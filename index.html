@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Casa Comasine</title>
+<meta name="theme-color" content="#1f2937" />
+<link rel="manifest" href="manifest.json" />
+<style>
+  :root{
+    --bg1:#fff7ed; --bg2:#eef2ff; --card:#ffffffdd; --text:#172033; --muted:#5b6475;
+    --line:#eadfce; --accent:#1f2937;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);
+       background:linear-gradient(180deg,var(--bg1),var(--bg2));}
+  .wrap{max-width:980px;margin:0 auto;padding:16px}
+  .hero{
+    position:relative; overflow:hidden; color:#fff; border-radius:28px; padding:22px;
+    background:
+      linear-gradient(135deg,rgba(17,24,39,.88),rgba(120,53,15,.70),rgba(29,78,216,.60)),
+      url('assets/bg-placeholder-1.jpg') center/cover no-repeat;
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+  }
+  .hero::after{
+    content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent,rgba(0,0,0,.08));
+    pointer-events:none;
+  }
+  .hero > *{position:relative; z-index:1}
+  .badge{
+    display:inline-block; padding:7px 12px; border-radius:999px; background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.16); font-size:13px; margin-bottom:10px;
+  }
+  h1{margin:0;font-size:34px}
+  .hero p{opacity:.95;line-height:1.4}
+  .quick{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+  .quick a{text-decoration:none;color:#fff;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.12);
+           padding:12px 14px;border-radius:18px;display:block;text-align:center}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:16px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+  .stat-num{font-size:28px;font-weight:bold}
+  .muted{color:var(--muted)}
+  .search{width:100%;padding:13px 14px;border-radius:16px;border:1px solid var(--line);background:#fff;font-size:16px}
+  .tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;background:#ffffffb8;border:1px solid var(--line);
+        border-radius:22px;padding:8px;position:sticky;top:0;backdrop-filter: blur(8px);z-index:5}
+  .tab-btn{border:none;border-radius:16px;padding:13px 8px;background:transparent;font-size:15px;font-weight:bold;color:#374151}
+  .tab-btn.active{background:#fff}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:14px}
+  .item-title{font-weight:bold;margin-bottom:6px}.item-area{font-size:13px;color:var(--muted);margin-bottom:10px}
+  .open{display:inline-block;margin-top:8px;text-decoration:none;background:var(--accent);color:#fff;padding:10px 14px;border-radius:12px}
+  .panel{display:none;margin-top:14px}.panel.active{display:block}
+  .photo-top{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .file{padding:12px;background:#fff;border:1px solid var(--line);border-radius:14px;width:100%}
+  .note{font-size:13px;color:var(--muted);line-height:1.4}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px}
+  .photo{overflow:hidden;border-radius:20px;background:#fff;border:1px solid var(--line);box-shadow:0 6px 18px rgba(0,0,0,.05)}
+  .photo img{width:100%;height:170px;object-fit:cover;display:block;background:#e5e7eb}
+  .photo-meta{padding:10px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .del{border:none;background:#111827;color:#fff;border-radius:10px;padding:8px 10px}
+  .ghost{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px}
+  .empty{text-align:center;padding:30px 16px;color:var(--muted);background:#ffffffa8;border:1px dashed var(--line);border-radius:20px;margin-top:12px}
+  .subhero{margin-top:14px; display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .subphoto{
+    min-height:150px; border-radius:22px; overflow:hidden; position:relative; border:1px solid rgba(255,255,255,.16);
+    background-size:cover; background-position:center;
+  }
+  .subphoto.one{background-image:linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.28)), url('assets/bg-placeholder-2.jpg');}
+  .subphoto.two{background-image:linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.28)), url('assets/bg-placeholder-3.jpg');}
+  .subphoto span{
+    position:absolute; left:12px; bottom:10px; color:#fff; font-weight:bold; text-shadow:0 1px 3px rgba(0,0,0,.45);
+  }
+  @media (max-width:720px){
+    h1{font-size:28px}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .tab-btn{font-size:13px;padding:12px 4px}
+    .subhero{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <div class="badge">🏔️ Dashboard di famiglia</div>
+      <h1>Casa Comasine</h1>
+      <p>Webcam, meteo, notizie e ricordi della Val di Pejo in un unico posto. Questa versione è pronta per essere pubblicata come app web installabile.</p>
+      <div class="quick">
+        <a href="https://www.visitvaldipejo.it/it/comasine" target="_blank" rel="noreferrer">Comasine</a>
+        <a href="https://www.visitvaldipejo.it/it/pianifica/informazioni/webcam" target="_blank" rel="noreferrer">Webcam</a>
+        <a href="https://www.meteotrentino.it/" target="_blank" rel="noreferrer">Meteo</a>
+        <a href="https://www.comune.peio.tn.it/Novita" target="_blank" rel="noreferrer">Comune</a>
+      </div>
+      <div class="subhero">
+        <div class="subphoto one"><span>Ricordi di Comasine</span></div>
+        <div class="subphoto two"><span>Val di Pejo</span></div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="card"><div class="stat-num">4</div><div class="muted">Fonti webcam</div></div>
+      <div class="card"><div class="stat-num">3</div><div class="muted">Fonti meteo</div></div>
+      <div class="card"><div class="stat-num">5</div><div class="muted">Fonti news</div></div>
+      <div class="card"><input id="search" class="search" placeholder="Cerca..." /></div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="webcam">Webcam</button>
+      <button class="tab-btn" data-tab="meteo">Meteo</button>
+      <button class="tab-btn" data-tab="news">Notizie</button>
+      <button class="tab-btn" data-tab="foto">Foto</button>
+    </div>
+
+    <div id="webcam" class="panel active"></div>
+    <div id="meteo" class="panel"></div>
+    <div id="news" class="panel"></div>
+    <div id="foto" class="panel">
+      <div class="card">
+        <div class="photo-top">
+          <input class="file" id="photoInput" type="file" accept="image/*" multiple />
+          <button class="ghost" id="clearPhotos">Svuota galleria</button>
+        </div>
+        <p class="note">Le foto vengono salvate nel browser del dispositivo. Se cancelli i dati del browser, la galleria si svuota.</p>
+      </div>
+      <div id="gallery"></div>
+    </div>
+  </div>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+}
+
+const data = {
+  webcam: [
+    {title:"Webcam ufficiali Val di Pejo", area:"Consorzio Turistico Pejo 3000", url:"https://www.visitvaldipejo.it/it/pianifica/informazioni/webcam", note:"Raccolta ufficiale delle webcam della valle"},
+    {title:"Webcam Meteotrentino - Peio", area:"Provincia Autonoma di Trento", url:"https://www.meteotrentino.it/dati/meteo/webcam/webcam-peio/", note:"Ottima per controllare meteo e visibilità in tempo reale"},
+    {title:"SkiPejo Webcam", area:"Pejo 3000", url:"https://www.skipejo.it/webcam/", note:"Panorami da Tarlenta, Saroden, Pejo 3000 e altre zone"},
+    {title:"Panorama 360° Pejo 3000", area:"Visit Trentino", url:"https://www.visittrentino.info/it/webcams/panorama-webcam-pejo", note:"Vista panoramica ad alta quota"}
+  ],
+  meteo: [
+    {title:"Meteotrentino", area:"Fonte istituzionale", url:"https://www.meteotrentino.it/", note:"Previsioni e webcam della Provincia di Trento"},
+    {title:"Meteo Pejo - 3BMeteo", area:"Previsioni locali", url:"https://www.3bmeteo.com/meteo/pejo", note:"Previsioni fino a 15 giorni"},
+    {title:"Meteo Peio - iLMeteo", area:"Previsioni locali", url:"https://www.ilmeteo.it/meteo/Peio", note:"Vista semplice e veloce"}
+  ],
+  news: [
+    {title:"Novità Comune di Peio", area:"Sito comunale", url:"https://www.comune.peio.tn.it/Novita", note:"Avvisi e comunicati"},
+    {title:"Notizie Comune di Peio", area:"Sito comunale", url:"https://www.comune.peio.tn.it/Novita/Notizie", note:"Sezione notizie"},
+    {title:"Eventi Val di Sole", area:"Visit Val di Sole", url:"https://www.visitvaldisole.it/it", note:"Eventi e attività"},
+    {title:"News & Eventi Pejo", area:"Acqua Pejo", url:"https://www.pejo.it/news.html", note:"Aggiornamenti locali"},
+    {title:"Gazzetta delle Valli - Val di Pejo", area:"Stampa locale", url:"https://www.gazzettadellevalli.it/val-di-sole-e-non/val-di-pejo", note:"Notizie della valle"}
+  ]
+};
+
+function card(item){
+  return `<div class="card">
+      <div class="item-title">${item.title}</div>
+      <div class="item-area">${item.area}</div>
+      <div class="muted">${item.note}</div>
+      <a class="open" href="${item.url}" target="_blank" rel="noreferrer">Apri</a>
+    </div>`;
+}
+function renderSections(filter=""){
+  ["webcam","meteo","news"].forEach(section => {
+    const q = filter.trim().toLowerCase();
+    const items = data[section].filter(i => !q || i.title.toLowerCase().includes(q) || i.area.toLowerCase().includes(q) || i.note.toLowerCase().includes(q));
+    document.getElementById(section).innerHTML = `<div class="grid">${items.map(card).join("") || `<div class="empty">Nessun risultato</div>`}</div>`;
+  });
+}
+function setTab(tab){
+  document.querySelectorAll(".tab-btn").forEach(b => b.classList.toggle("active", b.dataset.tab === tab));
+  document.querySelectorAll(".panel").forEach(p => p.classList.toggle("active", p.id === tab));
+}
+document.querySelectorAll(".tab-btn").forEach(btn => btn.addEventListener("click", () => setTab(btn.dataset.tab)));
+document.getElementById("search").addEventListener("input", e => renderSections(e.target.value));
+
+const STORAGE_KEY = "casa_comasine_pwa_photos_v1";
+function getPhotos(){ try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"); } catch(e){ return []; } }
+function savePhotos(arr){ localStorage.setItem(STORAGE_KEY, JSON.stringify(arr)); }
+function renderGallery(){
+  const photos = getPhotos();
+  const box = document.getElementById("gallery");
+  if(!photos.length){ box.innerHTML = `<div class="empty">Nessuna foto caricata ancora.</div>`; return; }
+  box.innerHTML = `<div class="gallery">${
+    photos.map((p, idx) => `<div class="photo"><img src="${p.src}" alt="${p.name}"><div class="photo-meta"><div style="font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px">${p.name}</div><button class="del" onclick="deletePhoto(${idx})">X</button></div></div>`).join("")
+  }</div>`;
+}
+window.deletePhoto = function(index){ const photos = getPhotos(); photos.splice(index,1); savePhotos(photos); renderGallery(); };
+document.getElementById("photoInput").addEventListener("change", async (e) => {
+  const files = Array.from(e.target.files || []);
+  if(!files.length) return;
+  const existing = getPhotos();
+  for(const file of files){
+    const reader = new FileReader();
+    await new Promise(resolve => {
+      reader.onload = () => { existing.unshift({ name:file.name, src:reader.result }); resolve(); };
+      reader.readAsDataURL(file);
+    });
+  }
+  try { savePhotos(existing); renderGallery(); } catch(err) { alert("Spazio browser finito. Prova con meno foto o immagini più leggere."); }
+  e.target.value = "";
+});
+document.getElementById("clearPhotos").addEventListener("click", () => {
+  if(confirm("Vuoi svuotare tutta la galleria?")){ localStorage.removeItem(STORAGE_KEY); renderGallery(); }
+});
+renderSections();
+renderGallery();
+</script>
+</body>
+</html>
