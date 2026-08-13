@@ -1,0 +1,6 @@
+Casa Comasine RC8.1 - Visual Polish
+- Eliminato lo stacco chiaro residuo della sezione Pianifica.
+- Forzato il linguaggio scuro continuo anche su Valle & quota e sezioni inferiori.
+- Ridotti bordi/contorni e spazi della pianificazione.
+- Aggiornata la cache del service worker per evitare il riuso della grafica precedente.
+- Nessuna modifica alla logica meteo.

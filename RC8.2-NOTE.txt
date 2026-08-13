@@ -1,0 +1,7 @@
+CASA COMASINE RC8.2 — LOWER UI CLEANUP
+- Pianifica uniformata al tema scuro
+- Rimossi i vecchi box statistiche fonti duplicati
+- Valle & quota compattata
+- Tab Webcam/Meteo/Notizie/Foto resa più app-like
+- Liste contenuti più compatte
+- Nessuna modifica alla logica meteo

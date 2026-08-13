@@ -387,6 +387,85 @@ body{
 }
 </style>
 
+
+<style>
+/* RC8.2 — correzione Pianifica + parte inferiore compatta */
+#daysCard{
+  background:#172434!important;
+  border:0!important;
+  box-shadow:none!important;
+  color:#f2f6fb!important;
+  margin-top:10px!important;
+  padding:12px!important;
+  border-radius:20px!important;
+}
+#daysCard .section-title h2{color:#f2f6fb!important}
+#daysCard .section-title small{color:#92a2b5!important}
+#daysCard .day{
+  background:#203247!important;
+  border:0!important;
+  box-shadow:none!important;
+  color:#f2f6fb!important;
+}
+#daysCard .day .rain{color:#9ab1c8!important}
+
+/* Valle & quota più compatta */
+#valleyCard{margin-top:10px!important;padding:12px!important;border-radius:20px!important}
+#valleyCard .source-links{display:none!important}
+
+/* Vecchi box statistici duplicati */
+.stats{display:none!important}
+
+/* Navigazione contenuti più app-like */
+.tabs{
+  margin-top:10px!important;
+  border:0!important;
+  background:#172434!important;
+  border-radius:18px!important;
+  padding:6px!important;
+}
+.tab-btn{
+  border-radius:13px!important;
+  padding:10px 8px!important;
+}
+.tab-btn.active{
+  background:#29415c!important;
+  color:#fff!important;
+}
+
+/* Liste più compatte */
+.links-grid{gap:8px!important;margin-top:10px!important}
+.link-card{
+  padding:12px!important;
+  border:0!important;
+  border-radius:16px!important;
+  background:#172434!important;
+}
+.link-card h3{font-size:16px!important;margin-bottom:4px!important}
+.link-card p{font-size:13px!important;line-height:1.3!important}
+.open{
+  padding:8px 12px!important;
+  border-radius:10px!important;
+  font-size:13px!important;
+}
+
+/* Ricerca discreta */
+.search-wrap{margin-top:10px!important}
+.search{
+  background:#122030!important;
+  border:0!important;
+  color:#eef3f8!important;
+}
+
+@media(max-width:700px){
+  #daysCard{padding:10px!important}
+  #daysCard .days{gap:8px!important}
+  #daysCard .day{padding:10px!important}
+  #valleyCard{padding:10px!important}
+  .link-card{padding:10px!important}
+}
+</style>
+
 </head>
 <body>
 <div class="wrap">
@@ -485,7 +564,7 @@ body{
 
   <section class="section card" id="daysCard">
     <div class="section-title">
-      <h2>📅 Oggi / Domani / +2</h2>
+      <h2>📅 Pianifica</h2>
       <small>tendenza rapida</small>
     </div>
     <div class="days" id="days"></div>
@@ -1011,4 +1090,19 @@ document.addEventListener('DOMContentLoaded',()=>{
 </script>
 
 </body>
-</html>
+</html><style id="rc81-polish">
+/* RC8.1 FINAL VISUAL POLISH — explicit selectors to prevent legacy light cards */
+body #daysCard.card, body #valleyCard.card, body #prossimeOre.card{background:#172331!important;border:0!important;color:#f3f6f8!important;box-shadow:none!important}
+body #daysCard.card .section-title h2,body #daysCard.card .section-title small,body #valleyCard.card .section-title h2,body #valleyCard.card .section-title small{color:#f3f6f8!important}
+body #daysCard.card .day,body #valleyCard.card .level{background:#1d2b3a!important;border:0!important;color:#f3f6f8!important}
+body #daysCard.card .day *,body #valleyCard.card .level *{color:inherit!important}
+body #daysCard.card .section-title small,body #valleyCard.card .section-title small,body #valleyCard.card .level .head,body #valleyCard.card .level .small{color:#9eacba!important}
+/* compact secondary planning area */
+body #daysCard.card{margin-top:8px!important;padding:9px 11px!important;border-radius:18px!important}
+body #daysCard .days{gap:7px!important}
+body #daysCard .day{padding:8px 10px!important;border-radius:12px!important}
+body #valleyCard.card{margin-top:8px!important;padding:9px 11px!important;border-radius:18px!important}
+/* keep lower app surface continuous */
+body .stats,body .tabs,body .panel{background:#172331!important;border:0!important;box-shadow:none!important;color:#f3f6f8!important}
+body .stat,body .link-card{background:#1d2b3a!important;border:0!important;color:#f3f6f8!important;box-shadow:none!important}
+</style>
