@@ -1,4 +1,4 @@
-const CACHE='casa-comasine-rc81-clean-polish';
+const CACHE='casa-comasine-rc9-sentieri-v1';
 const ASSETS=['./','./index.html','./manifest.json','./sw.js'];
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});

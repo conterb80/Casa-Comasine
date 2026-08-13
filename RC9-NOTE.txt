@@ -1,0 +1,17 @@
+CASA COMASINE RC9 — SENTIERI V1
+
+Prima implementazione reale della sezione Sentieri:
+- Accesso rapido in Home: Sentieri / Uscite / Diario / Valli
+- Sezione Sentieri a schermo intero
+- Stati: Da fare / Pianificati / Fatti
+- Filtri: Pejo / Sole / Rabbi / Tonale
+- Scheda sentiero con km, durata, dislivello, quota, difficoltà e mappa
+- Pianificazione con data e note
+- Uscite pianificate
+- Passaggio a Fatto
+- Diario con note e foto locali compresse
+- Dati e stati salvati nel browser tramite localStorage
+
+NOTA TEST:
+I percorsi iniziali servono principalmente per testare flusso e grafica.
+Prima di un'uscita reale, i dati del percorso vanno verificati con fonti ufficiali/cartografia.

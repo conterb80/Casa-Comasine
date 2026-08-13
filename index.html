@@ -389,80 +389,114 @@ body{
 
 
 <style>
-/* RC8.2 — correzione Pianifica + parte inferiore compatta */
-#daysCard{
-  background:#172434!important;
-  border:0!important;
-  box-shadow:none!important;
-  color:#f2f6fb!important;
-  margin-top:10px!important;
-  padding:12px!important;
-  border-radius:20px!important;
+/* ===== RC9 SENTIERI V1 ===== */
+.quick-hub{
+  margin-top:12px;padding:13px;border-radius:20px;background:#172434;
 }
-#daysCard .section-title h2{color:#f2f6fb!important}
-#daysCard .section-title small{color:#92a2b5!important}
-#daysCard .day{
-  background:#203247!important;
-  border:0!important;
-  box-shadow:none!important;
-  color:#f2f6fb!important;
+.quick-hub-title{font-weight:800;color:#f5f7fb;margin-bottom:10px}
+.quick-hub-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.hub-btn{
+  border:0;border-radius:14px;background:#203247;color:#eef3f8;
+  padding:12px 7px;font-weight:700;display:flex;gap:7px;align-items:center;
+  justify-content:center;cursor:pointer
 }
-#daysCard .day .rain{color:#9ab1c8!important}
+.hub-btn.primary{background:#2f7d4f;color:#fff}
+.hub-btn span{font-size:18px}
 
-/* Valle & quota più compatta */
-#valleyCard{margin-top:10px!important;padding:12px!important;border-radius:20px!important}
-#valleyCard .source-links{display:none!important}
+/* full screen app section */
+.app-screen{
+  position:fixed;inset:0;z-index:1000;background:#0d1620;color:#f3f6f9;
+  overflow:auto;display:none;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+}
+.app-screen.active{display:block}
+.screen-wrap{max-width:760px;margin:auto;padding:12px 12px 90px}
+.screen-head{
+  position:sticky;top:0;z-index:4;background:#0d1620eF;backdrop-filter:blur(12px);
+  display:grid;grid-template-columns:44px 1fr 44px;align-items:center;padding:6px 0 10px
+}
+.screen-head h2{margin:0;text-align:center;font-size:20px}
+.icon-btn{
+  width:40px;height:40px;border:0;border-radius:12px;background:#1c2938;color:#fff;
+  font-size:20px;cursor:pointer
+}
+.screen-tabs,.valley-filters{display:flex;gap:7px;overflow:auto;padding-bottom:3px}
+.screen-tabs{margin:4px 0 10px}
+.screen-tabs button,.valley-filters button{
+  border:0;border-radius:999px;background:#172434;color:#aeb9c7;
+  padding:9px 14px;font-weight:700;white-space:nowrap;cursor:pointer
+}
+.screen-tabs button.active,.valley-filters button.active{background:#3b8b55;color:white}
 
-/* Vecchi box statistici duplicati */
-.stats{display:none!important}
+.trail-list{display:grid;gap:9px;margin-top:10px}
+.trail-card{
+  display:grid;grid-template-columns:90px 1fr 26px;gap:11px;align-items:center;
+  background:#172434;border-radius:18px;padding:9px;cursor:pointer
+}
+.trail-thumb{
+  height:86px;border-radius:13px;background:
+  linear-gradient(145deg,#315f4b,#17314a);display:flex;align-items:center;justify-content:center;
+  font-size:36px
+}
+.trail-card h3{margin:0 0 3px;font-size:16px}
+.trail-zone{font-size:12px;color:#98a6b7;margin-bottom:5px}
+.diff{font-size:12px;font-weight:800;margin-bottom:5px}
+.diff.facile{color:#60cc83}.diff.media{color:#efb24c}.diff.impegnativa{color:#ef7777}
+.trail-metrics{font-size:12px;color:#c1cad5;display:flex;gap:10px;flex-wrap:wrap}
+.chev{font-size:24px;color:#7d8b9b}
 
-/* Navigazione contenuti più app-like */
-.tabs{
-  margin-top:10px!important;
-  border:0!important;
-  background:#172434!important;
-  border-radius:18px!important;
-  padding:6px!important;
-}
-.tab-btn{
-  border-radius:13px!important;
-  padding:10px 8px!important;
-}
-.tab-btn.active{
-  background:#29415c!important;
-  color:#fff!important;
-}
+.empty-state{padding:30px 15px;text-align:center;color:#9ca9b8;background:#152231;border-radius:18px}
 
-/* Liste più compatte */
-.links-grid{gap:8px!important;margin-top:10px!important}
-.link-card{
-  padding:12px!important;
-  border:0!important;
-  border-radius:16px!important;
-  background:#172434!important;
+.detail-hero{
+  height:190px;border-radius:21px;background:linear-gradient(145deg,#315f4b,#17314a);
+  display:flex;align-items:end;padding:16px;margin-bottom:12px
 }
-.link-card h3{font-size:16px!important;margin-bottom:4px!important}
-.link-card p{font-size:13px!important;line-height:1.3!important}
-.open{
-  padding:8px 12px!important;
-  border-radius:10px!important;
-  font-size:13px!important;
+.detail-hero h2{margin:0;font-size:25px}
+.detail-sub{color:#c8d2dc;font-size:13px;margin-top:3px}
+.metric4{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:12px 0}
+.metric4 div{background:#172434;border-radius:14px;padding:10px;text-align:center}
+.metric4 b{display:block;font-size:17px}.metric4 span{font-size:10px;color:#9daaba}
+.info-list{background:#172434;border-radius:18px;padding:8px 13px}
+.info-row{display:grid;grid-template-columns:120px 1fr;gap:10px;padding:9px 0;border-bottom:1px solid #ffffff0d}
+.info-row:last-child{border:0}.info-row span{color:#9eabba;font-size:12px}.info-row b{font-size:13px}
+.detail-note{font-size:13px;line-height:1.45;color:#c7d0da;margin:12px 2px}
+.action-row{display:grid;grid-template-columns:1fr 1.35fr;gap:8px;margin-top:12px}
+.action{
+  border:0;border-radius:14px;padding:13px;font-weight:800;background:#26374b;color:white;cursor:pointer
 }
+.action.green{background:#388f51}.action.red{background:#9b4646}
 
-/* Ricerca discreta */
-.search-wrap{margin-top:10px!important}
-.search{
-  background:#122030!important;
-  border:0!important;
-  color:#eef3f8!important;
+.plan-card{background:#172434;border-radius:18px;padding:13px;margin-top:9px}
+.plan-card label{display:block;font-size:12px;color:#9daaba;margin-bottom:6px}
+.plan-card input,.plan-card textarea,.plan-card select{
+  width:100%;background:#0f1b28;color:#fff;border:1px solid #2d4055;border-radius:12px;padding:11px
 }
+.weather-plan{margin-top:10px;background:#132a22;border-radius:16px;padding:12px}
+.weather-plan b{color:#67cc88}.weather-plan p{font-size:12px;color:#b8c5cf;margin:5px 0 0}
 
-@media(max-width:700px){
-  #daysCard{padding:10px!important}
-  #daysCard .days{gap:8px!important}
-  #daysCard .day{padding:10px!important}
-  #valleyCard{padding:10px!important}
-  .link-card{padding:10px!important}
+.diary-card{background:#172434;border-radius:18px;padding:12px;margin-top:9px}
+.diary-card h3{margin:0 0 4px}.stars{color:#ffc64d;font-size:18px}
+.photo-strip{display:flex;gap:6px;overflow:auto;margin-top:9px}
+.photo-strip img{width:76px;height:62px;object-fit:cover;border-radius:10px}
+.photo-picker{margin-top:9px}
+.photo-picker input{width:100%;color:#aeb9c7}
+.note-small{font-size:11px;color:#8d9baa;margin-top:7px}
+
+.bottom-app-nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:1001;background:#101b28ee;
+  backdrop-filter:blur(12px);display:grid;grid-template-columns:repeat(4,1fr);
+  padding:7px max(8px,env(safe-area-inset-right)) calc(7px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));
+  border-top:1px solid #ffffff10
+}
+.bottom-app-nav button{border:0;background:transparent;color:#95a2b2;padding:7px 3px;font-weight:700}
+.bottom-app-nav button.active{color:#65c986}
+
+@media(max-width:560px){
+ .quick-hub-grid{grid-template-columns:repeat(4,1fr);gap:5px}
+ .hub-btn{font-size:11px;padding:10px 4px;flex-direction:column;gap:3px}
+ .metric4{grid-template-columns:repeat(4,1fr)}
+ .metric4 b{font-size:15px}
+ .trail-card{grid-template-columns:78px 1fr 20px}
+ .trail-thumb{height:76px}
 }
 </style>
 
@@ -564,7 +598,7 @@ body{
 
   <section class="section card" id="daysCard">
     <div class="section-title">
-      <h2>📅 Pianifica</h2>
+      <h2>📅 Oggi / Domani / +2</h2>
       <small>tendenza rapida</small>
     </div>
     <div class="days" id="days"></div>
@@ -597,7 +631,18 @@ body{
     <div id="weatherError"></div>
   </section>
 
-  <div class="stats">
+  
+  <section class="quick-hub" id="accessoRapido">
+    <div class="quick-hub-title">Accesso rapido</div>
+    <div class="quick-hub-grid">
+      <button class="hub-btn primary" data-open-screen="sentieri"><span>🥾</span>Sentieri</button>
+      <button class="hub-btn" data-open-screen="uscite"><span>📅</span>Uscite</button>
+      <button class="hub-btn" data-open-screen="diario"><span>📖</span>Diario</button>
+      <button class="hub-btn" data-open-screen="valli"><span>🗺️</span>Valli</button>
+    </div>
+  </section>
+
+<div class="stats">
     <div class="stat"><b>4</b><span>Fonti webcam</span></div>
     <div class="stat"><b>3</b><span>Fonti meteo</span></div>
     <div class="stat"><b>5</b><span>Fonti news</span></div>
@@ -622,7 +667,122 @@ body{
     </div>
     <div id="gallery" class="gallery"></div>
   </div>
+
 </div>
+
+<!-- RC9: SENTIERI V1 -->
+<section class="app-screen" id="screen-sentieri">
+  <div class="screen-wrap">
+    <div class="screen-head">
+      <button class="icon-btn close-screen">‹</button><h2>🥾 Sentieri</h2><button class="icon-btn" id="trailAddBtn">＋</button>
+    </div>
+    <div class="screen-tabs">
+      <button class="active" data-status="todo">Da fare</button>
+      <button data-status="planned">Pianificati</button>
+      <button data-status="done">Fatti</button>
+    </div>
+    <div class="valley-filters">
+      <button class="active" data-zone="Tutti">Tutti</button>
+      <button data-zone="Pejo">Pejo</button>
+      <button data-zone="Sole">Sole</button>
+      <button data-zone="Rabbi">Rabbi</button>
+      <button data-zone="Tonale">Tonale</button>
+    </div>
+    <div id="trailList" class="trail-list"></div>
+  </div>
+</section>
+
+<section class="app-screen" id="screen-detail">
+  <div class="screen-wrap">
+    <div class="screen-head">
+      <button class="icon-btn" id="detailBack">‹</button><h2 id="detailHead">Sentiero</h2><button class="icon-btn" id="favBtn">♡</button>
+    </div>
+    <div class="detail-hero">
+      <div><h2 id="dName"></h2><div class="detail-sub" id="dZone"></div></div>
+    </div>
+    <div class="metric4">
+      <div><b id="dKm"></b><span>Distanza</span></div>
+      <div><b id="dTime"></b><span>Durata</span></div>
+      <div><b id="dGain"></b><span>Dislivello</span></div>
+      <div><b id="dAlt"></b><span>Quota max</span></div>
+    </div>
+    <div class="info-list">
+      <div class="info-row"><span>Difficoltà</span><b id="dDiff"></b></div>
+      <div class="info-row"><span>Partenza</span><b id="dStart"></b></div>
+      <div class="info-row"><span>Periodo</span><b id="dSeason"></b></div>
+      <div class="info-row"><span>Tipologia</span><b id="dType"></b></div>
+    </div>
+    <div class="detail-note" id="dDesc"></div>
+    <div class="note-small">I dati iniziali servono per testare la struttura della nuova sezione. Prima di un'uscita reale verifica sempre percorso, condizioni e segnaletica sul posto.</div>
+    <div class="action-row">
+      <button class="action" id="mapBtn">🗺️ Mappa</button>
+      <button class="action green" id="planBtn">📅 Pianifica uscita</button>
+    </div>
+  </div>
+</section>
+
+<section class="app-screen" id="screen-plan">
+  <div class="screen-wrap">
+    <div class="screen-head">
+      <button class="icon-btn" id="planBack">‹</button><h2>📅 Pianifica uscita</h2><span></span>
+    </div>
+    <div class="plan-card">
+      <h3 id="pName" style="margin-top:0"></h3>
+      <label>Scegli la data</label>
+      <input id="planDate" type="date">
+    </div>
+    <div class="weather-plan">
+      <b>🌦️ Meteo operativo</b>
+      <p>La pianificazione è collegata alla Home meteo: prima di partire ricontrolla sempre Oggi fuori, Meteotrentino e webcam.</p>
+    </div>
+    <div class="plan-card">
+      <label>Note per l'uscita</label>
+      <textarea id="planNotes" rows="4" placeholder="Orario di partenza, parcheggio, cosa portare..."></textarea>
+    </div>
+    <button class="action green" id="savePlan" style="width:100%;margin-top:10px">✓ Salva in Pianificati</button>
+  </div>
+</section>
+
+<section class="app-screen" id="screen-uscite">
+  <div class="screen-wrap">
+    <div class="screen-head">
+      <button class="icon-btn close-screen">‹</button><h2>📅 Uscite</h2><span></span>
+    </div>
+    <div id="plannedList" class="trail-list"></div>
+  </div>
+</section>
+
+<section class="app-screen" id="screen-diario">
+  <div class="screen-wrap">
+    <div class="screen-head">
+      <button class="icon-btn close-screen">‹</button><h2>📖 Diario</h2><span></span>
+    </div>
+    <div id="diaryList"></div>
+  </div>
+</section>
+
+<section class="app-screen" id="screen-valli">
+  <div class="screen-wrap">
+    <div class="screen-head">
+      <button class="icon-btn close-screen">‹</button><h2>🗺️ Valli</h2><span></span>
+    </div>
+    <div class="trail-list">
+      <div class="trail-card" onclick="openValley('Pejo')"><div class="trail-thumb">🏔️</div><div><h3>Val di Pejo</h3><div class="trail-zone">Sentieri e mete vicine a Comasine</div></div><div class="chev">›</div></div>
+      <div class="trail-card" onclick="openValley('Sole')"><div class="trail-thumb">🌲</div><div><h3>Val di Sole</h3><div class="trail-zone">Esplora i percorsi della valle</div></div><div class="chev">›</div></div>
+      <div class="trail-card" onclick="openValley('Rabbi')"><div class="trail-thumb">💧</div><div><h3>Val di Rabbi</h3><div class="trail-zone">Escursioni e passeggiate</div></div><div class="chev">›</div></div>
+      <div class="trail-card" onclick="openValley('Tonale')"><div class="trail-thumb">⛰️</div><div><h3>Tonale</h3><div class="trail-zone">Percorsi e alta quota</div></div><div class="chev">›</div></div>
+    </div>
+  </div>
+</section>
+
+<nav class="bottom-app-nav" id="bottomNav" style="display:none">
+  <button data-nav="home">🏠<br>Home</button>
+  <button data-nav="sentieri" class="active">🥾<br>Sentieri</button>
+  <button data-nav="uscite">📅<br>Uscite</button>
+  <button data-nav="diario">📖<br>Diario</button>
+</nav>
+
+<div class="wrap" style="display:none">
 
 <script>
 if ('serviceWorker' in navigator) {
@@ -1089,20 +1249,178 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 </script>
 
+
+<script>
+/* ===== RC9 SENTIERI V1 ===== */
+const TRAILS = [
+  {id:"pian-palu",name:"Lago di Pian Palù",zone:"Pejo",difficulty:"Facile",km:"9.2 km",time:"3h 15m",gain:"+420 m",alt:"1850 m",start:"Val di Pejo",season:"Estate / inizio autunno",type:"Andata e ritorno",desc:"Percorso da inserire nella lista personale delle escursioni da valutare e pianificare.",map:"https://www.google.com/maps/search/?api=1&query=Lago+di+Pian+Palu"},
+  {id:"larcher",name:"Rifugio Larcher al Cevedale",zone:"Pejo",difficulty:"Media",km:"13.5 km",time:"5h 00m",gain:"+850 m",alt:"2607 m",start:"Val Venezia / Pejo",season:"Estate",type:"Andata e ritorno",desc:"Escursione di montagna da pianificare con attenzione a meteo, quota e orario.",map:"https://www.google.com/maps/search/?api=1&query=Rifugio+Larcher+Cevedale"},
+  {id:"covel",name:"Laghetti di Covel",zone:"Sole",difficulty:"Facile",km:"7.8 km",time:"2h 30m",gain:"+300 m",alt:"2100 m",start:"Area Pejo / Covel",season:"Estate",type:"Passeggiata",desc:"Meta panoramica adatta a una giornata tranquilla, da verificare in base all'accesso scelto.",map:"https://www.google.com/maps/search/?api=1&query=Laghetti+di+Covel"},
+  {id:"malga-mare",name:"Malga Mare",zone:"Pejo",difficulty:"Facile",km:"6.4 km",time:"2h 00m",gain:"+250 m",alt:"2030 m",start:"Val di Pejo",season:"Estate",type:"Andata e ritorno",desc:"Passeggiata da tenere tra le alternative più semplici della zona.",map:"https://www.google.com/maps/search/?api=1&query=Malga+Mare+Peio"},
+  {id:"rabbi",name:"Val di Rabbi · percorso da scegliere",zone:"Rabbi",difficulty:"Facile",km:"—",time:"—",gain:"—",alt:"—",start:"Val di Rabbi",season:"Da definire",type:"Da scegliere",desc:"Segnaposto per aggiungere i percorsi reali della Val di Rabbi che vorrai fare.",map:"https://www.google.com/maps/search/?api=1&query=Val+di+Rabbi"},
+  {id:"tonale",name:"Tonale · percorso da scegliere",zone:"Tonale",difficulty:"Media",km:"—",time:"—",gain:"—",alt:"—",start:"Passo del Tonale",season:"Da definire",type:"Da scegliere",desc:"Segnaposto per aggiungere i percorsi reali del Tonale e Presena.",map:"https://www.google.com/maps/search/?api=1&query=Passo+del+Tonale"}
+];
+
+const KEY="casaComasineTrailsV1";
+let store=JSON.parse(localStorage.getItem(KEY)||"{}");
+if(!store.status) store.status={};
+if(!store.plans) store.plans={};
+if(!store.diary) store.diary={};
+let currentTrail=null, currentStatus="todo", currentZone="Tutti";
+
+const saveStore=()=>localStorage.setItem(KEY,JSON.stringify(store));
+const getStatus=id=>store.status[id]||"todo";
+const trailById=id=>TRAILS.find(t=>t.id===id);
+
+function showScreen(name){
+  document.querySelectorAll(".app-screen").forEach(s=>s.classList.remove("active"));
+  const el=document.getElementById("screen-"+name);
+  if(el) el.classList.add("active");
+  document.getElementById("bottomNav").style.display=name==="detail"||name==="plan"?"none":"grid";
+  document.body.style.overflow=name?"hidden":"";
+  document.querySelectorAll("#bottomNav button").forEach(b=>b.classList.toggle("active",b.dataset.nav===name));
+  if(name==="sentieri") renderTrails();
+  if(name==="uscite") renderPlanned();
+  if(name==="diario") renderDiary();
+}
+function closeAll(){
+  document.querySelectorAll(".app-screen").forEach(s=>s.classList.remove("active"));
+  document.getElementById("bottomNav").style.display="none";
+  document.body.style.overflow="";
+}
+document.querySelectorAll("[data-open-screen]").forEach(b=>b.addEventListener("click",()=>showScreen(b.dataset.openScreen)));
+document.querySelectorAll(".close-screen").forEach(b=>b.addEventListener("click",closeAll));
+document.querySelectorAll("#bottomNav button").forEach(b=>b.addEventListener("click",()=>{
+  if(b.dataset.nav==="home") closeAll(); else showScreen(b.dataset.nav);
+}));
+document.getElementById("detailBack").onclick=()=>showScreen("sentieri");
+document.getElementById("planBack").onclick=()=>showScreen("detail");
+
+document.querySelectorAll("#screen-sentieri .screen-tabs button").forEach(b=>b.onclick=()=>{
+  currentStatus=b.dataset.status;
+  document.querySelectorAll("#screen-sentieri .screen-tabs button").forEach(x=>x.classList.toggle("active",x===b));
+  renderTrails();
+});
+document.querySelectorAll("#screen-sentieri .valley-filters button").forEach(b=>b.onclick=()=>{
+  currentZone=b.dataset.zone;
+  document.querySelectorAll("#screen-sentieri .valley-filters button").forEach(x=>x.classList.toggle("active",x===b));
+  renderTrails();
+});
+
+function renderTrails(){
+  const list=document.getElementById("trailList");
+  const items=TRAILS.filter(t=>getStatus(t.id)===currentStatus && (currentZone==="Tutti"||t.zone===currentZone));
+  if(!items.length){list.innerHTML='<div class="empty-state">Nessun sentiero in questa sezione.</div>';return}
+  list.innerHTML=items.map(t=>`
+    <div class="trail-card" onclick="openTrail('${t.id}')">
+      <div class="trail-thumb">🏔️</div>
+      <div>
+        <h3>${t.name}</h3><div class="trail-zone">Val di ${t.zone}</div>
+        <div class="diff ${t.difficulty.toLowerCase()}">● ${t.difficulty}</div>
+        <div class="trail-metrics"><span>↔ ${t.km}</span><span>◷ ${t.time}</span><span>↗ ${t.gain}</span></div>
+      </div><div class="chev">›</div>
+    </div>`).join("");
+}
+window.openTrail=function(id){
+  currentTrail=trailById(id);
+  const t=currentTrail;
+  document.getElementById("detailHead").textContent=t.name;
+  document.getElementById("dName").textContent=t.name;
+  document.getElementById("dZone").textContent="Val di "+t.zone;
+  document.getElementById("dKm").textContent=t.km;
+  document.getElementById("dTime").textContent=t.time;
+  document.getElementById("dGain").textContent=t.gain;
+  document.getElementById("dAlt").textContent=t.alt;
+  document.getElementById("dDiff").textContent=t.difficulty;
+  document.getElementById("dStart").textContent=t.start;
+  document.getElementById("dSeason").textContent=t.season;
+  document.getElementById("dType").textContent=t.type;
+  document.getElementById("dDesc").textContent=t.desc;
+  document.getElementById("mapBtn").onclick=()=>window.open(t.map,"_blank");
+  document.getElementById("planBtn").onclick=()=>openPlan(t.id);
+  showScreen("detail");
+}
+function openPlan(id){
+  currentTrail=trailById(id);
+  document.getElementById("pName").textContent=currentTrail.name;
+  document.getElementById("planDate").value=store.plans[id]?.date||"";
+  document.getElementById("planNotes").value=store.plans[id]?.notes||"";
+  showScreen("plan");
+}
+document.getElementById("savePlan").onclick=()=>{
+  if(!currentTrail)return;
+  const date=document.getElementById("planDate").value;
+  if(!date){alert("Scegli una data per l'uscita.");return}
+  store.status[currentTrail.id]="planned";
+  store.plans[currentTrail.id]={date,notes:document.getElementById("planNotes").value};
+  saveStore(); renderPlanned(); showScreen("uscite");
+}
+function renderPlanned(){
+  const items=TRAILS.filter(t=>getStatus(t.id)==="planned");
+  const list=document.getElementById("plannedList");
+  if(!items.length){list.innerHTML='<div class="empty-state">Nessuna uscita pianificata.<br>Apri Sentieri e scegli “Pianifica uscita”.</div>';return}
+  list.innerHTML=items.map(t=>`
+    <div class="trail-card">
+      <div class="trail-thumb">📅</div>
+      <div onclick="openTrail('${t.id}')">
+        <h3>${t.name}</h3><div class="trail-zone">${store.plans[t.id]?.date||""} · Val di ${t.zone}</div>
+        <div class="trail-metrics"><span>↔ ${t.km}</span><span>◷ ${t.time}</span></div>
+      </div>
+      <button class="icon-btn" onclick="event.stopPropagation();completeTrail('${t.id}')">✓</button>
+    </div>`).join("");
+}
+window.completeTrail=function(id){
+  const t=trailById(id);
+  store.status[id]="done";
+  store.diary[id]=store.diary[id]||{date:store.plans[id]?.date||new Date().toISOString().slice(0,10),rating:5,notes:"",photos:[]};
+  saveStore();renderPlanned();renderDiary();
+}
+function renderDiary(){
+  const items=TRAILS.filter(t=>getStatus(t.id)==="done");
+  const box=document.getElementById("diaryList");
+  if(!items.length){box.innerHTML='<div class="empty-state">Il diario è ancora vuoto.<br>Quando completi un'uscita, premi ✓ da Uscite.</div>';return}
+  box.innerHTML=items.map(t=>{
+    const d=store.diary[t.id]||{};
+    const photos=(d.photos||[]).map(src=>`<img src="${src}">`).join("");
+    return `<div class="diary-card">
+      <h3>${t.name}</h3><div class="trail-zone">${d.date||""} · Val di ${t.zone}</div>
+      <div class="stars">${"★".repeat(d.rating||5)}${"☆".repeat(5-(d.rating||5))}</div>
+      <div class="plan-card" style="padding:9px;margin-top:8px"><label>Note della giornata</label>
+        <textarea rows="3" oninput="saveDiaryNote('${t.id}',this.value)">${d.notes||""}</textarea></div>
+      <div class="photo-picker"><input type="file" accept="image/*" multiple onchange="addDiaryPhotos('${t.id}',this.files)"></div>
+      <div class="photo-strip">${photos}</div>
+      <div class="note-small">Le foto di questa V1 vengono salvate localmente sul dispositivo in formato ridotto. Per un archivio familiare definitivo valuteremo sincronizzazione/cloud.</div>
+    </div>`
+  }).join("");
+}
+window.saveDiaryNote=function(id,v){store.diary[id].notes=v;saveStore()}
+window.addDiaryPhotos=function(id,files){
+  const arr=[...files].slice(0,4);
+  arr.forEach(file=>{
+    const img=new Image(), reader=new FileReader();
+    reader.onload=e=>{
+      img.onload=()=>{
+        const c=document.createElement("canvas"), max=500;
+        const scale=Math.min(1,max/Math.max(img.width,img.height));
+        c.width=Math.round(img.width*scale);c.height=Math.round(img.height*scale);
+        c.getContext("2d").drawImage(img,0,0,c.width,c.height);
+        store.diary[id].photos=store.diary[id].photos||[];
+        if(store.diary[id].photos.length<6) store.diary[id].photos.push(c.toDataURL("image/jpeg",.68));
+        try{saveStore()}catch(e){alert("Memoria locale piena: rimuovi qualche foto.");}
+        renderDiary();
+      };img.src=e.target.result;
+    };reader.readAsDataURL(file);
+  });
+}
+window.openValley=function(zone){
+  currentZone=zone;currentStatus="todo";showScreen("sentieri");
+  document.querySelectorAll("#screen-sentieri .valley-filters button").forEach(b=>b.classList.toggle("active",b.dataset.zone===zone));
+  document.querySelectorAll("#screen-sentieri .screen-tabs button").forEach(b=>b.classList.toggle("active",b.dataset.status==="todo"));
+  renderTrails();
+}
+document.getElementById("trailAddBtn").onclick=()=>alert("Nella prossima evoluzione potremo aggiungere un sentiero personalizzato direttamente dall'app.");
+renderTrails();
+</script>
+
 </body>
-</html><style id="rc81-polish">
-/* RC8.1 FINAL VISUAL POLISH — explicit selectors to prevent legacy light cards */
-body #daysCard.card, body #valleyCard.card, body #prossimeOre.card{background:#172331!important;border:0!important;color:#f3f6f8!important;box-shadow:none!important}
-body #daysCard.card .section-title h2,body #daysCard.card .section-title small,body #valleyCard.card .section-title h2,body #valleyCard.card .section-title small{color:#f3f6f8!important}
-body #daysCard.card .day,body #valleyCard.card .level{background:#1d2b3a!important;border:0!important;color:#f3f6f8!important}
-body #daysCard.card .day *,body #valleyCard.card .level *{color:inherit!important}
-body #daysCard.card .section-title small,body #valleyCard.card .section-title small,body #valleyCard.card .level .head,body #valleyCard.card .level .small{color:#9eacba!important}
-/* compact secondary planning area */
-body #daysCard.card{margin-top:8px!important;padding:9px 11px!important;border-radius:18px!important}
-body #daysCard .days{gap:7px!important}
-body #daysCard .day{padding:8px 10px!important;border-radius:12px!important}
-body #valleyCard.card{margin-top:8px!important;padding:9px 11px!important;border-radius:18px!important}
-/* keep lower app surface continuous */
-body .stats,body .tabs,body .panel{background:#172331!important;border:0!important;box-shadow:none!important;color:#f3f6f8!important}
-body .stat,body .link-card{background:#1d2b3a!important;border:0!important;color:#f3f6f8!important;box-shadow:none!important}
-</style>
+</html>
