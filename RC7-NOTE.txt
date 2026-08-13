@@ -1,0 +1,5 @@
+RC7 — One Screen Weather Dashboard
+- Meteo attuale, verdetto Oggi fuori e prossime ore riuniti nella stessa dashboard.
+- Contrasto e colori uniformati in stile app scura.
+- Domani/+2 separati come secondo livello per pianificazione.
+- Nessuna modifica alla logica di acquisizione dati meteo.

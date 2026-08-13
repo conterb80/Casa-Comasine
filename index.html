@@ -387,208 +387,6 @@ body{
 }
 </style>
 
-
-<style>
-/* ===== RC6 MODERN APP ===== */
-:root{
-  --app-bg:#11161d;
-  --app-surface:#1a2029;
-  --app-surface-2:#202733;
-  --app-surface-3:#283140;
-  --app-line:#354050;
-  --app-text:#f3f6fa;
-  --app-muted:#aeb8c5;
-  --app-blue:#76b7ff;
-  --app-green:#5bc88a;
-  --app-amber:#e7b15a;
-  --app-red:#ff7272;
-}
-body{
-  background:
-    radial-gradient(circle at top right,rgba(70,103,154,.18),transparent 28rem),
-    linear-gradient(180deg,#0e1319 0%,#121821 100%) !important;
-  color:var(--app-text)!important;
-}
-.wrap{max-width:860px!important;padding:10px 10px 28px!important}
-
-/* Hero */
-.top{
-  background:linear-gradient(145deg,#171d25 0%,#202632 58%,#263650 100%)!important;
-  border:1px solid #2c3746!important;
-  box-shadow:0 14px 30px rgba(0,0,0,.28)!important;
-  border-radius:24px!important;
-}
-.top h1,.top .subtitle,.top .badge,.top .updated{color:var(--app-text)!important}
-.top .subtitle,.top .updated{color:var(--app-muted)!important}
-.current-main,.current-extra{
-  background:#ffffff09!important;
-  border-color:#ffffff12!important;
-}
-.current-grid>div{
-  background:#ffffff08!important;
-  border-color:#ffffff0d!important;
-}
-.current-grid span,.current-extra .label{color:var(--app-muted)!important}
-.quick-actions a{
-  background:#ffffff08!important;
-  border-color:#ffffff10!important;
-  color:var(--app-text)!important;
-}
-
-/* Generic sections */
-.section.card,
-.card{
-  background:var(--app-surface)!important;
-  border:1px solid var(--app-line)!important;
-  box-shadow:none!important;
-  color:var(--app-text)!important;
-}
-.section-title h2,
-.card h2,
-.card h3{color:var(--app-text)!important}
-.section-title small,
-.area,
-.source-note,
-.card p,
-.card span{color:var(--app-muted)}
-
-/* Decision panel */
-#outdoorCard{
-  background:linear-gradient(145deg,#1b222c 0%,#202834 100%)!important;
-  border:1px solid #354151!important;
-}
-#outdoorCard .outdoor h3{
-  font-size:21px!important;
-  color:var(--app-text)!important;
-}
-#outdoorCard .outdoor p{display:none!important}
-#outdoorCard .metric,
-#outdoorCard .decision,
-#outdoorCard .timeline{
-  background:var(--app-surface-2)!important;
-  border-color:var(--app-line)!important;
-}
-#outdoorCard .metric b{color:var(--app-text)!important}
-#outdoorCard .metric span,
-#outdoorCard .decision .k,
-#outdoorCard .timeline span{color:var(--app-muted)!important}
-#outdoorCard .window{
-  background:#2b261d!important;
-  border-color:#5a4b2e!important;
-  color:#f4d694!important;
-}
-#outdoorCard .decision.good .v{color:var(--app-green)!important}
-#outdoorCard .decision.warn .v{color:var(--app-amber)!important}
-#outdoorCard .decision.bad .v{color:var(--app-red)!important}
-#outdoorCard .webcam-check{display:none!important}
-
-/* Hourly */
-#prossimeOre{
-  background:var(--app-surface)!important;
-  border-color:var(--app-line)!important;
-}
-#prossimeOre .section-title h2{color:var(--app-text)!important}
-#prossimeOre .section-title small{color:var(--app-muted)!important}
-#prossimeOre .hour{
-  background:var(--app-surface-2)!important;
-  border-color:var(--app-line)!important;
-  color:var(--app-text)!important;
-}
-#prossimeOre .hour .rain{color:#8ec5ff!important}
-
-/* Days */
-#daysCard{
-  background:var(--app-surface)!important;
-  border-color:var(--app-line)!important;
-}
-#daysCard .day{
-  background:var(--app-surface-2)!important;
-  border-color:var(--app-line)!important;
-  color:var(--app-text)!important;
-}
-#daysCard .day .rain{color:#9bb9d9!important}
-
-/* Valley */
-#valleyCard{
-  background:var(--app-surface)!important;
-  border-color:var(--app-line)!important;
-}
-#valleyCard .level{
-  background:var(--app-surface-2)!important;
-  border-color:var(--app-line)!important;
-  color:var(--app-text)!important;
-}
-#valleyCard .level .label,
-#valleyCard .level .small{color:var(--app-muted)!important}
-#valleyCard .source-note{display:none!important}
-#valleyCard .source-links{display:flex!important;gap:6px!important}
-#valleyCard .source-links a{
-  background:var(--app-surface-3)!important;
-  color:var(--app-text)!important;
-  border-color:#3c4859!important;
-}
-
-/* Stats and navigation */
-.stats{margin-top:12px!important}
-.stat{
-  background:var(--app-surface)!important;
-  border-color:var(--app-line)!important;
-  color:var(--app-text)!important;
-}
-.stat span{color:var(--app-muted)!important}
-.search{
-  background:var(--app-surface-2)!important;
-  border-color:var(--app-line)!important;
-  color:var(--app-text)!important;
-}
-.search::placeholder{color:#7f8996}
-.tabs{
-  background:#171d25!important;
-  border-color:#303947!important;
-}
-.tab-btn{color:var(--app-muted)!important}
-.tab-btn.active{
-  background:var(--app-surface-3)!important;
-  color:var(--app-text)!important;
-  box-shadow:none!important;
-}
-.link-card{
-  background:var(--app-surface)!important;
-  border-color:var(--app-line)!important;
-  color:var(--app-text)!important;
-}
-.link-card h3{color:var(--app-text)!important}
-.open{
-  background:#2f6fab!important;
-  color:white!important;
-}
-.file{
-  background:var(--app-surface-2)!important;
-  border-color:var(--app-line)!important;
-  color:var(--app-text)!important;
-}
-
-/* Modern compact spacing */
-.section{margin-top:8px!important}
-#outdoorCard{padding:11px 12px!important}
-#outdoorCard .outdoor-details{margin-top:7px!important}
-#outdoorCard .decision-grid{margin-top:6px!important}
-#outdoorCard .timeline{margin-top:6px!important}
-#prossimeOre,#daysCard,#valleyCard{padding:10px 11px!important;border-radius:18px!important}
-#prossimeOre .hour,#daysCard .day,#valleyCard .level{border-radius:11px!important}
-
-/* App feeling */
-@media(max-width:700px){
-  body{background:linear-gradient(180deg,#0e1319,#121821)!important}
-  .wrap{padding:8px 8px 24px!important}
-  .top{border-radius:22px!important}
-  #outdoorCard,#prossimeOre,#daysCard,#valleyCard{border-radius:18px!important}
-  #outdoorCard .timeline span{display:none!important}
-  #outdoorCard .timeline b{font-size:12px!important}
-  #valleyCard .source-links{display:none!important}
-}
-</style>
-
 </head>
 <body>
 <div class="wrap">
@@ -599,7 +397,7 @@ body{
       <div class="update" id="updated">aggiornamento…</div>
     </div>
     <h1>Comasine · Val di Pejo</h1>
-    <p class="subtitle">Meteo rapido per giornata, spostamenti e camminate.</p>
+    <p class="subtitle">La situazione utile per decidere giornata, spostamenti e camminate.</p>
 
     <div class="now-grid">
       <div class="now-main loading" id="nowMain">
@@ -1112,6 +910,42 @@ document.addEventListener("DOMContentLoaded",()=>{
   };
   setTimeout(rename,800);
   setInterval(rename,60000);
+});
+</script>
+
+
+<style id="rc7-style">
+/* ===== RC7 ONE SCREEN WEATHER DASHBOARD ===== */
+body{background:linear-gradient(180deg,#101722 0,#172231 100%) fixed!important;color:#eef3f7!important}
+.wrap{max-width:760px!important;padding:10px 10px 34px!important}
+.top{padding:16px!important;border-radius:28px!important;margin:0!important;background:linear-gradient(145deg,#202b37 0%,#34404b 48%,#385477 100%)!important;box-shadow:0 18px 44px #0005!important}
+.top h1{font-size:26px!important;margin:8px 0 0!important}.top .subtitle{font-size:12px!important;color:#cbd5df!important;margin:2px 0 9px!important}
+.now-grid{display:block!important;margin-top:10px!important}.now-main{padding:12px!important;border-radius:20px!important;background:#ffffff10!important}.now-side{display:grid!important;grid-template-columns:repeat(4,1fr)!important;gap:5px!important;padding:8px!important;margin-top:7px!important;border-radius:16px!important;background:#10192555!important}
+.now-side>div{min-width:0}.now-side .label{font-size:9px!important;color:#b9c6d3!important}.now-side .value{font-size:14px!important;margin:1px 0!important;white-space:nowrap}.mountain-tag{display:none!important}
+.temp-row{justify-content:center!important}.icon-big{font-size:42px!important}.temp{font-size:56px!important}.cond{font-size:15px!important}.now-meta{margin-top:9px!important;gap:5px!important}.mini{padding:7px!important;border-radius:12px!important}.mini b{font-size:14px!important}.mini span{font-size:9px!important}
+.quick{grid-template-columns:1fr 1fr!important;gap:6px!important;margin-top:8px!important}.quick a:nth-child(1),.quick a:nth-child(2){display:none!important}.quick a{padding:8px!important;min-height:0!important;font-size:11px!important;border-radius:12px!important}
+/* Oggi fuori entra nella hero ed è solo il verdetto operativo */
+.top #oggiFuori{margin:9px 0 0!important;padding:10px 11px!important;border-radius:18px!important;background:#0e1724aa!important;border:1px solid #ffffff22!important;color:#fff!important;box-shadow:none!important}
+.top #oggiFuori .section-title{margin-bottom:4px!important}.top #oggiFuori .section-title h2{font-size:13px!important}.top #oggiFuori .section-title small{font-size:10px!important;color:#c9d2dc!important;text-transform:uppercase}
+.top #oggiFuori .outdoor{gap:8px!important;align-items:center!important}.top #oggiFuori .outdoor h3{font-size:19px!important;margin:0!important}.top #oggiFuori .outdoor p{display:none!important}.top #oggiFuori .light{width:11px!important;height:11px!important;margin-top:0!important}
+.top #oggiFuori .outdoor-details{margin-top:7px!important;gap:5px!important}.top #oggiFuori .metric{padding:6px!important;border-radius:10px!important;background:#ffffff0d!important;border-color:#ffffff12!important}.top #oggiFuori .metric b{font-size:13px!important;color:#fff!important}.top #oggiFuori .metric span{font-size:8px!important;color:#b9c5d1!important}
+.top #oggiFuori .window{margin-top:6px!important;padding:6px 8px!important;font-size:9px!important;line-height:1.2!important;border-radius:10px!important;background:#ffffff0d!important;color:#d9e1e8!important}
+.top #oggiFuori .decision-grid{margin-top:6px!important;gap:5px!important}.top #oggiFuori .decision{padding:6px 8px!important;border-radius:10px!important;background:#ffffff0d!important;border-color:#ffffff12!important}.top #oggiFuori .decision .k{font-size:8px!important;color:#aebdca!important;margin-bottom:1px!important}.top #oggiFuori .decision .v{font-size:12px!important}
+.top #oggiFuori .timeline{margin-top:6px!important;padding:6px 8px!important;border-radius:10px!important;background:#ffffff0d!important;border-color:#ffffff12!important}.top #oggiFuori .timeline b{font-size:11px!important;margin:0!important}.top #oggiFuori .timeline span{display:none!important}.top #oggiFuori .webcam-check{display:none!important}
+/* Prossime ore nello stesso pannello */
+.top #prossimeOre{margin:8px 0 0!important;padding:9px 10px!important;border-radius:17px!important;background:#ffffff0b!important;border:1px solid #ffffff1b!important;color:#fff!important;box-shadow:none!important}.top #prossimeOre .section-title{margin-bottom:5px!important}.top #prossimeOre .section-title h2{font-size:13px!important}.top #prossimeOre .section-title small{font-size:9px!important;color:#aebdca!important}.top #prossimeOre .hourly{gap:5px!important;overflow-x:auto!important}.top #prossimeOre .hour{min-width:66px!important;padding:6px 3px!important;border-radius:11px!important;background:#172333!important;border:1px solid #ffffff12!important;color:#fff!important}.top #prossimeOre .hour div{line-height:1.15!important}.top #prossimeOre .hour div:first-child{font-size:10px!important}.top #prossimeOre .hour div:nth-child(2){font-size:17px!important}.top #prossimeOre .hour div:nth-child(3){font-size:13px!important}.top #prossimeOre .hour div:nth-child(4){font-size:8px!important;color:#a9c9e8!important}
+/* Futuro = secondo livello, pulito e cliccabile */
+#daysCard{margin-top:10px!important;padding:12px!important;border-radius:22px!important;background:#182330!important;border:1px solid #2c3b4b!important;color:#fff!important;box-shadow:none!important}#daysCard .section-title{margin-bottom:7px!important}#daysCard .section-title h2{font-size:15px!important}#daysCard .section-title small{font-size:9px!important;color:#93a4b5!important}.days{gap:6px!important}.day{padding:9px!important;border-radius:13px!important;background:#233142!important;border-color:#33465a!important;color:#fff!important;cursor:pointer}.day *{color:inherit!important}.day .rain{opacity:.7}
+/* Valle/quota e archivio diventano approfondimenti, non rubano la home */
+#daysCard + .section.card{margin-top:10px!important;padding:12px!important;border-radius:22px!important;background:#182330!important;border:1px solid #2c3b4b!important;color:#fff!important}.valley{gap:6px!important}.level{padding:9px!important;background:#233142!important;border-color:#33465a!important;color:#fff!important}.level .head,.level .small,.source-note{color:#aeb9c5!important}.source-note{font-size:10px!important;line-height:1.3!important}.source-links a{background:#233142!important;color:#dce6ef!important;border-color:#33465a!important}
+.stats,.tabs,.panel{background:#182330!important;color:#eef3f7!important;border-color:#2c3b4b!important}.stat,.link-card{background:#202d3c!important;color:#eef3f7!important;border-color:#304154!important}.stat span,.link-card p,.link-card .meta{color:#aeb9c5!important}.search{background:#111b27!important;color:#fff!important}.tab-btn{color:#aeb9c5!important}.tab-btn.active{background:#2b3b50!important;color:#fff!important}
+@media(max-width:520px){.top{padding:14px!important}.now-side{grid-template-columns:repeat(4,1fr)!important}.top #oggiFuori .window{display:none!important}.source-note{display:none!important}}
+</style>
+<script id="rc7-script">
+document.addEventListener('DOMContentLoaded',()=>{
+ const top=document.querySelector('.top'), out=document.getElementById('oggiFuori'), hours=document.getElementById('prossimeOre');
+ if(top&&out&&hours){ top.appendChild(out); top.appendChild(hours); }
+ document.querySelectorAll('#days .day').forEach((d,i)=>{d.setAttribute('role','button');d.title=i===0?'Dettaglio oggi':'Apri il giorno per pianificare';});
 });
 </script>
 
