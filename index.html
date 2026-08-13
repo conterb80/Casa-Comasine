@@ -517,6 +517,9 @@ body{
 @media(max-width:560px){.detail-actions-3{grid-template-columns:1fr 1fr}.detail-actions-3 .action:last-child{grid-column:1/-1}.import-grid{grid-template-columns:1fr}}
 </style>
 
+<style>
+.guide-wrap{background:#0d1925}.guide-intro{color:#aeb9c5;font-size:14px;margin:0 4px 16px}.guide-section{margin:0 0 18px}.guide-section h3{font-size:11px;letter-spacing:1.4px;color:#8293a4;margin:0 4px 8px}.guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.guide-grid a,.guide-grid button,.guide-list a{box-sizing:border-box;text-decoration:none;color:#f6f8fb;background:#192b3d;border:0;border-radius:17px;padding:15px;text-align:left;min-height:82px;font:inherit}.guide-grid b,.guide-list b{display:block;font-size:16px;margin-bottom:6px}.guide-grid small,.guide-list small{display:block;color:#9eacba;font-size:12px;line-height:1.25}.guide-grid .bear{background:linear-gradient(145deg,#29402f,#1a2d29)}.guide-list{display:grid;gap:9px}.guide-list a{display:block;min-height:auto}.sos-hero{background:#40252a;border-radius:22px;padding:22px;margin-bottom:20px}.sos-hero b{display:block;font-size:48px}.sos-hero span{display:block;color:#cbd3dc;margin:2px 0 16px}.sos-hero a{display:inline-block;background:#f4f6f8;color:#17212b;text-decoration:none;font-weight:800;padding:12px 18px;border-radius:14px}@media(max-width:380px){.guide-grid{gap:7px}.guide-grid a,.guide-grid button{padding:12px;min-height:76px}.guide-grid b{font-size:14px}}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -655,11 +658,11 @@ body{
       <button class="hub-btn primary" data-open-screen="sentieri"><span>🥾</span>Sentieri</button>
       <button class="hub-btn" data-open-screen="uscite"><span>📅</span>Uscite</button>
       <button class="hub-btn" data-open-screen="diario"><span>📖</span>Diario</button>
-      <button class="hub-btn" data-open-screen="valli"><span>🗺️</span>Valli</button>
+      <button class="hub-btn" data-open-screen="guida"><span>🏔️</span>Guida</button>
     </div>
   </section>
 
-<div class="stats">
+<div class="legacy-directory" style="display:none"><div class="stats">
     <div class="stat"><b>4</b><span>Fonti webcam</span></div>
     <div class="stat"><b>3</b><span>Fonti meteo</span></div>
     <div class="stat"><b>5</b><span>Fonti news</span></div>
@@ -684,7 +687,7 @@ body{
     </div>
     <div id="gallery" class="gallery"></div>
   </div>
-
+</div>
 </div>
 
 <!-- RC9: SENTIERI V1 -->
@@ -810,6 +813,48 @@ body{
     </div>
     <div id="diaryList"></div>
   </div>
+</section>
+
+<section class="app-screen" id="screen-guida">
+  <div class="screen-wrap guide-wrap">
+    <div class="screen-head"><button class="icon-btn close-screen">‹</button><h2>🏔️ Guida Val di Pejo</h2><span></span></div>
+    <div class="guide-intro">Tutto quello che serve in vacanza, senza appesantire la Home.</div>
+    <div class="guide-section"><h3>OGGI</h3><div class="guide-grid">
+      <a href="https://www.visitvaldisole.it/it" target="_blank"><b>📅 Eventi</b><small>Cosa fare oggi in valle</small></a>
+      <a href="https://www.visitvaldipejo.it/it/pianifica/informazioni/webcam" target="_blank"><b>📷 Webcam</b><small>Controllo visivo Pejo</small></a>
+      <a href="https://www.skipejo.it/" target="_blank"><b>🚡 Impianti</b><small>Pejo 3000 e aperture</small></a>
+      <a href="https://www.meteotrentino.it/" target="_blank"><b>🌦️ Meteo</b><small>Fonte ufficiale Trentino</small></a>
+    </div></div>
+    <div class="guide-section"><h3>VIVI LA VALLE</h3><div class="guide-grid">
+      <button data-guide-screen="sentieri"><b>🥾 Sentieri</b><small>Percorsi e uscite</small></button>
+      <a href="https://www.termepejo.it/" target="_blank"><b>♨️ Terme</b><small>Terme di Pejo</small></a>
+      <a href="https://www.stelvioumbria.it/" target="_blank"><b>🌲 Parco</b><small>Parco dello Stelvio</small></a>
+      <a href="https://www.visitvaldisole.it/it" target="_blank"><b>🍴 Mangiare</b><small>Rifugi, malghe e locali</small></a>
+    </div></div>
+    <div class="guide-section"><h3>INFORMAZIONI & SICUREZZA</h3><div class="guide-grid">
+      <a class="bear" href="https://grandicarnivori.provincia.tn.it/Segnalazioni-orse-con-piccoli" target="_blank"><b>🐻 Orsi</b><small>Mappa e segnalazioni PAT</small></a>
+      <a href="https://www.visitvaldisole.it/it" target="_blank"><b>🚌 Mobilità</b><small>Bus, navette e accessi</small></a>
+      <a href="https://www.comune.peio.tn.it/Novita" target="_blank"><b>📰 Notizie</b><small>Avvisi del Comune</small></a>
+      <button data-guide-screen="sos"><b>☎️ SOS</b><small>Numeri utili</small></button>
+    </div></div>
+    <div class="guide-section"><h3>ESPLORA DINTORNI</h3><div class="guide-grid">
+      <button onclick="openValley('Sole')"><b>🌲 Val di Sole</b><small>Sentieri e mete</small></button>
+      <button onclick="openValley('Rabbi')"><b>💧 Val di Rabbi</b><small>Natura e passeggiate</small></button>
+      <button onclick="openValley('Tonale')"><b>⛰️ Tonale</b><small>Passo e alta quota</small></button>
+      <button data-guide-screen="valli"><b>🗺️ Tutte</b><small>Esplora per zona</small></button>
+    </div></div>
+  </div>
+</section>
+
+<section class="app-screen" id="screen-sos">
+ <div class="screen-wrap guide-wrap"><div class="screen-head"><button class="icon-btn" id="sosBack">‹</button><h2>☎️ Numeri utili</h2><span></span></div>
+ <div class="sos-hero"><b>112</b><span>Numero unico emergenze</span><a href="tel:112">Chiama 112</a></div>
+ <div class="guide-section"><h3>CONTATTI RAPIDI</h3><div class="guide-list">
+  <a href="https://www.comune.peio.tn.it/" target="_blank"><b>🏛️ Comune di Peio</b><small>Servizi, avvisi e contatti aggiornati</small></a>
+  <a href="https://www.visitvaldisole.it/it" target="_blank"><b>ℹ️ Informazioni turistiche</b><small>APT Val di Sole</small></a>
+  <a href="https://www.skipejo.it/" target="_blank"><b>🚡 Pejo 3000</b><small>Impianti e informazioni operative</small></a>
+  <a href="https://grandicarnivori.provincia.tn.it/" target="_blank"><b>🐻 Grandi carnivori PAT</b><small>Informazioni e segnalazioni ufficiali</small></a>
+ </div></div><div class="note-small">Per contatti sanitari, farmacie e servizi stagionali usa le pagine ufficiali: numeri e disponibilità possono cambiare.</div></div>
 </section>
 
 <section class="app-screen" id="screen-valli">
@@ -1340,6 +1385,9 @@ function closeAll(){
 }
 document.querySelectorAll("[data-open-screen]").forEach(b=>b.addEventListener("click",()=>showScreen(b.dataset.openScreen)));
 document.querySelectorAll(".close-screen").forEach(b=>b.addEventListener("click",closeAll));
+document.querySelectorAll("[data-guide-screen]").forEach(b=>b.addEventListener("click",()=>showScreen(b.dataset.guideScreen)));
+document.getElementById("sosBack").onclick=()=>showScreen("guida");
+
 document.querySelectorAll("#bottomNav button").forEach(b=>b.addEventListener("click",()=>{
   if(b.dataset.nav==="home") closeAll(); else showScreen(b.dataset.nav);
 }));

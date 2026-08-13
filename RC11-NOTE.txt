@@ -1,0 +1,13 @@
+CASA COMASINE RC11 — GUIDA VAL DI PEJO
+
+- Home congelata: nessuna modifica alla logica meteo.
+- Sentieri congelati: mantenuta RC10 con import GPX e flusso Da fare/Pianificati/Fatti.
+- Nuova terza area: Guida Val di Pejo.
+- Rimossa dalla Home la vecchia directory lunga Webcam/Meteo/Notizie/Foto.
+- Accesso rapido: Valli diventa Guida.
+- Guida organizzata in Oggi, Vivi la valle, Informazioni & sicurezza, Esplora dintorni.
+- Inserito accesso ufficiale PAT a monitoraggio/segnalazioni orsi.
+- Inserita pagina SOS con 112 e accessi ai contatti ufficiali.
+- Valli resta disponibile dentro Guida.
+
+RC pensata per test complessivo sul campo.
