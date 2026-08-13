@@ -1,0 +1,6 @@
+Casa Comasine RC3.1 — Home Meteo Final Compact
+- Rifinitura grafica della Home Meteo RC3
+- Oggi fuori ulteriormente compattato, senza rimuovere dati
+- Valle & quota più compatta; nota tecnica nascosta su mobile
+- Nessuna nuova funzione e nessuna modifica alla PWA
+- Base pronta per il prossimo sviluppo: Posti/Sentieri e Altre zone

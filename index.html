@@ -195,6 +195,49 @@ h1{font-size:28px;margin:10px 0 2px}
 }
 </style>
 
+
+<style>
+/* RC3.1 — rifinitura finale Home Meteo */
+#outdoorCard.card{padding:11px 13px}
+#outdoorCard .section-title{margin-bottom:6px}
+#outdoorCard .outdoor{gap:6px}
+#outdoorCard .outdoor h3{font-size:16px;line-height:1.15;margin:0 0 2px}
+#outdoorCard .outdoor p{font-size:12px;line-height:1.25;margin:0}
+#outdoorCard .outdoor-details{margin-top:7px;gap:5px}
+#outdoorCard .metric{padding:6px 8px}
+#outdoorCard .metric b{font-size:13px}
+#outdoorCard .metric span{font-size:10px}
+#outdoorCard .window{margin-top:6px;padding:7px 9px;font-size:11px;line-height:1.25}
+#outdoorCard .decision-grid{margin-top:6px;gap:5px}
+#outdoorCard .decision{padding:7px 9px}
+#outdoorCard .decision .k{font-size:9px}
+#outdoorCard .decision .v{font-size:13px}
+#outdoorCard .timeline{margin-top:6px;padding:7px 9px}
+#outdoorCard .timeline b{font-size:12px}
+#outdoorCard .timeline span{font-size:11px;line-height:1.22}
+#outdoorCard .webcam-check{margin-top:6px;padding:7px 9px}
+#outdoorCard .webcam-check b{font-size:12px}
+#outdoorCard .webcam-check a{padding:7px 12px}
+
+/* Valle & quota: mantiene i dati, riduce il testo di servizio */
+#valleyCard.card{padding:11px 13px}
+#valleyCard .section-title{margin-bottom:6px}
+#valleyCard .valley{gap:5px}
+#valleyCard .level{padding:8px 10px}
+#valleyCard .level .big{font-size:20px}
+#valleyCard .level .small{font-size:10px}
+#valleyCard .source-note{font-size:9px;line-height:1.2;margin-top:5px}
+#valleyCard .source-links{margin-top:5px}
+#valleyCard .source-links a{padding:6px 8px;font-size:10px}
+
+@media(max-width:700px){
+  #outdoorCard .outdoor-details{grid-template-columns:repeat(3,1fr)}
+  #outdoorCard .metric{min-width:0}
+  #outdoorCard .metric b{white-space:nowrap}
+  #valleyCard .source-note{display:none}
+}
+</style>
+
 </head>
 <body>
 <div class="wrap">
