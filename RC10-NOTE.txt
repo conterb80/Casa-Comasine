@@ -1,0 +1,6 @@
+CASA COMASINE RC10 — SENTIERI REALI + IMPORT
+- Database iniziale verificato su fonti ufficiali Val di Sole / Parco dello Stelvio
+- Parcheggio, Come arrivare, Percorso reale, Fonte
+- Import GPX con calcolo distanza/dislivello/quota max
+- Import da link come fonte personale
+- Flusso Da fare → Pianificati → Fatti → Diario invariato

@@ -500,6 +500,23 @@ body{
 }
 </style>
 
+
+<style>
+.trail-source{margin-top:10px;padding:11px;border-radius:14px;background:#122030;color:#aeb9c7;font-size:12px;line-height:1.35}
+.trail-source a{color:#8fc6ff}
+.detail-actions-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin-top:10px}
+.detail-actions-3 .action{padding:11px 7px;font-size:12px}
+.import-box{background:#172434;border-radius:18px;padding:13px;margin-top:10px}
+.import-box h3{margin:0 0 5px}
+.import-box p{font-size:12px;color:#aab5c3;line-height:1.4}
+.import-box input,.import-box select,.import-box textarea{width:100%;margin-top:8px;background:#0f1b28;color:#fff;border:1px solid #2d4055;border-radius:12px;padding:11px}
+.import-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.import-summary{margin-top:10px;background:#11281f;border-radius:15px;padding:11px;color:#b8c8c0}
+.import-summary b{color:#72d095}
+.badge-official{display:inline-block;margin-left:6px;padding:2px 6px;border-radius:999px;background:#214e3a;color:#78d69d;font-size:9px;font-weight:800;vertical-align:middle}
+@media(max-width:560px){.detail-actions-3{grid-template-columns:1fr 1fr}.detail-actions-3 .action:last-child{grid-column:1/-1}.import-grid{grid-template-columns:1fr}}
+</style>
+
 </head>
 <body>
 <div class="wrap">
@@ -714,8 +731,14 @@ body{
     </div>
     <div class="detail-note" id="dDesc"></div>
     <div class="note-small">I dati iniziali servono per testare la struttura della nuova sezione. Prima di un'uscita reale verifica sempre percorso, condizioni e segnaletica sul posto.</div>
+    <div class="trail-source" id="dSource"></div>
+    <div class="detail-actions-3">
+      <button class="action" id="parkingBtn">🅿️ Parcheggio</button>
+      <button class="action" id="directionsBtn">🚗 Come arrivare</button>
+      <button class="action green" id="routeBtn">🥾 Percorso reale</button>
+    </div>
     <div class="action-row">
-      <button class="action" id="mapBtn">🗺️ Mappa</button>
+      <button class="action" id="mapBtn">🗺️ Apri zona</button>
       <button class="action green" id="planBtn">📅 Pianifica uscita</button>
     </div>
   </div>
@@ -740,6 +763,34 @@ body{
       <textarea id="planNotes" rows="4" placeholder="Orario di partenza, parcheggio, cosa portare..."></textarea>
     </div>
     <button class="action green" id="savePlan" style="width:100%;margin-top:10px">✓ Salva in Pianificati</button>
+  </div>
+</section>
+
+
+<section class="app-screen" id="screen-import">
+  <div class="screen-wrap">
+    <div class="screen-head">
+      <button class="icon-btn" id="importBack">‹</button><h2>⬆️ Importa sentiero</h2><span></span>
+    </div>
+    <div class="import-box">
+      <h3>Importa file GPX</h3>
+      <p>Se trovi un percorso online e scarichi il file GPX, selezionalo qui. L'app calcola distanza, dislivello positivo e quota massima.</p>
+      <input id="gpxInput" type="file" accept=".gpx,application/gpx+xml,application/xml,text/xml">
+      <div id="gpxSummary" class="import-summary" style="display:none"></div>
+    </div>
+    <div class="import-box">
+      <h3>Dati del percorso</h3>
+      <input id="impName" placeholder="Nome sentiero">
+      <div class="import-grid">
+        <select id="impZone"><option>Pejo</option><option>Sole</option><option>Rabbi</option><option>Tonale</option></select>
+        <select id="impDiff"><option>Facile</option><option>Media</option><option>Impegnativa</option></select>
+      </div>
+      <input id="impStart" placeholder="Punto di partenza / parcheggio">
+      <input id="impSource" placeholder="Link alla pagina dove hai trovato il percorso">
+      <textarea id="impNotes" rows="3" placeholder="Note utili"></textarea>
+      <button class="action green" id="saveImport" style="width:100%;margin-top:10px">✓ Salva in Da fare</button>
+    </div>
+    <div class="note-small">Per ora l'app importa direttamente file GPX. Un semplice link viene salvato come fonte; l'import automatico da URL dipende dal sito.</div>
   </div>
 </section>
 
@@ -1253,12 +1304,11 @@ document.addEventListener('DOMContentLoaded',()=>{
 <script>
 /* ===== RC9 SENTIERI V1 ===== */
 const TRAILS = [
-  {id:"pian-palu",name:"Lago di Pian Palù",zone:"Pejo",difficulty:"Facile",km:"9.2 km",time:"3h 15m",gain:"+420 m",alt:"1850 m",start:"Val di Pejo",season:"Estate / inizio autunno",type:"Andata e ritorno",desc:"Percorso da inserire nella lista personale delle escursioni da valutare e pianificare.",map:"https://www.google.com/maps/search/?api=1&query=Lago+di+Pian+Palu"},
-  {id:"larcher",name:"Rifugio Larcher al Cevedale",zone:"Pejo",difficulty:"Media",km:"13.5 km",time:"5h 00m",gain:"+850 m",alt:"2607 m",start:"Val Venezia / Pejo",season:"Estate",type:"Andata e ritorno",desc:"Escursione di montagna da pianificare con attenzione a meteo, quota e orario.",map:"https://www.google.com/maps/search/?api=1&query=Rifugio+Larcher+Cevedale"},
-  {id:"covel",name:"Laghetti di Covel",zone:"Sole",difficulty:"Facile",km:"7.8 km",time:"2h 30m",gain:"+300 m",alt:"2100 m",start:"Area Pejo / Covel",season:"Estate",type:"Passeggiata",desc:"Meta panoramica adatta a una giornata tranquilla, da verificare in base all'accesso scelto.",map:"https://www.google.com/maps/search/?api=1&query=Laghetti+di+Covel"},
-  {id:"malga-mare",name:"Malga Mare",zone:"Pejo",difficulty:"Facile",km:"6.4 km",time:"2h 00m",gain:"+250 m",alt:"2030 m",start:"Val di Pejo",season:"Estate",type:"Andata e ritorno",desc:"Passeggiata da tenere tra le alternative più semplici della zona.",map:"https://www.google.com/maps/search/?api=1&query=Malga+Mare+Peio"},
-  {id:"rabbi",name:"Val di Rabbi · percorso da scegliere",zone:"Rabbi",difficulty:"Facile",km:"—",time:"—",gain:"—",alt:"—",start:"Val di Rabbi",season:"Da definire",type:"Da scegliere",desc:"Segnaposto per aggiungere i percorsi reali della Val di Rabbi che vorrai fare.",map:"https://www.google.com/maps/search/?api=1&query=Val+di+Rabbi"},
-  {id:"tonale",name:"Tonale · percorso da scegliere",zone:"Tonale",difficulty:"Media",km:"—",time:"—",gain:"—",alt:"—",start:"Passo del Tonale",season:"Da definire",type:"Da scegliere",desc:"Segnaposto per aggiungere i percorsi reali del Tonale e Presena.",map:"https://www.google.com/maps/search/?api=1&query=Passo+del+Tonale"}
+  {id:"pian-palu-official",name:"Giro del Lago di Pian Palù",zone:"Pejo",difficulty:"Facile",km:"7 km",time:"2h 30m",gain:"+227 m",alt:"~1800 m",start:"Fontanino di Peio Fonti",season:"Estate / inizio autunno",type:"Anello",desc:"Giro del lago con partenza dal Fontanino di Peio Fonti. Percorso ufficiale APT Val di Sole.",parking:"https://www.google.com/maps/search/?api=1&query=Parcheggio+Peio+Fonti",directions:"https://www.google.com/maps/dir/?api=1&destination=Peio+Fonti+TN",route:"https://www.visitvaldisole.it/it/activity/pianpal__lakeroute-28239",source:"Visit Val di Sole / APT Valli di Sole, Peio e Rabbi",official:true},
+  {id:"covel-official",name:"Peio Paese · Lago di Covel",zone:"Pejo",difficulty:"Facile",km:"8.7 km",time:"3h 00m",gain:"+502 m",alt:"1998 m",start:"Peio Paese",season:"Estate / autunno",type:"Anello",desc:"Anello nel Parco Nazionale dello Stelvio tra masi, boschi, pascoli, cascata, malga e Lago di Covel.",parking:"https://www.google.com/maps/search/?api=1&query=Parcheggio+Peio+Paese",directions:"https://www.google.com/maps/dir/?api=1&destination=Peio+Paese+TN",route:"https://www.visitvaldisole.it/it/activity/peiopaese_lagodicovel-10358",source:"Visit Val di Sole / APT Valli di Sole, Peio e Rabbi",official:true},
+  {id:"urogalli-official",name:"Bosco degli Urogalli · Malga Talé",zone:"Pejo",difficulty:"Media",km:"5.3 km",time:"1h 45m",gain:"+138 m",alt:"1719 m",start:"Peio Paese",season:"Estate",type:"Sentiero tematico",desc:"Sentiero tematico del Parco Nazionale dello Stelvio verso Malga Talé.",parking:"https://www.google.com/maps/search/?api=1&query=Parcheggio+Peio+Paese+fermata+autobus",directions:"https://www.google.com/maps/dir/?api=1&destination=Peio+Paese+TN",route:"https://www.visitvaldisole.it/it/activity/tour-28076",source:"Visit Val di Sole / Parco Nazionale dello Stelvio",official:true},
+  {id:"larcher-official",name:"Rifugio Cevedale G. Larcher",zone:"Pejo",difficulty:"Media",km:"—",time:"5h 30m",gain:"—",alt:"2608 m",start:"Parcheggio Prà Bòn / Malga Mare",season:"Estate",type:"Trekking",desc:"Trekking verso il Rifugio Larcher. L'accesso stradale sale da Cogolo verso Malga Mare fino al parcheggio di Prà Bòn.",parking:"https://www.google.com/maps/search/?api=1&query=Parcheggio+Pra+Bon+Malga+Mare",directions:"https://www.google.com/maps/dir/?api=1&destination=Malga+Mare+Peio",route:"https://www.visitvaldisole.it/it/activity/rifugiocevedale__guidolarcher__-9772",source:"Visit Val di Sole / APT Valli di Sole, Peio e Rabbi",official:true},
+  {id:"ghiacciai-mare-official",name:"Percorso dei ghiacciai · Val de la Mare",zone:"Pejo",difficulty:"Media",km:"12 km",time:"4h 45m",gain:"+735 m",alt:"2707 m",start:"Area Malga Mare",season:"Estate",type:"Anello",desc:"Percorso del Parco Nazionale dello Stelvio con laghi Marmotta e Lungo e vista sulla Vedretta de la Mare.",parking:"https://www.google.com/maps/search/?api=1&query=Malga+Mare+Peio+parcheggio",directions:"https://www.google.com/maps/dir/?api=1&destination=Malga+Mare+Peio",route:"https://www.visitvaldisole.it/it/activity/percorsodeighiacciaidellavaldelamare-10143",source:"Visit Val di Sole / Parco Nazionale dello Stelvio",official:true}
 ];
 
 const KEY="casaComasineTrailsV1";
@@ -1315,7 +1365,7 @@ function renderTrails(){
     <div class="trail-card" onclick="openTrail('${t.id}')">
       <div class="trail-thumb">🏔️</div>
       <div>
-        <h3>${t.name}</h3><div class="trail-zone">Val di ${t.zone}</div>
+        <h3>${t.name}${t.official?'<span class="badge-official">VERIFICATO</span>':""}</h3><div class="trail-zone">Val di ${t.zone}</div>
         <div class="diff ${t.difficulty.toLowerCase()}">● ${t.difficulty}</div>
         <div class="trail-metrics"><span>↔ ${t.km}</span><span>◷ ${t.time}</span><span>↗ ${t.gain}</span></div>
       </div><div class="chev">›</div>
@@ -1336,7 +1386,11 @@ window.openTrail=function(id){
   document.getElementById("dSeason").textContent=t.season;
   document.getElementById("dType").textContent=t.type;
   document.getElementById("dDesc").textContent=t.desc;
-  document.getElementById("mapBtn").onclick=()=>window.open(t.map,"_blank");
+  document.getElementById("dSource").innerHTML=`Fonte percorso: <b>${t.source||"Percorso personale"}</b>${t.route?` · <a href="${t.route}" target="_blank" rel="noreferrer">Apri fonte</a>`:""}`;
+  document.getElementById("parkingBtn").onclick=()=>window.open(t.parking||t.directions||t.route,"_blank");
+  document.getElementById("directionsBtn").onclick=()=>window.open(t.directions||t.parking||t.route,"_blank");
+  document.getElementById("routeBtn").onclick=()=>window.open(t.route||t.directions||t.parking,"_blank");
+  document.getElementById("mapBtn").onclick=()=>window.open(t.route||t.directions||t.parking,"_blank");
   document.getElementById("planBtn").onclick=()=>openPlan(t.id);
   showScreen("detail");
 }
@@ -1418,7 +1472,60 @@ window.openValley=function(zone){
   document.querySelectorAll("#screen-sentieri .screen-tabs button").forEach(b=>b.classList.toggle("active",b.dataset.status==="todo"));
   renderTrails();
 }
-document.getElementById("trailAddBtn").onclick=()=>alert("Nella prossima evoluzione potremo aggiungere un sentiero personalizzato direttamente dall'app.");
+document.getElementById("trailAddBtn").onclick=()=>showScreen("import");
+
+let importedTrail=null;
+document.getElementById("importBack").onclick=()=>showScreen("sentieri");
+
+function haversine(lat1,lon1,lat2,lon2){
+  const R=6371,toRad=x=>x*Math.PI/180;
+  const dLat=toRad(lat2-lat1),dLon=toRad(lon2-lon1);
+  const a=Math.sin(dLat/2)**2+Math.cos(toRad(lat1))*Math.cos(toRad(lat2))*Math.sin(dLon/2)**2;
+  return 2*R*Math.asin(Math.sqrt(a));
+}
+document.getElementById("gpxInput").addEventListener("change",e=>{
+  const file=e.target.files?.[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=()=>{
+    try{
+      const xml=new DOMParser().parseFromString(reader.result,"application/xml");
+      const pts=[...xml.querySelectorAll("trkpt")].map(n=>({lat:+n.getAttribute("lat"),lon:+n.getAttribute("lon"),ele:+(n.querySelector("ele")?.textContent||0)}))
+        .filter(p=>Number.isFinite(p.lat)&&Number.isFinite(p.lon));
+      if(pts.length<2)throw new Error("GPX senza punti traccia");
+      let km=0,gain=0,maxAlt=-Infinity;
+      for(let i=1;i<pts.length;i++){
+        km+=haversine(pts[i-1].lat,pts[i-1].lon,pts[i].lat,pts[i].lon);
+        const de=pts[i].ele-pts[i-1].ele;if(de>0)gain+=de;
+        maxAlt=Math.max(maxAlt,pts[i].ele);
+      }
+      const name=xml.querySelector("trk > name")?.textContent||file.name.replace(/\.gpx$/i,"");
+      importedTrail={km:+km.toFixed(1),gain:Math.round(gain),alt:Math.round(maxAlt)};
+      document.getElementById("impName").value=name;
+      const sum=document.getElementById("gpxSummary");sum.style.display="block";
+      sum.innerHTML=`<b>GPX letto correttamente</b><br>↔ ${importedTrail.km} km · ↗ +${importedTrail.gain} m · ⛰ ${importedTrail.alt} m max`;
+    }catch(err){alert("Non riesco a leggere questo GPX: "+err.message);}
+  };
+  reader.readAsText(file);
+});
+document.getElementById("saveImport").onclick=()=>{
+  const name=document.getElementById("impName").value.trim();
+  if(!name){alert("Inserisci il nome del sentiero.");return}
+  store.customTrails=store.customTrails||[];
+  const id="custom-"+Date.now();
+  const sourceUrl=document.getElementById("impSource").value.trim();
+  const start=document.getElementById("impStart").value.trim()||"Da definire";
+  const custom={id,name,zone:document.getElementById("impZone").value,difficulty:document.getElementById("impDiff").value,
+    km:importedTrail?`${importedTrail.km} km`:"—",time:"—",gain:importedTrail?`+${importedTrail.gain} m`:"—",
+    alt:importedTrail?`${importedTrail.alt} m`:"—",start,season:"Da definire",type:"Importato",
+    desc:document.getElementById("impNotes").value||"Percorso personale importato.",
+    parking:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(start)}`,
+    directions:`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(start)}`,
+    route:sourceUrl||"",source:sourceUrl?"Link personale":"File GPX personale",official:false,custom:true};
+  store.customTrails.push(custom);store.status[id]="todo";saveStore();TRAILS.push(custom);
+  currentStatus="todo";currentZone="Tutti";renderTrails();showScreen("sentieri");
+};
+if(store.customTrails?.length){store.customTrails.forEach(t=>{if(!TRAILS.some(x=>x.id===t.id))TRAILS.push(t)});}
+
 renderTrails();
 </script>
 
