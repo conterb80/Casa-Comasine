@@ -1,0 +1,7 @@
+Casa Comasine RC3 — Home Meteo Compact
+- Home meteo più compatta e gerarchica
+- Oggi fuori mantenuto come centro decisionale
+- Prossime ore ridotte a 4 slot
+- Oggi/Domani/+2 e Valle & quota compattati
+- Alta quota resa più prudente e coerente col rischio generale
+- Nessuna nuova funzione; PWA e sezioni esistenti preservate
