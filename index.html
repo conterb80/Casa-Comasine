@@ -1378,7 +1378,7 @@ window.completeTrail=function(id){
 function renderDiary(){
   const items=TRAILS.filter(t=>getStatus(t.id)==="done");
   const box=document.getElementById("diaryList");
-  if(!items.length){box.innerHTML='<div class="empty-state">Il diario è ancora vuoto.<br>Quando completi un'uscita, premi ✓ da Uscite.</div>';return}
+  if(!items.length){box.innerHTML="<div class='empty-state'>Il diario è ancora vuoto.<br>Quando completi un'uscita, premi ✓ da Uscite.</div>";return}
   box.innerHTML=items.map(t=>{
     const d=store.diary[t.id]||{};
     const photos=(d.photos||[]).map(src=>`<img src="${src}">`).join("");

@@ -1,0 +1,1 @@
+RC9.1 FIX — Corretto errore JavaScript che bloccava i pulsanti Accesso rapido (Sentieri, Uscite, Diario, Valli). Grafica e contenuti RC9 invariati. Aggiornata cache PWA.
