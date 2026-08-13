@@ -1,6 +1,5 @@
-const CACHE='casa-comasine-v1';
-const ASSETS=['./','./index.html','./manifest.json','./sw.js','./icons/icon-192.png','./icons/icon-512.png','./assets/bg-placeholder-1.jpg','./assets/bg-placeholder-2.jpg','./assets/bg-placeholder-3.jpg'];
-self.addEventListener('install', e => e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS))));
-self.addEventListener('fetch', e => {
-  e.respondWith(caches.match(e.request).then(r => r || fetch(e.request).catch(()=>caches.match('./index.html'))));
-});
+const CACHE='casa-comasine-rc1-home-meteo';
+const ASSETS=['./','./index.html','./manifest.json','./sw.js'];
+self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)))});
+self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
+self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;e.respondWith(fetch(e.request).then(r=>{const clone=r.clone();caches.open(CACHE).then(c=>c.put(e.request,clone));return r}).catch(()=>caches.match(e.request).then(r=>r||caches.match('./index.html'))))});

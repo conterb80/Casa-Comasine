@@ -1,0 +1,13 @@
+CASA COMASINE RC1 - HOME METEO
+
+Intervento unico:
+- Nuova Home operativa centrata su Comasine / Val di Pejo
+- Meteo attuale
+- Oggi fuori
+- Prossime 8 ore
+- Oggi / Domani / +2
+- Confronto Comasine ~1200 m / quota 3000 m (stima modellistica)
+- Link rapidi Meteotrentino e webcam
+- Nessuna modifica a foto/PWA oltre all'aggiornamento cache
+
+Per aggiornare il sito GitHub/Netlify sostituire i file della repo con quelli del pacchetto.

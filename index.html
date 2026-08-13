@@ -1,208 +1,454 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Casa Comasine</title>
-<meta name="theme-color" content="#1f2937" />
-<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#263044">
+<link rel="manifest" href="manifest.json">
 <style>
-  :root{
-    --bg1:#fff7ed; --bg2:#eef2ff; --card:#ffffffdd; --text:#172033; --muted:#5b6475;
-    --line:#eadfce; --accent:#1f2937;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);
-       background:linear-gradient(180deg,var(--bg1),var(--bg2));}
-  .wrap{max-width:980px;margin:0 auto;padding:16px}
-  .hero{
-    position:relative; overflow:hidden; color:#fff; border-radius:28px; padding:22px;
-    background:
-      linear-gradient(135deg,rgba(17,24,39,.88),rgba(120,53,15,.70),rgba(29,78,216,.60)),
-      url('assets/bg-placeholder-1.jpg') center/cover no-repeat;
-    box-shadow:0 12px 30px rgba(0,0,0,.18);
-  }
-  .hero::after{
-    content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent,rgba(0,0,0,.08));
-    pointer-events:none;
-  }
-  .hero > *{position:relative; z-index:1}
-  .badge{
-    display:inline-block; padding:7px 12px; border-radius:999px; background:rgba(255,255,255,.12);
-    border:1px solid rgba(255,255,255,.16); font-size:13px; margin-bottom:10px;
-  }
-  h1{margin:0;font-size:34px}
-  .hero p{opacity:.95;line-height:1.4}
-  .quick{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
-  .quick a{text-decoration:none;color:#fff;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.12);
-           padding:12px 14px;border-radius:18px;display:block;text-align:center}
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:16px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
-  .stat-num{font-size:28px;font-weight:bold}
-  .muted{color:var(--muted)}
-  .search{width:100%;padding:13px 14px;border-radius:16px;border:1px solid var(--line);background:#fff;font-size:16px}
-  .tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;background:#ffffffb8;border:1px solid var(--line);
-        border-radius:22px;padding:8px;position:sticky;top:0;backdrop-filter: blur(8px);z-index:5}
-  .tab-btn{border:none;border-radius:16px;padding:13px 8px;background:transparent;font-size:15px;font-weight:bold;color:#374151}
-  .tab-btn.active{background:#fff}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:14px}
-  .item-title{font-weight:bold;margin-bottom:6px}.item-area{font-size:13px;color:var(--muted);margin-bottom:10px}
-  .open{display:inline-block;margin-top:8px;text-decoration:none;background:var(--accent);color:#fff;padding:10px 14px;border-radius:12px}
-  .panel{display:none;margin-top:14px}.panel.active{display:block}
-  .photo-top{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-  .file{padding:12px;background:#fff;border:1px solid var(--line);border-radius:14px;width:100%}
-  .note{font-size:13px;color:var(--muted);line-height:1.4}
-  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px}
-  .photo{overflow:hidden;border-radius:20px;background:#fff;border:1px solid var(--line);box-shadow:0 6px 18px rgba(0,0,0,.05)}
-  .photo img{width:100%;height:170px;object-fit:cover;display:block;background:#e5e7eb}
-  .photo-meta{padding:10px;display:flex;justify-content:space-between;align-items:center;gap:8px}
-  .del{border:none;background:#111827;color:#fff;border-radius:10px;padding:8px 10px}
-  .ghost{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px}
-  .empty{text-align:center;padding:30px 16px;color:var(--muted);background:#ffffffa8;border:1px dashed var(--line);border-radius:20px;margin-top:12px}
-  .subhero{margin-top:14px; display:grid; grid-template-columns:1fr 1fr; gap:12px;}
-  .subphoto{
-    min-height:150px; border-radius:22px; overflow:hidden; position:relative; border:1px solid rgba(255,255,255,.16);
-    background-size:cover; background-position:center;
-  }
-  .subphoto.one{background-image:linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.28)), url('assets/bg-placeholder-2.jpg');}
-  .subphoto.two{background-image:linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.28)), url('assets/bg-placeholder-3.jpg');}
-  .subphoto span{
-    position:absolute; left:12px; bottom:10px; color:#fff; font-weight:bold; text-shadow:0 1px 3px rgba(0,0,0,.45);
-  }
-  @media (max-width:720px){
-    h1{font-size:28px}
-    .stats{grid-template-columns:repeat(2,1fr)}
-    .tab-btn{font-size:13px;padding:12px 4px}
-    .subhero{grid-template-columns:1fr}
-  }
+:root{
+  --ink:#172033; --muted:#667085; --line:#eadfce; --paper:#fffdf9;
+  --sand:#fff7ed; --sky:#eef4ff; --navy:#263044; --good:#2e7d5a;
+  --warn:#b7791f; --bad:#b54747; --shadow:0 7px 22px rgba(23,32,51,.07);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; font-family:Arial,Helvetica,sans-serif; color:var(--ink);
+  background:linear-gradient(180deg,#fff8ef 0%,#f7f8fc 52%,#edf2ff 100%);
+}
+button,input{font:inherit}
+.wrap{max-width:980px;margin:auto;padding:14px 14px 30px}
+.top{
+  border-radius:28px; padding:20px; color:white;
+  background:linear-gradient(135deg,#202a3a 0%,#73533d 52%,#536baf 100%);
+  box-shadow:0 13px 30px rgba(23,32,51,.17);
+}
+.eyebrow{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.pill{display:inline-flex;gap:7px;align-items:center;padding:7px 11px;border:1px solid #ffffff2f;border-radius:999px;background:#ffffff12;font-size:13px}
+.update{font-size:12px;color:#f7eadb}
+h1{font-size:32px;margin:14px 0 4px}
+.subtitle{margin:0;color:#f9eee2;font-size:14px}
+.now-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:12px;margin-top:18px}
+.now-main,.now-side{background:#ffffff12;border:1px solid #ffffff25;border-radius:22px;padding:16px}
+.temp-row{display:flex;align-items:flex-start;gap:12px}
+.icon-big{font-size:38px;line-height:1}
+.temp{font-size:52px;font-weight:700;line-height:.9}
+.cond{font-size:15px;margin-top:6px;color:#fff4e8}
+.now-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.mini{background:#ffffff0e;border-radius:14px;padding:10px}
+.mini b{display:block;font-size:16px}
+.mini span{font-size:11px;color:#f7eadb}
+.now-side .label{font-size:12px;color:#f7eadb;margin-bottom:4px}
+.now-side .value{font-size:25px;font-weight:700;margin-bottom:12px}
+.mountain-tag{font-size:12px;color:#f7eadb}
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+.quick a{color:white;text-decoration:none;text-align:center;padding:11px 6px;border-radius:14px;background:#ffffff12;border:1px solid #ffffff20;font-size:13px}
+
+.section{margin-top:14px}
+.card{background:#ffffffdc;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:16px}
+.section-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.section-title h2{font-size:18px;margin:0}
+.section-title small{color:var(--muted)}
+.outdoor{display:grid;grid-template-columns:auto 1fr;gap:13px;align-items:start}
+.light{width:14px;height:14px;border-radius:50%;margin-top:4px;background:#aaa;box-shadow:0 0 0 5px #00000008}
+.light.good{background:var(--good)} .light.warn{background:var(--warn)} .light.bad{background:var(--bad)}
+.outdoor h3{margin:0 0 6px;font-size:18px}
+.outdoor p{margin:0;color:#4d5667;line-height:1.42}
+.outdoor-details{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.metric{padding:11px;background:#f8fafc;border-radius:15px;border:1px solid #edf0f4}
+.metric b{display:block;font-size:16px}.metric span{color:var(--muted);font-size:11px}
+.window{margin-top:12px;padding:11px 13px;border-radius:15px;background:#eff8f2;color:#265d45;font-size:13px}
+.window.warn{background:#fff7e7;color:#855b12}.window.bad{background:#fff0f0;color:#8b3b3b}
+
+.hourly{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(84px,1fr);gap:8px;overflow-x:auto;padding-bottom:4px}
+.hour{background:#f8fafc;border:1px solid #edf0f4;border-radius:17px;padding:11px 8px;text-align:center}
+.hour .time{font-weight:700;font-size:13px}.hour .wx{font-size:23px;margin:7px 0}
+.hour .t{font-size:17px;font-weight:700}.hour .rain{font-size:11px;color:#5074a8;margin-top:5px}
+
+.days{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.day{background:#f8fafc;border:1px solid #edf0f4;border-radius:18px;padding:12px}
+.day .name{font-weight:700}.day .wx{font-size:25px;margin:8px 0}
+.day .temps{font-size:16px;font-weight:700}.day .rain{font-size:11px;color:#5074a8;margin-top:5px}
+
+.valley{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.level{border-radius:20px;padding:14px;background:#f8fafc;border:1px solid #edf0f4}
+.level .head{font-size:12px;color:var(--muted);margin-bottom:5px}
+.level .big{font-size:27px;font-weight:700}
+.level .small{font-size:12px;color:var(--muted);margin-top:5px}
+.source-note{font-size:11px;color:var(--muted);line-height:1.45;margin-top:10px}
+.source-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.source-links a{padding:9px 11px;border-radius:12px;text-decoration:none;color:#263044;background:#f7f7f5;border:1px solid #e8e6e0;font-size:12px}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
+.stat{background:#ffffffdc;border:1px solid var(--line);border-radius:20px;padding:14px;box-shadow:var(--shadow)}
+.stat b{font-size:25px;display:block}.stat span{color:var(--muted);font-size:12px}
+.search{width:100%;height:100%;min-height:60px;border:1px solid var(--line);border-radius:16px;padding:12px;background:white}
+
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;background:#ffffffcc;border:1px solid var(--line);border-radius:22px;padding:7px;position:sticky;top:5px;z-index:5;backdrop-filter:blur(10px)}
+.tab-btn{border:0;background:transparent;border-radius:15px;padding:12px 5px;color:#394150;font-weight:700}
+.tab-btn.active{background:white;box-shadow:0 3px 10px #0000000a}
+.panel{display:none;margin-top:12px}.panel.active{display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.link-card{background:#ffffffdc;border:1px solid var(--line);border-radius:22px;padding:15px;box-shadow:var(--shadow)}
+.link-card h3{margin:0 0 5px;font-size:16px}.link-card .area{font-size:12px;color:var(--muted)}
+.link-card p{color:#596273;font-size:14px;line-height:1.4}
+.open{display:inline-block;background:#263044;color:white;text-decoration:none;border-radius:12px;padding:9px 13px}
+.file{width:100%;padding:12px;border:1px solid var(--line);border-radius:14px;background:white}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:12px}
+.photo{background:white;border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+.photo img{width:100%;height:160px;object-fit:cover;display:block}
+.photo .foot{padding:9px;font-size:12px}
+.loading{opacity:.78}
+.error{background:#fff1f1;color:#943e3e;border:1px solid #f0caca;padding:12px;border-radius:15px;margin-top:10px}
+@media(max-width:700px){
+  .wrap{padding:10px 10px 26px}
+  .top{padding:17px;border-radius:25px}
+  h1{font-size:28px}
+  .now-grid{grid-template-columns:1fr}
+  .now-side{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .now-side .value{margin-bottom:0}
+  .quick{grid-template-columns:repeat(2,1fr)}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .outdoor-details{grid-template-columns:repeat(3,1fr)}
+  .days{grid-template-columns:repeat(3,1fr)}
+  .valley{grid-template-columns:1fr 1fr}
+  .tab-btn{font-size:13px}
+}
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="hero">
-      <div class="badge">🏔️ Dashboard di famiglia</div>
-      <h1>Casa Comasine</h1>
-      <p>Webcam, meteo, notizie e ricordi della Val di Pejo in un unico posto. Questa versione è pronta per essere pubblicata come app web installabile.</p>
-      <div class="quick">
-        <a href="https://www.visitvaldipejo.it/it/comasine" target="_blank" rel="noreferrer">Comasine</a>
-        <a href="https://www.visitvaldipejo.it/it/pianifica/informazioni/webcam" target="_blank" rel="noreferrer">Webcam</a>
-        <a href="https://www.meteotrentino.it/" target="_blank" rel="noreferrer">Meteo</a>
-        <a href="https://www.comune.peio.tn.it/Novita" target="_blank" rel="noreferrer">Comune</a>
-      </div>
-      <div class="subhero">
-        <div class="subphoto one"><span>Ricordi di Comasine</span></div>
-        <div class="subphoto two"><span>Val di Pejo</span></div>
-      </div>
-    </div>
+<div class="wrap">
 
-    <div class="stats">
-      <div class="card"><div class="stat-num">4</div><div class="muted">Fonti webcam</div></div>
-      <div class="card"><div class="stat-num">3</div><div class="muted">Fonti meteo</div></div>
-      <div class="card"><div class="stat-num">5</div><div class="muted">Fonti news</div></div>
-      <div class="card"><input id="search" class="search" placeholder="Cerca..." /></div>
+  <section class="top">
+    <div class="eyebrow">
+      <div class="pill">🏔️ Casa Comasine · Meteo operativo</div>
+      <div class="update" id="updated">aggiornamento…</div>
     </div>
+    <h1>Comasine · Val di Pejo</h1>
+    <p class="subtitle">La situazione utile per decidere giornata, spostamenti e camminate.</p>
 
-    <div class="tabs">
-      <button class="tab-btn active" data-tab="webcam">Webcam</button>
-      <button class="tab-btn" data-tab="meteo">Meteo</button>
-      <button class="tab-btn" data-tab="news">Notizie</button>
-      <button class="tab-btn" data-tab="foto">Foto</button>
-    </div>
-
-    <div id="webcam" class="panel active"></div>
-    <div id="meteo" class="panel"></div>
-    <div id="news" class="panel"></div>
-    <div id="foto" class="panel">
-      <div class="card">
-        <div class="photo-top">
-          <input class="file" id="photoInput" type="file" accept="image/*" multiple />
-          <button class="ghost" id="clearPhotos">Svuota galleria</button>
+    <div class="now-grid">
+      <div class="now-main loading" id="nowMain">
+        <div class="temp-row">
+          <div class="icon-big" id="nowIcon">⛰️</div>
+          <div>
+            <div class="temp"><span id="nowTemp">--</span>°</div>
+            <div class="cond" id="nowCond">Carico il meteo di Comasine…</div>
+          </div>
         </div>
-        <p class="note">Le foto vengono salvate nel browser del dispositivo. Se cancelli i dati del browser, la galleria si svuota.</p>
+        <div class="now-meta">
+          <div class="mini"><b id="humidity">--%</b><span>Umidità</span></div>
+          <div class="mini"><b id="wind">-- km/h</b><span>Vento</span></div>
+          <div class="mini"><b id="pressure">-- hPa</b><span>Pressione</span></div>
+        </div>
       </div>
-      <div id="gallery"></div>
+      <div class="now-side loading" id="nowSide">
+        <div>
+          <div class="label">Percepita</div>
+          <div class="value" id="feels">--°</div>
+        </div>
+        <div>
+          <div class="label">Raffiche</div>
+          <div class="value" id="gust">--</div>
+        </div>
+        <div>
+          <div class="label">Precipitazione ora</div>
+          <div class="value" id="precipNow">--</div>
+        </div>
+        <div>
+          <div class="label">Quota</div>
+          <div class="value">~1200 m</div>
+        </div>
+        <div class="mountain-tag" style="grid-column:1/-1">Previsione modellistica centrata su Comasine. Verifica ufficiale: Meteotrentino.</div>
+      </div>
     </div>
+
+    <div class="quick">
+      <a href="#oggiFuori">🥾 Oggi fuori</a>
+      <a href="#prossimeOre">🕒 Prossime ore</a>
+      <a href="https://www.meteotrentino.it/" target="_blank" rel="noreferrer">🌦️ Meteotrentino</a>
+      <a href="https://www.visitvaldipejo.it/it/pianifica/informazioni/webcam" target="_blank" rel="noreferrer">🎥 Webcam</a>
+    </div>
+  </section>
+
+  <section class="section card" id="oggiFuori">
+    <div class="section-title">
+      <h2>🥾 Oggi fuori</h2>
+      <small id="riskLabel">analisi in corso</small>
+    </div>
+    <div class="outdoor">
+      <span class="light" id="riskLight"></span>
+      <div>
+        <h3 id="outdoorTitle">Valuto le prossime ore…</h3>
+        <p id="outdoorText">Pioggia, temporali, raffiche e andamento della giornata vengono letti insieme per darti un colpo d'occhio operativo.</p>
+      </div>
+    </div>
+    <div class="outdoor-details">
+      <div class="metric"><b id="rainRisk">--%</b><span>Pioggia max 8h</span></div>
+      <div class="metric"><b id="gustRisk">--</b><span>Raffica max 8h</span></div>
+      <div class="metric"><b id="rainSum">--</b><span>Pioggia 8h</span></div>
+    </div>
+    <div class="window" id="bestWindow">Cerco la finestra migliore della giornata…</div>
+  </section>
+
+  <section class="section card" id="prossimeOre">
+    <div class="section-title">
+      <h2>🕒 Prossime ore</h2>
+      <small>Comasine</small>
+    </div>
+    <div class="hourly" id="hourly"><div class="hour">Caricamento…</div></div>
+  </section>
+
+  <section class="section card">
+    <div class="section-title">
+      <h2>📅 Oggi / Domani / +2</h2>
+      <small>tendenza rapida</small>
+    </div>
+    <div class="days" id="days"></div>
+  </section>
+
+  <section class="section card">
+    <div class="section-title">
+      <h2>🏔️ Valle & quota</h2>
+      <small>confronto operativo</small>
+    </div>
+    <div class="valley">
+      <div class="level">
+        <div class="head">Comasine · ~1200 m</div>
+        <div class="big"><span id="valleyTemp">--</span>°</div>
+        <div class="small"><span id="valleyWind">--</span> km/h · raff. <span id="valleyGust">--</span></div>
+      </div>
+      <div class="level">
+        <div class="head">Quota 3000 m · stima</div>
+        <div class="big"><span id="mountainTemp">--</span>°</div>
+        <div class="small"><span id="mountainWind">--</span> km/h · raff. <span id="mountainGust">--</span></div>
+      </div>
+    </div>
+    <div class="source-note">La quota 3000 m è una stima modellistica ottenuta con downscaling per elevazione: utile per orientarsi, non sostituisce bollettini, condizioni reali e valutazione sul posto.</div>
+    <div class="source-links">
+      <a href="https://www.meteotrentino.it/" target="_blank" rel="noreferrer">Meteotrentino</a>
+      <a href="https://www.visitvaldipejo.it/it/pianifica/informazioni/webcam" target="_blank" rel="noreferrer">Webcam Val di Pejo</a>
+      <a href="https://www.skipejo.it/webcam/" target="_blank" rel="noreferrer">Webcam Pejo 3000</a>
+    </div>
+    <div id="weatherError"></div>
+  </section>
+
+  <div class="stats">
+    <div class="stat"><b>4</b><span>Fonti webcam</span></div>
+    <div class="stat"><b>3</b><span>Fonti meteo</span></div>
+    <div class="stat"><b>5</b><span>Fonti news</span></div>
+    <div class="stat"><input id="search" class="search" placeholder="Cerca..." /></div>
   </div>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="webcam">Webcam</button>
+    <button class="tab-btn" data-tab="meteo">Meteo</button>
+    <button class="tab-btn" data-tab="news">Notizie</button>
+    <button class="tab-btn" data-tab="foto">Foto</button>
+  </div>
+
+  <div id="webcam" class="panel active"></div>
+  <div id="meteo" class="panel"></div>
+  <div id="news" class="panel"></div>
+  <div id="foto" class="panel">
+    <div class="link-card">
+      <h3>📸 Foto di famiglia</h3>
+      <p>Sezione lasciata volutamente semplice per ora. Puoi caricare foto dal telefono; sviluppo album e sfondi resta in stand-by.</p>
+      <input class="file" id="photoInput" type="file" accept="image/*" multiple>
+    </div>
+    <div id="gallery" class="gallery"></div>
+  </div>
+</div>
 
 <script>
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 }
 
-const data = {
-  webcam: [
-    {title:"Webcam ufficiali Val di Pejo", area:"Consorzio Turistico Pejo 3000", url:"https://www.visitvaldipejo.it/it/pianifica/informazioni/webcam", note:"Raccolta ufficiale delle webcam della valle"},
-    {title:"Webcam Meteotrentino - Peio", area:"Provincia Autonoma di Trento", url:"https://www.meteotrentino.it/dati/meteo/webcam/webcam-peio/", note:"Ottima per controllare meteo e visibilità in tempo reale"},
-    {title:"SkiPejo Webcam", area:"Pejo 3000", url:"https://www.skipejo.it/webcam/", note:"Panorami da Tarlenta, Saroden, Pejo 3000 e altre zone"},
-    {title:"Panorama 360° Pejo 3000", area:"Visit Trentino", url:"https://www.visittrentino.info/it/webcams/panorama-webcam-pejo", note:"Vista panoramica ad alta quota"}
+const links = {
+  webcam:[
+    ["Webcam ufficiali Val di Pejo","Consorzio Turistico Pejo 3000","Raccolta ufficiale delle webcam della valle","https://www.visitvaldipejo.it/it/pianifica/informazioni/webcam"],
+    ["Webcam Meteotrentino - Peio","Provincia Autonoma di Trento","Controllo meteo e visibilità in tempo reale","https://www.meteotrentino.it/dati/meteo/webcam/webcam-peio/"],
+    ["SkiPejo Webcam","Pejo 3000","Panorami da Tarlenta, Saroden, Pejo 3000 e altre zone","https://www.skipejo.it/webcam/"],
+    ["Panorama 360° Pejo 3000","Visit Trentino","Vista panoramica ad alta quota","https://www.visittrentino.info/it/webcams/panorama-webcam-pejo"]
   ],
-  meteo: [
-    {title:"Meteotrentino", area:"Fonte istituzionale", url:"https://www.meteotrentino.it/", note:"Previsioni e webcam della Provincia di Trento"},
-    {title:"Meteo Pejo - 3BMeteo", area:"Previsioni locali", url:"https://www.3bmeteo.com/meteo/pejo", note:"Previsioni fino a 15 giorni"},
-    {title:"Meteo Peio - iLMeteo", area:"Previsioni locali", url:"https://www.ilmeteo.it/meteo/Peio", note:"Vista semplice e veloce"}
+  meteo:[
+    ["Meteotrentino","Fonte istituzionale","Bollettini e previsioni della Provincia di Trento","https://www.meteotrentino.it/"],
+    ["Meteo Pejo - 3BMeteo","Previsioni locali","Seconda lettura delle previsioni locali","https://www.3bmeteo.com/meteo/pejo"],
+    ["Meteo Peio - iLMeteo","Previsioni locali","Vista semplice per temperatura e precipitazioni","https://www.ilmeteo.it/meteo/Peio"]
   ],
-  news: [
-    {title:"Novità Comune di Peio", area:"Sito comunale", url:"https://www.comune.peio.tn.it/Novita", note:"Avvisi e comunicati"},
-    {title:"Notizie Comune di Peio", area:"Sito comunale", url:"https://www.comune.peio.tn.it/Novita/Notizie", note:"Sezione notizie"},
-    {title:"Eventi Val di Sole", area:"Visit Val di Sole", url:"https://www.visitvaldisole.it/it", note:"Eventi e attività"},
-    {title:"News & Eventi Pejo", area:"Acqua Pejo", url:"https://www.pejo.it/news.html", note:"Aggiornamenti locali"},
-    {title:"Gazzetta delle Valli - Val di Pejo", area:"Stampa locale", url:"https://www.gazzettadellevalli.it/val-di-sole-e-non/val-di-pejo", note:"Notizie della valle"}
+  news:[
+    ["Novità Comune di Peio","Sito comunale","Avvisi e comunicati","https://www.comune.peio.tn.it/Novita"],
+    ["Notizie Comune di Peio","Sito comunale","Sezione notizie","https://www.comune.peio.tn.it/Novita/Notizie"],
+    ["Eventi Val di Sole","Visit Val di Sole","Eventi e attività","https://www.visitvaldisole.it/it"],
+    ["News & Eventi Pejo","Acqua Pejo","Aggiornamenti locali","https://www.pejo.it/news.html"],
+    ["Gazzetta delle Valli - Val di Pejo","Stampa locale","Notizie della valle","https://www.gazzettadellevalli.it/val-di-sole-e-non/val-di-pejo"]
   ]
 };
 
-function card(item){
-  return `<div class="card">
-      <div class="item-title">${item.title}</div>
-      <div class="item-area">${item.area}</div>
-      <div class="muted">${item.note}</div>
-      <a class="open" href="${item.url}" target="_blank" rel="noreferrer">Apri</a>
-    </div>`;
-}
-function renderSections(filter=""){
-  ["webcam","meteo","news"].forEach(section => {
-    const q = filter.trim().toLowerCase();
-    const items = data[section].filter(i => !q || i.title.toLowerCase().includes(q) || i.area.toLowerCase().includes(q) || i.note.toLowerCase().includes(q));
-    document.getElementById(section).innerHTML = `<div class="grid">${items.map(card).join("") || `<div class="empty">Nessun risultato</div>`}</div>`;
+function renderLinks(filter=""){
+  const q=filter.toLowerCase().trim();
+  ["webcam","meteo","news"].forEach(section=>{
+    const items=links[section].filter(x=>!q || x.join(" ").toLowerCase().includes(q));
+    document.getElementById(section).innerHTML='<div class="grid">'+items.map(x=>`
+      <div class="link-card">
+        <h3>${x[0]}</h3><div class="area">${x[1]}</div><p>${x[2]}</p>
+        <a class="open" href="${x[3]}" target="_blank" rel="noreferrer">Apri</a>
+      </div>`).join("")+'</div>';
   });
 }
-function setTab(tab){
-  document.querySelectorAll(".tab-btn").forEach(b => b.classList.toggle("active", b.dataset.tab === tab));
-  document.querySelectorAll(".panel").forEach(p => p.classList.toggle("active", p.id === tab));
-}
-document.querySelectorAll(".tab-btn").forEach(btn => btn.addEventListener("click", () => setTab(btn.dataset.tab)));
-document.getElementById("search").addEventListener("input", e => renderSections(e.target.value));
+document.getElementById("search").addEventListener("input",e=>renderLinks(e.target.value));
+document.querySelectorAll(".tab-btn").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".tab-btn").forEach(x=>x.classList.remove("active"));
+  document.querySelectorAll(".panel").forEach(x=>x.classList.remove("active"));
+  b.classList.add("active"); document.getElementById(b.dataset.tab).classList.add("active");
+}));
+renderLinks();
 
-const STORAGE_KEY = "casa_comasine_pwa_photos_v1";
-function getPhotos(){ try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"); } catch(e){ return []; } }
-function savePhotos(arr){ localStorage.setItem(STORAGE_KEY, JSON.stringify(arr)); }
-function renderGallery(){
-  const photos = getPhotos();
-  const box = document.getElementById("gallery");
-  if(!photos.length){ box.innerHTML = `<div class="empty">Nessuna foto caricata ancora.</div>`; return; }
-  box.innerHTML = `<div class="gallery">${
-    photos.map((p, idx) => `<div class="photo"><img src="${p.src}" alt="${p.name}"><div class="photo-meta"><div style="font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px">${p.name}</div><button class="del" onclick="deletePhoto(${idx})">X</button></div></div>`).join("")
-  }</div>`;
+document.getElementById("photoInput").addEventListener("change",e=>{
+  const g=document.getElementById("gallery"); g.innerHTML="";
+  [...e.target.files].forEach(f=>{
+    const d=document.createElement("div"); d.className="photo";
+    const img=document.createElement("img"); img.src=URL.createObjectURL(f);
+    const foot=document.createElement("div"); foot.className="foot"; foot.textContent=f.name;
+    d.append(img,foot); g.appendChild(d);
+  });
+});
+
+const LAT=46.3285, LON=10.7054;
+const BASE="https://api.open-meteo.com/v1/forecast";
+const varsCurrent="temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,pressure_msl,wind_speed_10m,wind_gusts_10m";
+const varsHourly="temperature_2m,precipitation_probability,precipitation,weather_code,wind_gusts_10m";
+const varsDaily="weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum";
+const urlValley=`${BASE}?latitude=${LAT}&longitude=${LON}&elevation=1200&current=${varsCurrent}&hourly=${varsHourly}&daily=${varsDaily}&timezone=Europe%2FRome&forecast_days=3`;
+const urlMountain=`${BASE}?latitude=${LAT}&longitude=${LON}&elevation=3000&current=temperature_2m,wind_speed_10m,wind_gusts_10m,weather_code&timezone=Europe%2FRome&forecast_days=1`;
+
+const wxText=(c)=>({
+  0:"Sereno",1:"Prevalentemente sereno",2:"Parzialmente nuvoloso",3:"Coperto",
+  45:"Nebbia",48:"Nebbia con brina",51:"Pioviggine debole",53:"Pioviggine",55:"Pioviggine intensa",
+  61:"Pioggia debole",63:"Pioggia",65:"Pioggia forte",71:"Neve debole",73:"Neve",75:"Neve forte",
+  80:"Rovesci deboli",81:"Rovesci",82:"Rovesci forti",85:"Rovesci di neve",86:"Rovesci di neve forti",
+  95:"Temporale",96:"Temporale con grandine",99:"Temporale forte con grandine"
+}[c]||"Variabile");
+const wxIcon=(c)=>{
+  if(c===0) return "☀️"; if([1,2].includes(c)) return "🌤️"; if(c===3) return "☁️";
+  if([45,48].includes(c)) return "🌫️"; if([71,73,75,85,86].includes(c)) return "🌨️";
+  if([95,96,99].includes(c)) return "⛈️"; if([51,53,55,61,63,65,80,81,82].includes(c)) return "🌧️"; return "🌤️";
+};
+const round=(n)=>Math.round(Number(n));
+const fmt=(n,d=0)=>Number(n).toFixed(d);
+
+function hourName(iso){return iso.slice(11,16)}
+function dayName(iso,i){
+  if(i===0)return "Oggi"; if(i===1)return "Domani";
+  return new Date(iso+"T12:00:00").toLocaleDateString("it-IT",{weekday:"short"});
 }
-window.deletePhoto = function(index){ const photos = getPhotos(); photos.splice(index,1); savePhotos(photos); renderGallery(); };
-document.getElementById("photoInput").addEventListener("change", async (e) => {
-  const files = Array.from(e.target.files || []);
-  if(!files.length) return;
-  const existing = getPhotos();
-  for(const file of files){
-    const reader = new FileReader();
-    await new Promise(resolve => {
-      reader.onload = () => { existing.unshift({ name:file.name, src:reader.result }); resolve(); };
-      reader.readAsDataURL(file);
-    });
+function thunder(code){return [95,96,99].includes(code)}
+
+function bestWindow(times, probs, gusts, codes){
+  const now=new Date();
+  let candidates=[];
+  for(let i=0;i<times.length-2;i++){
+    const d=new Date(times[i]);
+    const h=d.getHours();
+    if(d<now || h<7 || h>18) continue;
+    let ok=true, score=0;
+    for(let j=i;j<i+3;j++){
+      if(thunder(codes[j])) ok=false;
+      score += probs[j] + Math.max(0,gusts[j]-20)*1.5;
+    }
+    if(ok) candidates.push({i,score});
   }
-  try { savePhotos(existing); renderGallery(); } catch(err) { alert("Spazio browser finito. Prova con meno foto o immagini più leggere."); }
-  e.target.value = "";
-});
-document.getElementById("clearPhotos").addEventListener("click", () => {
-  if(confirm("Vuoi svuotare tutta la galleria?")){ localStorage.removeItem(STORAGE_KEY); renderGallery(); }
-});
-renderSections();
-renderGallery();
+  if(!candidates.length) return null;
+  candidates.sort((a,b)=>a.score-b.score);
+  const i=candidates[0].i;
+  return `${hourName(times[i])}–${hourName(times[i+2]).replace(":00",":59")}`;
+}
+
+function outdoorAnalysis(h){
+  const now=new Date();
+  const start=h.time.findIndex(t=>new Date(t)>=now);
+  const i0=Math.max(0,start);
+  const i1=Math.min(h.time.length,i0+8);
+  const probs=h.precipitation_probability.slice(i0,i1);
+  const gusts=h.wind_gusts_10m.slice(i0,i1);
+  const rain=h.precipitation.slice(i0,i1);
+  const codes=h.weather_code.slice(i0,i1);
+  const maxP=Math.max(...probs), maxG=Math.max(...gusts), sumR=rain.reduce((a,b)=>a+b,0);
+  const hasThunder=codes.some(thunder);
+  let level="good", title="Giornata favorevole", text="Nelle prossime ore non emergono segnali meteo importanti. Resta comunque utile controllare il cielo e gli aggiornamenti prima di partire.";
+  if(hasThunder || maxP>=75 || maxG>=55){
+    level="bad"; title="Prudenza: condizioni sfavorevoli";
+    text=hasThunder ? "Nelle prossime ore compare un segnale temporalesco. Per sentieri e quota serve particolare prudenza e una verifica ravvicinata prima di partire." :
+      "Le prossime ore mostrano rischio elevato di precipitazioni o raffiche forti. Meglio valutare attività brevi e facilmente interrompibili.";
+  } else if(maxP>=40 || maxG>=35 || sumR>=1.5){
+    level="warn"; title="Da valutare con attenzione";
+    text="La giornata presenta qualche elemento da tenere d'occhio: possibili precipitazioni, rovesci o vento. Meglio scegliere orari e percorso con margine.";
+  }
+  const window=bestWindow(h.time,h.precipitation_probability,h.wind_gusts_10m,h.weather_code);
+  return {level,title,text,maxP,maxG,sumR,window};
+}
+
+async function loadWeather(){
+  try{
+    const [rv,rm]=await Promise.all([fetch(urlValley),fetch(urlMountain)]);
+    if(!rv.ok || !rm.ok) throw new Error("Meteo non disponibile");
+    const v=await rv.json(), m=await rm.json();
+
+    document.getElementById("nowTemp").textContent=round(v.current.temperature_2m);
+    document.getElementById("nowCond").textContent=wxText(v.current.weather_code);
+    document.getElementById("nowIcon").textContent=wxIcon(v.current.weather_code);
+    document.getElementById("humidity").textContent=round(v.current.relative_humidity_2m)+"%";
+    document.getElementById("wind").textContent=round(v.current.wind_speed_10m)+" km/h";
+    document.getElementById("pressure").textContent=round(v.current.pressure_msl)+" hPa";
+    document.getElementById("feels").textContent=round(v.current.apparent_temperature)+"°";
+    document.getElementById("gust").textContent=round(v.current.wind_gusts_10m)+" km/h";
+    document.getElementById("precipNow").textContent=fmt(v.current.precipitation,1)+" mm";
+    document.getElementById("updated").textContent="agg. "+v.current.time.slice(11,16);
+    document.getElementById("nowMain").classList.remove("loading");
+    document.getElementById("nowSide").classList.remove("loading");
+
+    document.getElementById("valleyTemp").textContent=round(v.current.temperature_2m);
+    document.getElementById("valleyWind").textContent=round(v.current.wind_speed_10m);
+    document.getElementById("valleyGust").textContent=round(v.current.wind_gusts_10m);
+    document.getElementById("mountainTemp").textContent=round(m.current.temperature_2m);
+    document.getElementById("mountainWind").textContent=round(m.current.wind_speed_10m);
+    document.getElementById("mountainGust").textContent=round(m.current.wind_gusts_10m);
+
+    const now=new Date();
+    let start=v.hourly.time.findIndex(t=>new Date(t)>=now);
+    start=Math.max(0,start);
+    document.getElementById("hourly").innerHTML=v.hourly.time.slice(start,start+8).map((t,k)=>{
+      const i=start+k;
+      return `<div class="hour"><div class="time">${hourName(t)}</div><div class="wx">${wxIcon(v.hourly.weather_code[i])}</div><div class="t">${round(v.hourly.temperature_2m[i])}°</div><div class="rain">💧 ${round(v.hourly.precipitation_probability[i])}%</div></div>`;
+    }).join("");
+
+    document.getElementById("days").innerHTML=v.daily.time.slice(0,3).map((d,i)=>`
+      <div class="day"><div class="name">${dayName(d,i)}</div><div class="wx">${wxIcon(v.daily.weather_code[i])}</div>
+      <div class="temps">${round(v.daily.temperature_2m_max[i])}° / ${round(v.daily.temperature_2m_min[i])}°</div>
+      <div class="rain">Pioggia ${round(v.daily.precipitation_probability_max[i])}% · ${fmt(v.daily.precipitation_sum[i],1)} mm</div></div>
+    `).join("");
+
+    const a=outdoorAnalysis(v.hourly);
+    const light=document.getElementById("riskLight");
+    light.className="light "+a.level;
+    document.getElementById("riskLabel").textContent=a.level==="good"?"favorevole":a.level==="warn"?"attenzione":"prudenza";
+    document.getElementById("outdoorTitle").textContent=a.title;
+    document.getElementById("outdoorText").textContent=a.text;
+    document.getElementById("rainRisk").textContent=round(a.maxP)+"%";
+    document.getElementById("gustRisk").textContent=round(a.maxG)+" km/h";
+    document.getElementById("rainSum").textContent=fmt(a.sumR,1)+" mm";
+    const w=document.getElementById("bestWindow");
+    w.className="window "+(a.level==="good"?"":a.level);
+    w.textContent=a.window ? `Finestra meteo più favorevole stimata: ${a.window}. Prima di partire verifica sempre condizioni e bollettino ufficiale.` :
+      "Non emerge una finestra di 3 ore nettamente favorevole: meglio rivalutare più vicino alla partenza.";
+  }catch(err){
+    document.getElementById("weatherError").innerHTML='<div class="error">Non riesco a caricare i dati automatici in questo momento. I collegamenti a Meteotrentino e alle webcam restano disponibili.</div>';
+    document.getElementById("updated").textContent="meteo non disponibile";
+  }
+}
+loadWeather();
 </script>
 </body>
 </html>
