@@ -387,6 +387,208 @@ body{
 }
 </style>
 
+
+<style>
+/* ===== RC6 MODERN APP ===== */
+:root{
+  --app-bg:#11161d;
+  --app-surface:#1a2029;
+  --app-surface-2:#202733;
+  --app-surface-3:#283140;
+  --app-line:#354050;
+  --app-text:#f3f6fa;
+  --app-muted:#aeb8c5;
+  --app-blue:#76b7ff;
+  --app-green:#5bc88a;
+  --app-amber:#e7b15a;
+  --app-red:#ff7272;
+}
+body{
+  background:
+    radial-gradient(circle at top right,rgba(70,103,154,.18),transparent 28rem),
+    linear-gradient(180deg,#0e1319 0%,#121821 100%) !important;
+  color:var(--app-text)!important;
+}
+.wrap{max-width:860px!important;padding:10px 10px 28px!important}
+
+/* Hero */
+.top{
+  background:linear-gradient(145deg,#171d25 0%,#202632 58%,#263650 100%)!important;
+  border:1px solid #2c3746!important;
+  box-shadow:0 14px 30px rgba(0,0,0,.28)!important;
+  border-radius:24px!important;
+}
+.top h1,.top .subtitle,.top .badge,.top .updated{color:var(--app-text)!important}
+.top .subtitle,.top .updated{color:var(--app-muted)!important}
+.current-main,.current-extra{
+  background:#ffffff09!important;
+  border-color:#ffffff12!important;
+}
+.current-grid>div{
+  background:#ffffff08!important;
+  border-color:#ffffff0d!important;
+}
+.current-grid span,.current-extra .label{color:var(--app-muted)!important}
+.quick-actions a{
+  background:#ffffff08!important;
+  border-color:#ffffff10!important;
+  color:var(--app-text)!important;
+}
+
+/* Generic sections */
+.section.card,
+.card{
+  background:var(--app-surface)!important;
+  border:1px solid var(--app-line)!important;
+  box-shadow:none!important;
+  color:var(--app-text)!important;
+}
+.section-title h2,
+.card h2,
+.card h3{color:var(--app-text)!important}
+.section-title small,
+.area,
+.source-note,
+.card p,
+.card span{color:var(--app-muted)}
+
+/* Decision panel */
+#outdoorCard{
+  background:linear-gradient(145deg,#1b222c 0%,#202834 100%)!important;
+  border:1px solid #354151!important;
+}
+#outdoorCard .outdoor h3{
+  font-size:21px!important;
+  color:var(--app-text)!important;
+}
+#outdoorCard .outdoor p{display:none!important}
+#outdoorCard .metric,
+#outdoorCard .decision,
+#outdoorCard .timeline{
+  background:var(--app-surface-2)!important;
+  border-color:var(--app-line)!important;
+}
+#outdoorCard .metric b{color:var(--app-text)!important}
+#outdoorCard .metric span,
+#outdoorCard .decision .k,
+#outdoorCard .timeline span{color:var(--app-muted)!important}
+#outdoorCard .window{
+  background:#2b261d!important;
+  border-color:#5a4b2e!important;
+  color:#f4d694!important;
+}
+#outdoorCard .decision.good .v{color:var(--app-green)!important}
+#outdoorCard .decision.warn .v{color:var(--app-amber)!important}
+#outdoorCard .decision.bad .v{color:var(--app-red)!important}
+#outdoorCard .webcam-check{display:none!important}
+
+/* Hourly */
+#prossimeOre{
+  background:var(--app-surface)!important;
+  border-color:var(--app-line)!important;
+}
+#prossimeOre .section-title h2{color:var(--app-text)!important}
+#prossimeOre .section-title small{color:var(--app-muted)!important}
+#prossimeOre .hour{
+  background:var(--app-surface-2)!important;
+  border-color:var(--app-line)!important;
+  color:var(--app-text)!important;
+}
+#prossimeOre .hour .rain{color:#8ec5ff!important}
+
+/* Days */
+#daysCard{
+  background:var(--app-surface)!important;
+  border-color:var(--app-line)!important;
+}
+#daysCard .day{
+  background:var(--app-surface-2)!important;
+  border-color:var(--app-line)!important;
+  color:var(--app-text)!important;
+}
+#daysCard .day .rain{color:#9bb9d9!important}
+
+/* Valley */
+#valleyCard{
+  background:var(--app-surface)!important;
+  border-color:var(--app-line)!important;
+}
+#valleyCard .level{
+  background:var(--app-surface-2)!important;
+  border-color:var(--app-line)!important;
+  color:var(--app-text)!important;
+}
+#valleyCard .level .label,
+#valleyCard .level .small{color:var(--app-muted)!important}
+#valleyCard .source-note{display:none!important}
+#valleyCard .source-links{display:flex!important;gap:6px!important}
+#valleyCard .source-links a{
+  background:var(--app-surface-3)!important;
+  color:var(--app-text)!important;
+  border-color:#3c4859!important;
+}
+
+/* Stats and navigation */
+.stats{margin-top:12px!important}
+.stat{
+  background:var(--app-surface)!important;
+  border-color:var(--app-line)!important;
+  color:var(--app-text)!important;
+}
+.stat span{color:var(--app-muted)!important}
+.search{
+  background:var(--app-surface-2)!important;
+  border-color:var(--app-line)!important;
+  color:var(--app-text)!important;
+}
+.search::placeholder{color:#7f8996}
+.tabs{
+  background:#171d25!important;
+  border-color:#303947!important;
+}
+.tab-btn{color:var(--app-muted)!important}
+.tab-btn.active{
+  background:var(--app-surface-3)!important;
+  color:var(--app-text)!important;
+  box-shadow:none!important;
+}
+.link-card{
+  background:var(--app-surface)!important;
+  border-color:var(--app-line)!important;
+  color:var(--app-text)!important;
+}
+.link-card h3{color:var(--app-text)!important}
+.open{
+  background:#2f6fab!important;
+  color:white!important;
+}
+.file{
+  background:var(--app-surface-2)!important;
+  border-color:var(--app-line)!important;
+  color:var(--app-text)!important;
+}
+
+/* Modern compact spacing */
+.section{margin-top:8px!important}
+#outdoorCard{padding:11px 12px!important}
+#outdoorCard .outdoor-details{margin-top:7px!important}
+#outdoorCard .decision-grid{margin-top:6px!important}
+#outdoorCard .timeline{margin-top:6px!important}
+#prossimeOre,#daysCard,#valleyCard{padding:10px 11px!important;border-radius:18px!important}
+#prossimeOre .hour,#daysCard .day,#valleyCard .level{border-radius:11px!important}
+
+/* App feeling */
+@media(max-width:700px){
+  body{background:linear-gradient(180deg,#0e1319,#121821)!important}
+  .wrap{padding:8px 8px 24px!important}
+  .top{border-radius:22px!important}
+  #outdoorCard,#prossimeOre,#daysCard,#valleyCard{border-radius:18px!important}
+  #outdoorCard .timeline span{display:none!important}
+  #outdoorCard .timeline b{font-size:12px!important}
+  #valleyCard .source-links{display:none!important}
+}
+</style>
+
 </head>
 <body>
 <div class="wrap">
@@ -397,7 +599,7 @@ body{
       <div class="update" id="updated">aggiornamento…</div>
     </div>
     <h1>Comasine · Val di Pejo</h1>
-    <p class="subtitle">La situazione utile per decidere giornata, spostamenti e camminate.</p>
+    <p class="subtitle">Meteo rapido per giornata, spostamenti e camminate.</p>
 
     <div class="now-grid">
       <div class="now-main loading" id="nowMain">

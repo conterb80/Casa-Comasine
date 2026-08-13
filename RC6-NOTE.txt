@@ -1,0 +1,8 @@
+CASA COMASINE RC6 — MODERN APP
+- Restyling completo della palette: dark/app style uniforme
+- Eliminato il predominio del bianco
+- Pannelli antracite e blu notte coerenti
+- Colori operativi verde / ambra / rosso mantenuti solo per gli stati
+- Oggi fuori, prossime ore, 3 giorni e valle/quota uniformati
+- Nessuna nuova funzione aggiunta
+- Filosofia: pochi dati chiave a colpo d'occhio, approfondimenti via click
