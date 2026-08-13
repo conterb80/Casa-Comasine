@@ -949,5 +949,66 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 </script>
 
+
+<style id="rc8-style">
+/* ===== RC8 CLEAN APP MAKEUP ===== */
+:root{--rc8-bg:#101823;--rc8-panel:#172331;--rc8-soft:#1d2b3a;--rc8-line:rgba(255,255,255,.07);--rc8-text:#f3f6f8;--rc8-muted:#9eacba}
+html,body{background:#101823!important} body{background:linear-gradient(180deg,#0d151f 0%,#111c28 100%) fixed!important}
+.wrap{background:transparent!important}
+.top{background:linear-gradient(150deg,#1b2732 0%,#293845 55%,#345274 100%)!important;box-shadow:0 16px 38px #0004!important;border:0!important}
+.now-main,.now-side,.top #oggiFuori,.top #prossimeOre{border:0!important;box-shadow:none!important}
+.now-main{background:rgba(255,255,255,.055)!important;padding:10px 12px!important}
+.now-meta .mini{background:rgba(255,255,255,.045)!important}
+.now-side{background:rgba(5,14,23,.20)!important;padding:6px 8px!important}
+.quick a{border:0!important;background:rgba(255,255,255,.07)!important}
+.top #oggiFuori{background:rgba(6,16,27,.43)!important;padding:9px 10px!important}
+.top #oggiFuori .metric,.top #oggiFuori .decision,.top #oggiFuori .timeline{border:0!important;background:rgba(255,255,255,.055)!important}
+.top #prossimeOre{background:transparent!important;padding:7px 2px 1px!important;margin-top:7px!important}
+.top #prossimeOre .hour{border:0!important;background:rgba(7,17,29,.58)!important;border-radius:10px!important}
+/* Nessun pannello chiaro: il futuro prosegue nello stesso linguaggio */
+#daysCard,#daysCard + .section.card,.stats,.tabs,.panel,.link-card,.stat{background:var(--rc8-panel)!important;border:0!important;box-shadow:none!important;color:var(--rc8-text)!important}
+#daysCard{padding:11px 12px!important}
+#daysCard .section-title h2{font-size:14px!important}
+#daysCard .day{background:var(--rc8-soft)!important;border:0!important;box-shadow:none!important}
+#daysCard .day:first-child{display:none!important}
+#daysCard .days{grid-template-columns:repeat(2,1fr)!important}
+#daysCard .section-title h2{font-size:0!important}
+#daysCard .section-title h2:after{content:'📅 Pianifica';font-size:15px!important}
+/* Valle & quota = fascia compatta */
+#daysCard + .section.card{padding:10px 12px!important}
+#daysCard + .section.card .section-title{margin-bottom:5px!important}
+#daysCard + .section.card .section-title h2{font-size:15px!important}
+#daysCard + .section.card .section-title small{font-size:9px!important}
+.valley{display:grid!important;grid-template-columns:1fr 1fr!important;gap:6px!important}
+.level{background:var(--rc8-soft)!important;border:0!important;border-radius:13px!important;padding:8px 10px!important}
+.level .big{font-size:19px!important}.level .head{font-size:10px!important}.level .small{font-size:9px!important}
+.source-note{display:none!important}.source-links{margin-top:6px!important}.source-links a{background:var(--rc8-soft)!important;border:0!important;padding:6px 8px!important}
+/* Archivio / fonti: app scura continua, meno scatole */
+.stats{gap:6px!important;margin:10px 0!important}.stat{background:var(--rc8-soft)!important;border-radius:14px!important;padding:10px!important}.stat b{font-size:20px!important}.stat span{font-size:10px!important}.search{border:0!important;background:#111c28!important;min-height:48px!important}
+.tabs{border-radius:16px!important;padding:5px!important;position:sticky!important}.tab-btn{padding:10px 4px!important}.link-card{border-radius:16px!important;padding:13px!important}.open{background:#2b3b50!important}
+.section-title small,.stat span,.link-card p,.link-card .area{color:var(--rc8-muted)!important}
+@media(max-width:520px){
+ .wrap{padding:8px 8px 28px!important}.top{border-radius:25px!important;padding:12px!important}
+ .top h1{font-size:24px!important}.temp{font-size:52px!important}.icon-big{font-size:38px!important}
+ .now-main{padding:9px 10px!important}.top #oggiFuori{padding:8px 9px!important}
+ .top #oggiFuori .outdoor-details{margin-top:5px!important}.top #oggiFuori .decision-grid{margin-top:5px!important}.top #oggiFuori .timeline{margin-top:5px!important}
+ .top #prossimeOre{padding-top:5px!important}
+ #daysCard,#daysCard + .section.card{border-radius:18px!important}
+}
+</style>
+<script id="rc8-script">
+document.addEventListener('DOMContentLoaded',()=>{
+  const days=document.getElementById('days');
+  if(days){
+    const relabel=()=>{
+      const cards=[...days.querySelectorAll('.day')];
+      if(cards[1]){cards[1].setAttribute('role','button');cards[1].title='Apri previsione di domani';}
+      if(cards[2]){cards[2].setAttribute('role','button');cards[2].title='Apri previsione del giorno successivo';}
+    };
+    relabel(); setTimeout(relabel,1200);
+  }
+});
+</script>
+
 </body>
 </html>

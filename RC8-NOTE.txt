@@ -1,0 +1,9 @@
+CASA COMASINE RC8 — CLEAN APP MAKEUP
+
+- Sfondo scuro continuo: eliminato lo stacco chiaro.
+- Ridotti/eliminati i contorni decorativi e le scatole annidate.
+- Dashboard meteo invariata nelle funzioni e nei dati.
+- Oggi fuori e Prossime ore alleggeriti graficamente.
+- Pianificazione: nascosta la card Oggi ridondante, restano Domani e +2.
+- Valle & quota resa più compatta.
+- Fonti, ricerca, tab e contenuti inferiori uniformati al nuovo stile app.
