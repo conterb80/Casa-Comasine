@@ -1,0 +1,7 @@
+Casa Comasine RC4 — Home Meteo Dashboard
+- Nuova gerarchia visiva, non semplice compattazione
+- Oggi fuori diventa la fascia decisionale principale
+- Palette più scura e calda, meno bianco dominante
+- Prossime ore / tendenza / valle-quota diventano sezioni secondarie
+- Testi non essenziali ridotti su mobile
+- Nessuna nuova funzione e nessuna modifica alla PWA

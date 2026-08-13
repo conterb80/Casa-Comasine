@@ -238,6 +238,155 @@ h1{font-size:28px;margin:10px 0 2px}
 }
 </style>
 
+
+<style>
+/* RC4 — Dashboard Meteo Operativa */
+:root{
+  --bg:#e7e8e3;
+  --panel:#252b35;
+  --panel2:#323846;
+  --panel3:#3b4251;
+  --ink:#f7f8fa;
+  --soft:#d9dde5;
+  --muted2:#aeb6c3;
+  --line2:#49505f;
+  --cream:#f4f0e8;
+  --good2:#2e8b61;
+  --warn2:#c78a24;
+  --bad2:#c94f4f;
+}
+body{
+  background:
+    linear-gradient(180deg,#dfe1dc 0%,#ecebe7 45%,#e2e5eb 100%) !important;
+  color:#172033;
+}
+.wrap{max-width:980px}
+
+/* Hero più essenziale */
+.top{
+  background:linear-gradient(135deg,#20252e 0%,#4c4038 58%,#465f99 100%) !important;
+  box-shadow:0 12px 28px rgba(22,27,36,.20) !important;
+}
+.top .subtitle{color:#ece7df}
+
+/* Sezione decisiva: il vero cuore della Home */
+#outdoorCard{
+  background:var(--panel) !important;
+  color:var(--ink) !important;
+  border:1px solid #343b47 !important;
+  box-shadow:0 10px 24px rgba(26,31,40,.16) !important;
+}
+#outdoorCard .section-title h2,
+#outdoorCard .outdoor h3,
+#outdoorCard .timeline b,
+#outdoorCard .webcam-check b{color:var(--ink)}
+#outdoorCard .section-title small,
+#outdoorCard .outdoor p,
+#outdoorCard .timeline span{color:var(--soft)}
+#outdoorCard .metric,
+#outdoorCard .decision,
+#outdoorCard .timeline,
+#outdoorCard .webcam-check{
+  background:var(--panel2) !important;
+  border-color:var(--line2) !important;
+}
+#outdoorCard .metric b{color:var(--ink)}
+#outdoorCard .metric span,
+#outdoorCard .decision .k{color:var(--muted2)}
+#outdoorCard .window{
+  background:#342f2f !important;
+  border:1px solid #5f4d4d !important;
+  color:#f0d6d6 !important;
+}
+#outdoorCard .decision.good .v{color:#67c792 !important}
+#outdoorCard .decision.warn .v{color:#e2b55e !important}
+#outdoorCard .decision.bad .v{color:#ff8989 !important}
+#outdoorCard .webcam-check a{
+  background:#f4f0e8 !important;
+  color:#232832 !important;
+}
+#riskLight.good{background:var(--good2) !important}
+#riskLight.warn{background:var(--warn2) !important}
+#riskLight.bad{background:var(--bad2) !important}
+
+/* Le sezioni secondarie diventano fasce più compatte, meno "fogli bianchi" */
+#prossimeOre.card,
+#daysCard.card,
+#valleyCard.card{
+  background:#f1f0eb !important;
+  border:1px solid #d4d0c7 !important;
+  box-shadow:none !important;
+}
+#prossimeOre .hour,
+#daysCard .day,
+#valleyCard .level{
+  background:#e6e7e3 !important;
+  border:1px solid #d3d5d0 !important;
+}
+#prossimeOre .section-title h2,
+#daysCard .section-title h2,
+#valleyCard .section-title h2{color:#252b35}
+#prossimeOre .section-title small,
+#daysCard .section-title small,
+#valleyCard .section-title small{color:#6e7683}
+
+/* Riduzione visiva */
+#outdoorCard .outdoor-details{grid-template-columns:repeat(3,1fr)}
+#outdoorCard .window{font-weight:600}
+#outdoorCard .timeline{padding-top:8px;padding-bottom:8px}
+#outdoorCard .webcam-check{padding-top:8px;padding-bottom:8px}
+
+#prossimeOre{padding-top:11px;padding-bottom:11px}
+#daysCard{padding-top:11px;padding-bottom:11px}
+#valleyCard{padding-top:11px;padding-bottom:11px}
+
+#prossimeOre .hour{padding:7px 4px}
+#daysCard .day{padding:8px}
+#valleyCard .level{padding:9px 10px}
+
+.section-title h2{letter-spacing:-.2px}
+
+/* Statistiche sotto: meno protagoniste */
+.stats{opacity:.88}
+.stat{background:#f1f0eb !important;box-shadow:none !important}
+
+/* Barra sezioni più "app-like" */
+.tabs{
+  background:#303641 !important;
+  border-color:#3d4552 !important;
+}
+.tab-btn{color:#d9dde5 !important}
+.tab-btn.active{
+  background:#f3efe7 !important;
+  color:#252b35 !important;
+}
+
+/* link card più calde e meno bianche */
+.link-card{
+  background:#f4f0e8 !important;
+  border-color:#d8d2c6 !important;
+  box-shadow:none !important;
+}
+.open{background:#2b313d !important}
+
+@media(max-width:700px){
+  .wrap{padding:10px 10px 24px}
+  .top{margin-bottom:9px}
+  #outdoorCard{margin-top:8px}
+  #outdoorCard .section-title{margin-bottom:4px}
+  #outdoorCard .outdoor p{display:none}
+  #outdoorCard .outdoor-details{margin-top:6px}
+  #outdoorCard .window{font-size:10px}
+  #outdoorCard .timeline span{font-size:10px}
+  #outdoorCard .webcam-check{margin-top:5px}
+  #prossimeOre,#daysCard,#valleyCard{margin-top:8px}
+  #prossimeOre .hour .wx{font-size:18px}
+  #prossimeOre .hour .t{font-size:14px}
+  #daysCard .day .rain{font-size:9px}
+  #valleyCard .source-links{display:none}
+}
+</style>
+
 </head>
 <body>
 <div class="wrap">
@@ -334,7 +483,7 @@ h1{font-size:28px;margin:10px 0 2px}
     <div class="hourly" id="hourly"><div class="hour">Caricamento…</div></div>
   </section>
 
-  <section class="section card">
+  <section class="section card" id="daysCard">
     <div class="section-title">
       <h2>📅 Oggi / Domani / +2</h2>
       <small>tendenza rapida</small>
@@ -512,13 +661,13 @@ function outdoorAnalysis(h){
   const codes=h.weather_code.slice(i0,i1);
   const maxP=Math.max(...probs), maxG=Math.max(...gusts), sumR=rain.reduce((a,b)=>a+b,0);
   const hasThunder=codes.some(thunder);
-  let level="good", title="Giornata favorevole", text="Nelle prossime ore non emergono segnali meteo importanti. Resta comunque utile controllare il cielo e gli aggiornamenti prima di partire.";
+  let level="good", title="USCITA FAVOREVOLE", text="Nelle prossime ore non emergono segnali meteo importanti. Resta comunque utile controllare il cielo e gli aggiornamenti prima di partire.";
   if(hasThunder || maxP>=75 || maxG>=55){
-    level="bad"; title="Prudenza: condizioni sfavorevoli";
+    level="bad"; title="USCITA SCONSIGLIATA";
     text=hasThunder ? "Nelle prossime ore compare un segnale temporalesco. Per sentieri e quota serve particolare prudenza e una verifica ravvicinata prima di partire." :
       "Le prossime ore mostrano rischio elevato di precipitazioni o raffiche forti. Meglio valutare attività brevi e facilmente interrompibili.";
   } else if(maxP>=40 || maxG>=35 || sumR>=1.5){
-    level="warn"; title="Da valutare con attenzione";
+    level="warn"; title="USCITA DA VALUTARE";
     text="La giornata presenta qualche elemento da tenere d'occhio: possibili precipitazioni, rovesci o vento. Meglio scegliere orari e percorso con margine.";
   }
   const window=bestWindow(h.time,h.precipitation_probability,h.wind_gusts_10m,h.weather_code);
@@ -586,7 +735,7 @@ async function loadWeather(){
     const a=outdoorAnalysis(v.hourly);
     const light=document.getElementById("riskLight");
     light.className="light "+a.level;
-    document.getElementById("riskLabel").textContent=a.level==="good"?"favorevole":a.level==="warn"?"attenzione":"prudenza";
+    document.getElementById("riskLabel").textContent=a.level==="good"?"OK":a.level==="warn"?"ATTENZIONE":"STOP";
     document.getElementById("outdoorTitle").textContent=a.title;
     document.getElementById("outdoorText").textContent=a.text;
     document.getElementById("rainRisk").textContent=round(a.maxP)+"%";
@@ -627,5 +776,142 @@ async function loadWeather(){
 }
 loadWeather();
 </script>
+
+<style>
+/* ===== RC5 METEO CONTROL — cambio netto Home meteo ===== */
+body{
+ background:linear-gradient(180deg,#171b22 0,#222832 44rem,#e8e8e4 44rem,#ecebe7 100%) !important;
+}
+.wrap{max-width:900px!important;padding:10px 10px 28px!important}
+
+/* HERO: molto più basso */
+.top{
+ padding:18px 18px 14px!important;
+ border-radius:25px!important;
+ margin-bottom:8px!important;
+ background:linear-gradient(135deg,#20252d 0%,#403832 54%,#3c527c 100%)!important;
+}
+.top h1{font-size:27px!important;margin:8px 0 2px!important}
+.top .subtitle{font-size:13px!important;margin:0 0 10px!important}
+.current-main{padding:10px 12px!important;min-height:0!important}
+.current-main .weather-icon{font-size:37px!important}
+.current-main .temp{font-size:54px!important}
+.current-main .condition{font-size:15px!important;margin-top:0!important}
+.current-grid{margin-top:7px!important;gap:6px!important}
+.current-grid>div{padding:7px 8px!important;border-radius:13px!important}
+.current-grid b{font-size:14px!important}
+.current-grid span{font-size:10px!important}
+.current-extra{padding:8px 10px!important;margin-top:7px!important;gap:7px!important}
+.current-extra .value{font-size:15px!important}
+.quick-actions{margin-top:7px!important;gap:5px!important}
+.quick-actions a{min-height:38px!important;padding:6px 4px!important;font-size:11px!important}
+
+/* CONTROL BAR: card "Oggi fuori" trasformata in pannello scuro compatto */
+#outdoorCard{
+ margin-top:8px!important;padding:12px 14px!important;border-radius:21px!important;
+ background:#242a33!important;border:1px solid #3b424e!important;color:#fff!important;
+}
+#outdoorCard .section-title{margin:0 0 6px!important}
+#outdoorCard .section-title h2{font-size:15px!important;text-transform:uppercase;letter-spacing:.8px!important}
+#outdoorCard .section-title small{font-size:11px!important}
+#outdoorCard .outdoor{display:flex!important;align-items:center!important;gap:9px!important}
+#outdoorCard .outdoor h3{font-size:22px!important;margin:0!important;line-height:1.1!important}
+#outdoorCard .outdoor p{display:none!important}
+#riskLight{width:12px!important;height:12px!important;min-width:12px!important}
+#outdoorCard .outdoor-details{
+ display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:6px!important;margin-top:9px!important
+}
+#outdoorCard .metric{padding:7px 8px!important;border-radius:12px!important;background:#303742!important}
+#outdoorCard .metric b{font-size:14px!important}
+#outdoorCard .metric span{font-size:9px!important}
+#outdoorCard .window{
+ margin-top:7px!important;padding:7px 9px!important;border-radius:11px!important;font-size:10px!important;line-height:1.25!important
+}
+#outdoorCard .decision-row{margin-top:7px!important;gap:6px!important}
+#outdoorCard .decision{padding:7px 9px!important;border-radius:11px!important}
+#outdoorCard .decision .k{font-size:8px!important}
+#outdoorCard .decision .v{font-size:12px!important}
+#outdoorCard .timeline{margin-top:7px!important;padding:7px 9px!important;border-radius:11px!important}
+#outdoorCard .timeline b{font-size:12px!important}
+#outdoorCard .timeline span{font-size:9px!important}
+#outdoorCard .webcam-check{display:none!important}
+
+/* PROSSIME ORE: vera striscia */
+#prossimeOre{
+ margin-top:8px!important;padding:10px 12px!important;border-radius:19px!important;
+ background:#2d333d!important;border:1px solid #414955!important;color:#fff!important
+}
+#prossimeOre .section-title{margin-bottom:6px!important}
+#prossimeOre .section-title h2{font-size:16px!important;color:#fff!important}
+#prossimeOre .section-title small{font-size:10px!important;color:#b8c0cc!important}
+#prossimeOre .hours{gap:5px!important}
+#prossimeOre .hour{
+ padding:6px 2px!important;border-radius:12px!important;background:#383f4a!important;border-color:#4a5260!important;color:#fff!important
+}
+#prossimeOre .hour .time{font-size:11px!important}
+#prossimeOre .hour .wx{font-size:17px!important;margin:1px 0!important}
+#prossimeOre .hour .t{font-size:14px!important}
+#prossimeOre .hour .rain{font-size:9px!important;color:#b9c9dd!important}
+
+/* 3 giorni: una barra bassa */
+#daysCard{
+ margin-top:8px!important;padding:9px 11px!important;border-radius:19px!important;background:#353b45!important;
+ border:1px solid #474f5b!important;color:#fff!important
+}
+#daysCard .section-title{margin-bottom:5px!important}
+#daysCard .section-title h2{font-size:15px!important;color:#fff!important}
+#daysCard .section-title small{font-size:9px!important;color:#b9c0cb!important}
+#daysCard .days{gap:5px!important}
+#daysCard .day{padding:6px 8px!important;border-radius:11px!important;background:#414853!important;border-color:#515967!important;color:#fff!important}
+#daysCard .day .name{font-size:11px!important}
+#daysCard .day .wx{font-size:16px!important}
+#daysCard .day .temps{font-size:12px!important}
+#daysCard .day .rain{font-size:8px!important;color:#bdc9d9!important}
+
+/* Valle/quota: quasi una riga di servizio */
+#valleyCard{
+ margin-top:8px!important;padding:9px 11px!important;border-radius:18px!important;background:#454a51!important;
+ border:1px solid #555b64!important;color:#fff!important
+}
+#valleyCard .section-title{margin-bottom:5px!important}
+#valleyCard .section-title h2{font-size:14px!important;color:#fff!important}
+#valleyCard .section-title small{font-size:9px!important;color:#c2c6cd!important}
+#valleyCard .levels{gap:6px!important}
+#valleyCard .level{padding:6px 9px!important;border-radius:10px!important;background:#51575f!important;border-color:#60666f!important;color:#fff!important}
+#valleyCard .level .label{font-size:9px!important;color:#cbd0d6!important}
+#valleyCard .level .big{font-size:18px!important}
+#valleyCard .level .small{font-size:9px!important;color:#d0d4d9!important}
+#valleyCard>p,#valleyCard .source-links{display:none!important}
+
+/* il resto dell'app torna chiaro e separato dal Meteo Control */
+.stats{margin-top:13px!important}
+@media(max-width:700px){
+ .top .badge{font-size:10px!important}
+ .top .updated{font-size:10px!important}
+ .current-extra{grid-template-columns:repeat(4,1fr)!important}
+ #outdoorCard .decision-row{grid-template-columns:1fr 1fr!important}
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+  // Titoli RC5 più operativi senza cambiare la logica dati.
+  const rename=()=>{
+    const h=document.getElementById("riskTitle");
+    if(!h) return;
+    const t=(h.textContent||"").toLowerCase();
+    if(t.includes("sfavore")||t.includes("sconsigli")) h.textContent="USCITA SCONSIGLIATA";
+    else if(t.includes("atten")||t.includes("valut")) h.textContent="USCITA DA VALUTARE";
+    else h.textContent="USCITA FAVOREVOLE";
+    const lab=document.getElementById("riskLabel");
+    if(lab){
+      const l=(lab.textContent||"").toLowerCase();
+      lab.textContent=l.includes("prud")?"STOP":l.includes("atten")?"ATTENZIONE":"OK";
+    }
+  };
+  setTimeout(rename,800);
+  setInterval(rename,60000);
+});
+</script>
+
 </body>
 </html>

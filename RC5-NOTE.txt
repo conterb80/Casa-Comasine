@@ -1,0 +1,10 @@
+CASA COMASINE RC5 — METEO CONTROL
+Cambio grafico netto della pagina meteo:
+- hero meteo sensibilmente più basso
+- Oggi fuori trasformato in pannello decisionale scuro
+- testi descrittivi rimossi dalla vista principale
+- prossime ore trasformate in striscia operativa
+- 3 giorni compattati
+- valle/quota ridotta a confronto rapido
+- area meteo con palette antracite/montagna
+- logica e sorgenti dati mantenute
