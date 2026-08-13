@@ -60,6 +60,15 @@ h1{font-size:32px;margin:14px 0 4px}
 .metric b{display:block;font-size:16px}.metric span{color:var(--muted);font-size:11px}
 .window{margin-top:12px;padding:11px 13px;border-radius:15px;background:#eff8f2;color:#265d45;font-size:13px}
 .window.warn{background:#fff7e7;color:#855b12}.window.bad{background:#fff0f0;color:#8b3b3b}
+.decision-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}
+.decision{border-radius:18px;padding:13px;background:#f8fafc;border:1px solid #edf0f4}
+.decision .k{font-size:11px;color:var(--muted);margin-bottom:5px}.decision .v{font-size:16px;font-weight:700}
+.decision.good .v{color:var(--good)}.decision.warn .v{color:var(--warn)}.decision.bad .v{color:var(--bad)}
+.timeline{margin-top:12px;padding:12px;border-radius:17px;background:#f8fafc;border:1px solid #edf0f4}
+.timeline b{display:block;margin-bottom:4px}.timeline span{font-size:13px;color:#596273;line-height:1.4}
+.webcam-check{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;margin-top:12px;padding:12px;border-radius:17px;background:#f6f8fb;border:1px solid #e8edf3}
+.webcam-check b{display:block;font-size:14px}.webcam-check span{font-size:12px;color:var(--muted)}
+.webcam-check a{text-decoration:none;color:white;background:#263044;padding:9px 12px;border-radius:11px;font-size:12px}
 
 .hourly{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(84px,1fr);gap:8px;overflow-x:auto;padding-bottom:4px}
 .hour{background:#f8fafc;border:1px solid #edf0f4;border-radius:17px;padding:11px 8px;text-align:center}
@@ -190,6 +199,18 @@ h1{font-size:32px;margin:14px 0 4px}
       <div class="metric"><b id="rainSum">--</b><span>Pioggia 8h</span></div>
     </div>
     <div class="window" id="bestWindow">Cerco la finestra migliore della giornata…</div>
+    <div class="decision-grid">
+      <div class="decision" id="trailDecision"><div class="k">SENTIERI</div><div class="v" id="trailValue">Valutazione…</div></div>
+      <div class="decision" id="quotaDecision"><div class="k">ALTA QUOTA</div><div class="v" id="quotaValue">Valutazione…</div></div>
+    </div>
+    <div class="timeline">
+      <b id="changeTitle">Evoluzione della giornata</b>
+      <span id="changeText">Cerco eventuali cambiamenti significativi nelle prossime ore…</span>
+    </div>
+    <div class="webcam-check">
+      <div><b>Controllo visivo prima di partire</b><span>Apri direttamente le webcam della Val di Pejo.</span></div>
+      <a href="https://www.visitvaldipejo.it/it/pianifica/informazioni/webcam" target="_blank" rel="noreferrer">Webcam</a>
+    </div>
   </section>
 
   <section class="section card" id="prossimeOre">
@@ -223,6 +244,7 @@ h1{font-size:32px;margin:14px 0 4px}
         <div class="head">Quota 3000 m · stima</div>
         <div class="big"><span id="mountainTemp">--</span>°</div>
         <div class="small"><span id="mountainWind">--</span> km/h · raff. <span id="mountainGust">--</span></div>
+        <div class="small" id="mountainCond">condizioni in quota…</div>
       </div>
     </div>
     <div class="source-note">La quota 3000 m è una stima modellistica ottenuta con downscaling per elevazione: utile per orientarsi, non sostituisce bollettini, condizioni reali e valutazione sul posto.</div>
@@ -390,6 +412,23 @@ function outdoorAnalysis(h){
   return {level,title,text,maxP,maxG,sumR,window};
 }
 
+
+function firstSignificantChange(h){
+  const now=new Date();
+  let start=h.time.findIndex(t=>new Date(t)>=now);
+  start=Math.max(0,start);
+  for(let i=start;i<Math.min(h.time.length,start+12);i++){
+    if(thunder(h.weather_code[i]) || h.precipitation_probability[i]>=60 || h.wind_gusts_10m[i]>=45){
+      const causes=[];
+      if(thunder(h.weather_code[i])) causes.push("temporali");
+      if(h.precipitation_probability[i]>=60) causes.push("pioggia");
+      if(h.wind_gusts_10m[i]>=45) causes.push("raffiche");
+      return {time:hourName(h.time[i]), causes:causes.join(", ")};
+    }
+  }
+  return null;
+}
+function decisionClass(level){return level==="good"?"good":level==="warn"?"warn":"bad"}
 async function loadWeather(){
   try{
     const [rv,rm]=await Promise.all([fetch(urlValley),fetch(urlMountain)]);
@@ -415,6 +454,7 @@ async function loadWeather(){
     document.getElementById("mountainTemp").textContent=round(m.current.temperature_2m);
     document.getElementById("mountainWind").textContent=round(m.current.wind_speed_10m);
     document.getElementById("mountainGust").textContent=round(m.current.wind_gusts_10m);
+    document.getElementById("mountainCond").textContent=wxText(m.current.weather_code);
 
     const now=new Date();
     let start=v.hourly.time.findIndex(t=>new Date(t)>=now);
@@ -443,6 +483,27 @@ async function loadWeather(){
     w.className="window "+(a.level==="good"?"":a.level);
     w.textContent=a.window ? `Finestra meteo più favorevole stimata: ${a.window}. Prima di partire verifica sempre condizioni e bollettino ufficiale.` :
       "Non emerge una finestra di 3 ore nettamente favorevole: meglio rivalutare più vicino alla partenza.";
+    const trail=document.getElementById("trailDecision");
+    const trailValue=document.getElementById("trailValue");
+    trail.className="decision "+decisionClass(a.level);
+    trailValue.textContent=a.level==="good"?"Favorevole":a.level==="warn"?"Da valutare":"Sconsigliato";
+
+    let qLevel="good", qText="Favorevole";
+    const mg=Number(m.current.wind_gusts_10m), mw=Number(m.current.wind_speed_10m), mc=Number(m.current.weather_code);
+    if(thunder(mc) || mg>=60 || mw>=45){qLevel="bad";qText=thunder(mc)?"Temporali / prudenza":"Vento forte";}
+    else if(mg>=40 || mw>=30 || [71,73,75,85,86].includes(mc)){qLevel="warn";qText=mg>=40?"Attenzione vento":"Da valutare";}
+    const quota=document.getElementById("quotaDecision");
+    quota.className="decision "+decisionClass(qLevel);
+    document.getElementById("quotaValue").textContent=qText;
+
+    const change=firstSignificantChange(v.hourly);
+    if(change){
+      document.getElementById("changeTitle").textContent=`Attenzione dalle ${change.time}`;
+      document.getElementById("changeText").textContent=`Da quell'ora il modello segnala ${change.causes}. Per un'uscita conviene mantenere margine sul rientro e ricontrollare il meteo prima di partire.`;
+    }else{
+      document.getElementById("changeTitle").textContent="Nessun cambio importante nelle prossime 12 ore";
+      document.getElementById("changeText").textContent="Il modello non mostra, al momento, un peggioramento netto per pioggia, temporali o raffiche. In montagna resta comunque necessario verificare gli aggiornamenti.";
+    }
   }catch(err){
     document.getElementById("weatherError").innerHTML='<div class="error">Non riesco a caricare i dati automatici in questo momento. I collegamenti a Meteotrentino e alle webcam restano disponibili.</div>';
     document.getElementById("updated").textContent="meteo non disponibile";

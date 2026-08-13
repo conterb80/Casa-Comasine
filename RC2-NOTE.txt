@@ -1,0 +1,12 @@
+CASA COMASINE RC2 - HOME METEO OPERATIVA
+
+Intervento mirato sulla Home:
+- indicatore SENTIERI: favorevole / da valutare / sconsigliato
+- indicatore ALTA QUOTA separato
+- finestra oraria favorevole
+- evidenza dell'ora del primo possibile peggioramento
+- confronto Comasine / quota 3000 m
+- condizione meteo stimata a 3000 m
+- accesso webcam per controllo visivo prima della partenza
+
+Nessun intervento su Foto o installazione PWA.
