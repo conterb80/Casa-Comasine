@@ -520,6 +520,37 @@ body{
 <style>
 .guide-wrap{background:#0d1925}.guide-intro{color:#aeb9c5;font-size:14px;margin:0 4px 16px}.guide-section{margin:0 0 18px}.guide-section h3{font-size:11px;letter-spacing:1.4px;color:#8293a4;margin:0 4px 8px}.guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.guide-grid a,.guide-grid button,.guide-list a{box-sizing:border-box;text-decoration:none;color:#f6f8fb;background:#192b3d;border:0;border-radius:17px;padding:15px;text-align:left;min-height:82px;font:inherit}.guide-grid b,.guide-list b{display:block;font-size:16px;margin-bottom:6px}.guide-grid small,.guide-list small{display:block;color:#9eacba;font-size:12px;line-height:1.25}.guide-grid .bear{background:linear-gradient(145deg,#29402f,#1a2d29)}.guide-list{display:grid;gap:9px}.guide-list a{display:block;min-height:auto}.sos-hero{background:#40252a;border-radius:22px;padding:22px;margin-bottom:20px}.sos-hero b{display:block;font-size:48px}.sos-hero span{display:block;color:#cbd3dc;margin:2px 0 16px}.sos-hero a{display:inline-block;background:#f4f6f8;color:#17212b;text-decoration:none;font-weight:800;padding:12px 18px;border-radius:14px}@media(max-width:380px){.guide-grid{gap:7px}.guide-grid a,.guide-grid button{padding:12px;min-height:76px}.guide-grid b{font-size:14px}}
 </style>
+
+<style id="rc12-functional-style">
+/* RC12 — rifinitura funzionale, nessun redesign */
+#daysCard{background:#172331!important;color:#f3f6f8!important;border:0!important;box-shadow:none!important}
+#daysCard .day{background:#1d2b3a!important;color:#f3f6f8!important;border:0!important}
+#daysCard .section-title small,#daysCard .day .rain{color:#9eacba!important}
+.weather-deep-link{width:100%;margin:8px 0 0;border:0;border-radius:13px;background:rgba(5,14,23,.24);color:#eef5fb;padding:9px 12px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left}
+.weather-deep-link span{font-weight:700;font-size:12px}.weather-deep-link b{font-size:12px;color:#b7cbe0}
+.weather-deep-link:active{transform:scale(.995)}
+.quick-hub{margin-top:16px!important;padding:15px 13px 14px!important;border-radius:20px!important;background:linear-gradient(180deg,#1a2a3b 0%,#152333 100%)!important;border-top:3px solid #415e7b!important;box-shadow:0 -8px 24px rgba(0,0,0,.12)!important}
+.quick-hub-kicker{font-size:9px;font-weight:900;letter-spacing:1.7px;color:#7f9bb7;margin-bottom:3px}
+.quick-hub-title{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px!important;font-size:18px}
+.quick-hub-title small{font-size:10px;font-weight:500;color:#8799ab}
+.hub-btn,.hub-btn.primary{background:#203247!important;color:#eef3f8!important;border:1px solid rgba(255,255,255,.045)!important}
+.hub-btn{min-height:58px!important}.hub-btn:active{background:#2a4159!important}
+/* Guida: gerarchia più immediata senza cambiare contenuti */
+#screen-guida .guide-section:first-of-type .guide-grid a{background:#20364a}
+#screen-guida .guide-section:first-of-type{padding:10px;border-radius:19px;background:#132333;margin-bottom:20px}
+#screen-guida .guide-section:first-of-type h3{color:#a9c7e2;font-weight:900}
+#screen-guida .guide-section h3{padding-left:2px}
+/* Meteo dettaglio */
+.weather-detail-wrap{background:#0d1925}
+.weather-detail-hero{background:linear-gradient(145deg,#223447,#365b79);border-radius:22px;padding:18px;display:flex;align-items:flex-start;justify-content:space-between;margin:5px 0 10px}
+.weather-detail-hero small{display:block;color:#afbfce;font-size:10px;letter-spacing:.6px}.weather-detail-hero strong{display:block;font-size:50px;line-height:1;margin:6px 0 3px}.weather-detail-hero span{color:#e6edf3}.weather-detail-badge{font-size:9px;background:#ffffff18;border:1px solid #ffffff1f;border-radius:999px;padding:6px 8px;color:#d9e6f2}
+.weather-detail-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:10px}.weather-detail-metrics div{background:#172839;border-radius:14px;padding:10px}.weather-detail-metrics span{display:block;color:#8fa2b5;font-size:9px;margin-bottom:4px}.weather-detail-metrics b{font-size:14px}
+.weather-detail-block{background:#142333;border-radius:19px;padding:12px;margin-top:9px}.weather-detail-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px}.weather-detail-title b{font-size:14px}.weather-detail-title small{font-size:9px;color:#8295a8}
+.weather-detail-hours{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.weather-detail-hours .hour{display:block!important;background:#1b3044!important;border:0!important;color:#fff!important;padding:9px 5px!important}.weather-detail-hours .hour:nth-child(n){display:block!important}
+.weather-detail-days{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.weather-detail-days .day{display:block!important;background:#1b3044!important;border:0!important;color:#fff!important;padding:9px!important}.weather-detail-days .day:nth-child(n){display:block!important}
+.weather-link-grid{display:grid;grid-template-columns:1fr;gap:7px}.weather-link-grid a{background:#20364a;color:#eef4f9;text-decoration:none;border-radius:13px;padding:11px 12px;font-size:12px;font-weight:700}
+@media(max-width:520px){.quick-hub{margin-top:14px!important}.quick-hub-title{font-size:17px}.hub-btn{font-size:11px!important}.weather-detail-hours{grid-template-columns:repeat(4,minmax(0,1fr));overflow-x:auto}.weather-detail-days{grid-template-columns:repeat(3,1fr)}.weather-detail-metrics{grid-template-columns:repeat(3,1fr)}}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -567,6 +598,9 @@ body{
         <div class="mountain-tag" style="grid-column:1/-1">Previsione modellistica centrata su Comasine. Verifica ufficiale: Meteotrentino.</div>
       </div>
     </div>
+    <button class="weather-deep-link" id="weatherDeepLink" type="button" aria-label="Apri approfondimento meteo">
+      <span>🌦️ Approfondimento meteo</span><b>Apri ›</b>
+    </button>
 
     <div class="quick">
       <a href="#oggiFuori">🥾 Oggi fuori</a>
@@ -653,7 +687,7 @@ body{
 
   
   <section class="quick-hub" id="accessoRapido">
-    <div class="quick-hub-title">Accesso rapido</div>
+    <div class="quick-hub-kicker">NAVIGAZIONE</div><div class="quick-hub-title">Accesso rapido <small>vai subito a…</small></div>
     <div class="quick-hub-grid">
       <button class="hub-btn primary" data-open-screen="sentieri"><span>🥾</span>Sentieri</button>
       <button class="hub-btn" data-open-screen="uscite"><span>📅</span>Uscite</button>
@@ -689,6 +723,32 @@ body{
   </div>
 </div>
 </div>
+
+<!-- RC12: APPROFONDIMENTO METEO -->
+<section class="app-screen" id="screen-meteo-detail">
+  <div class="screen-wrap weather-detail-wrap">
+    <div class="screen-head"><button class="icon-btn close-screen">‹</button><h2>🌦️ Meteo Comasine</h2><span></span></div>
+    <div class="weather-detail-hero">
+      <div><small>ADESSO · COMASINE ~1200 m</small><strong id="wdNow">--°</strong><span id="wdCond">Caricamento…</span></div>
+      <div class="weather-detail-badge">Approfondimento</div>
+    </div>
+    <div class="weather-detail-metrics">
+      <div><span>Percepita</span><b id="wdFeels">--°</b></div>
+      <div><span>Vento</span><b id="wdWind">--</b></div>
+      <div><span>Raffiche</span><b id="wdGust">--</b></div>
+      <div><span>Pressione</span><b id="wdPressure">--</b></div>
+      <div><span>Umidità</span><b id="wdHumidity">--</b></div>
+      <div><span>Pioggia ora</span><b id="wdPrecip">--</b></div>
+    </div>
+    <div class="weather-detail-block"><div class="weather-detail-title"><b>🕒 Evoluzione prossime ore</b><small>lettura estesa</small></div><div class="weather-detail-hours" id="wdHours"></div></div>
+    <div class="weather-detail-block"><div class="weather-detail-title"><b>📅 Tendenza</b><small>prossimi giorni</small></div><div class="weather-detail-days" id="wdDays"></div></div>
+    <div class="weather-detail-block weather-detail-links"><div class="weather-detail-title"><b>🔎 Verifica sul campo</b><small>fonti rapide</small></div><div class="weather-link-grid">
+      <a href="https://www.meteotrentino.it/" target="_blank" rel="noreferrer">🌦️ Meteotrentino</a>
+      <a href="https://www.visitvaldipejo.it/it/pianifica/informazioni/webcam" target="_blank" rel="noreferrer">📷 Webcam Val di Pejo</a>
+      <a href="https://www.skipejo.it/webcam/" target="_blank" rel="noreferrer">🏔️ Webcam Pejo 3000</a>
+    </div></div>
+  </div>
+</section>
 
 <!-- RC9: SENTIERI V1 -->
 <section class="app-screen" id="screen-sentieri">
@@ -1577,5 +1637,23 @@ if(store.customTrails?.length){store.customTrails.forEach(t=>{if(!TRAILS.some(x=
 renderTrails();
 </script>
 
+
+<script id="rc12-functional-script">
+(function(){
+ function text(id){const e=document.getElementById(id);return e?e.textContent.trim():''}
+ function syncWeatherDetail(){
+   const set=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v||'--'};
+   set('wdNow',(text('nowTemp')||'--')+'°'); set('wdCond',text('nowCond')); set('wdFeels',text('feels'));
+   set('wdWind',text('wind')); set('wdGust',text('gust')); set('wdPressure',text('pressure')); set('wdHumidity',text('humidity')); set('wdPrecip',text('precipNow'));
+   const h=document.getElementById('hourly'), wh=document.getElementById('wdHours'); if(h&&wh) wh.innerHTML=h.innerHTML;
+   const d=document.getElementById('days'), wd=document.getElementById('wdDays'); if(d&&wd) wd.innerHTML=d.innerHTML;
+ }
+ function openWeather(){syncWeatherDetail();document.querySelectorAll('.app-screen').forEach(s=>s.classList.remove('active'));const e=document.getElementById('screen-meteo-detail');if(e)e.classList.add('active');const n=document.getElementById('bottomNav');if(n)n.style.display='none';document.body.style.overflow='hidden'}
+ document.addEventListener('DOMContentLoaded',()=>{
+   const b=document.getElementById('weatherDeepLink'); if(b)b.addEventListener('click',openWeather);
+   const grid=document.querySelector('.now-grid'); if(grid){grid.style.cursor='pointer';grid.setAttribute('role','button');grid.setAttribute('aria-label','Apri approfondimento meteo');grid.addEventListener('click',openWeather)}
+ });
+})();
+</script>
 </body>
 </html>

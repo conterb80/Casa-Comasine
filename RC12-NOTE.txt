@@ -1,0 +1,12 @@
+Casa Comasine RC12 — Rifinitura funzionale e navigazione
+
+Interventi:
+- eliminato definitivamente lo stacco chiaro della card Pianifica, ora coerente con la Home scura;
+- meteo Home reso cliccabile tramite area principale e pulsante “Approfondimento meteo”;
+- aggiunta schermata Meteo Comasine con dati correnti, prossime ore, tendenza e link rapidi a Meteotrentino/webcam;
+- Accesso rapido reso visivamente riconoscibile come pannello di navigazione, senza cambiare le 4 funzioni;
+- eliminato il verde esclusivo da Sentieri: i quattro accessi hanno pari gerarchia;
+- Guida Val di Pejo: sezione OGGI resa più evidente, contenuti invariati;
+- nessuna modifica alla logica Sentieri/Uscite/Diario e ai dati salvati localmente.
+
+Obiettivo test: rapidità di lettura e navigazione sul telefono.
