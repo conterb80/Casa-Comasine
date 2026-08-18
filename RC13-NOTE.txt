@@ -1,0 +1,7 @@
+CASA COMASINE RC13 — TRAFFICO & VIAGGIO
+
+- Home invariata.
+- Sentieri invariati.
+- Nella Guida, Mobilità diventa Traffico.
+- Nuova schermata Traffico & viaggio con A22 live, Viaggiare in Trentino, webcam A22, navigazione verso Comasine, previsioni traffico e numeri verdi.
+- Cache PWA aggiornata a RC13.

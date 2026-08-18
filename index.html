@@ -893,7 +893,7 @@ body{
     </div></div>
     <div class="guide-section"><h3>INFORMAZIONI & SICUREZZA</h3><div class="guide-grid">
       <a class="bear" href="https://grandicarnivori.provincia.tn.it/Segnalazioni-orse-con-piccoli" target="_blank"><b>🐻 Orsi</b><small>Mappa e segnalazioni PAT</small></a>
-      <a href="https://www.visitvaldisole.it/it" target="_blank"><b>🚌 Mobilità</b><small>Bus, navette e accessi</small></a>
+      <button data-guide-screen="traffico"><b>🚗 Traffico</b><small>A22, strade e webcam</small></button>
       <a href="https://www.comune.peio.tn.it/Novita" target="_blank"><b>📰 Notizie</b><small>Avvisi del Comune</small></a>
       <button data-guide-screen="sos"><b>☎️ SOS</b><small>Numeri utili</small></button>
     </div></div>
@@ -902,6 +902,28 @@ body{
       <button onclick="openValley('Rabbi')"><b>💧 Val di Rabbi</b><small>Natura e passeggiate</small></button>
       <button onclick="openValley('Tonale')"><b>⛰️ Tonale</b><small>Passo e alta quota</small></button>
       <button data-guide-screen="valli"><b>🗺️ Tutte</b><small>Esplora per zona</small></button>
+    </div></div>
+  </div>
+</section>
+
+<section class="app-screen" id="screen-traffico">
+  <div class="screen-wrap guide-wrap">
+    <div class="screen-head"><button class="icon-btn" id="trafficBack">‹</button><h2>🚗 Traffico & viaggio</h2><span></span></div>
+    <div class="guide-intro">Controllo rapido per arrivo, partenza e spostamenti in Trentino.</div>
+    <div class="guide-section"><h3>TRAFFICO LIVE</h3><div class="guide-grid">
+      <a href="https://www.autobrennero.it/it/" target="_blank" rel="noreferrer"><b>🛣️ A22 Live</b><small>Code, incidenti e lavori</small></a>
+      <a href="https://www.viaggiareintrentino.it/it/" target="_blank" rel="noreferrer"><b>🚦 Strade Trentino</b><small>Viabilità provinciale live</small></a>
+      <a href="https://www.autobrennero.it/it/in-viaggio/webcam/" target="_blank" rel="noreferrer"><b>📷 Webcam A22</b><small>Controllo visivo autostrada</small></a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Comasine%2C+Peio+TN&travelmode=driving" target="_blank" rel="noreferrer"><b>🧭 Navigatore</b><small>Apri percorso verso Comasine</small></a>
+    </div></div>
+    <div class="guide-section"><h3>PRIMA DI PARTIRE</h3><div class="guide-list">
+      <a href="https://www.autobrennero.it/it/" target="_blank" rel="noreferrer"><b>📊 Previsioni traffico A22</b><small>Giornate e fasce orarie più trafficate</small></a>
+      <a href="https://www.viaggiareintrentino.it/it/" target="_blank" rel="noreferrer"><b>⚠️ Cantieri e chiusure</b><small>Rete stradale della Provincia di Trento</small></a>
+      <a href="tel:800994411"><b>☎️ Viaggiare in Trentino</b><small>Numero verde 800 994411</small></a>
+      <a href="tel:800279940"><b>☎️ Info A22</b><small>Numero verde 800 279940</small></a>
+    </div></div>
+    <div class="guide-section"><h3>PERCORSO CASA</h3><div class="guide-list">
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Comasine%2C+Peio+TN&travelmode=driving" target="_blank" rel="noreferrer"><b>🏠 Verso Comasine</b><small>Traffico e navigazione in tempo reale</small></a>
     </div></div>
   </div>
 </section>
@@ -1447,6 +1469,7 @@ document.querySelectorAll("[data-open-screen]").forEach(b=>b.addEventListener("c
 document.querySelectorAll(".close-screen").forEach(b=>b.addEventListener("click",closeAll));
 document.querySelectorAll("[data-guide-screen]").forEach(b=>b.addEventListener("click",()=>showScreen(b.dataset.guideScreen)));
 document.getElementById("sosBack").onclick=()=>showScreen("guida");
+document.getElementById("trafficBack").onclick=()=>showScreen("guida");
 
 document.querySelectorAll("#bottomNav button").forEach(b=>b.addEventListener("click",()=>{
   if(b.dataset.nav==="home") closeAll(); else showScreen(b.dataset.nav);
