@@ -1,0 +1,16 @@
+CASA COMASINE RC14 — PWA FIX
+
+Correzioni mirate:
+- fascia Pianifica forzata definitivamente al tema scuro
+- background PWA scuro (#0d1620)
+- manifest rinforzato con id, scope, display standalone, display_override
+- icone 192/512 dichiarate any + maskable
+- nuovo service worker RC14
+- vecchi service worker rimossi automaticamente al caricamento
+- Home, Sentieri, Guida e Traffico lasciati invariati nelle funzioni
+
+TEST INSTALLAZIONE:
+1. carica RC14 su GitHub/Netlify
+2. apri il sito una volta e ricarica
+3. chiudi e riapri Chrome
+4. menu ⋮: dovrebbe comparire "Installa app" / "Installa Casa Comasine"

@@ -4,8 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Casa Comasine</title>
-<meta name="theme-color" content="#263044">
-<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0d1620">
+<link rel="manifest" href="./manifest.webmanifest?v=14">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Casa Comasine">
+<link rel="apple-touch-icon" href="./icons/icon-192.png">
 <style>
 :root{
   --ink:#172033; --muted:#667085; --line:#eadfce; --paper:#fffdf9;
@@ -551,6 +556,53 @@ body{
 .weather-link-grid{display:grid;grid-template-columns:1fr;gap:7px}.weather-link-grid a{background:#20364a;color:#eef4f9;text-decoration:none;border-radius:13px;padding:11px 12px;font-size:12px;font-weight:700}
 @media(max-width:520px){.quick-hub{margin-top:14px!important}.quick-hub-title{font-size:17px}.hub-btn{font-size:11px!important}.weather-detail-hours{grid-template-columns:repeat(4,minmax(0,1fr));overflow-x:auto}.weather-detail-days{grid-template-columns:repeat(3,1fr)}.weather-detail-metrics{grid-template-columns:repeat(3,1fr)}}
 </style>
+
+<style id="rc14-final-fix">
+/* RC14 — FIX DEFINITIVO FASCIA PIANIFICA + COERENZA DARK */
+html,body{
+  background:#0d1620!important;
+  color-scheme:dark;
+}
+html body #daysCard,
+html body section#daysCard.section.card{
+  background:#172434!important;
+  background-image:none!important;
+  border:0!important;
+  box-shadow:none!important;
+  color:#f3f6f9!important;
+}
+html body #daysCard .section-title,
+html body #daysCard .days{
+  background:transparent!important;
+}
+html body #daysCard .section-title h2{
+  color:#f3f6f9!important;
+}
+html body #daysCard .section-title small{
+  color:#91a1b2!important;
+}
+html body #daysCard .day{
+  background:#203247!important;
+  background-image:none!important;
+  border:0!important;
+  box-shadow:none!important;
+  color:#f3f6f9!important;
+}
+html body #daysCard .day *{
+  color:inherit!important;
+}
+html body #daysCard .day .rain{
+  color:#9fb0c0!important;
+  opacity:1!important;
+}
+/* evita qualunque vecchio "paper/sand" visibile attorno alla card */
+html body #daysCard::before,
+html body #daysCard::after{
+  display:none!important;
+  content:none!important;
+}
+</style>
+
 </head>
 <body>
 <div class="wrap">
@@ -964,7 +1016,15 @@ body{
 
 <script>
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+  window.addEventListener('load', async () => {
+    try {
+      const regs = await navigator.serviceWorker.getRegistrations();
+      await Promise.all(regs.map(r => r.unregister()));
+      await navigator.serviceWorker.register('./sw-rc14.js', {scope:'./'});
+    } catch (e) {
+      console.warn('PWA registration:', e);
+    }
+  });
 }
 
 const links = {
