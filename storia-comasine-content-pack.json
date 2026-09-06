@@ -1,0 +1,1026 @@
+{
+  "meta": {
+    "title": "Storia di Comasine",
+    "subtitle": "Dalla cronaca di Remo Sonna, ordinata e integrata da Romano Sonna",
+    "period": "1853–1981",
+    "purpose": "Pacchetto contenuti preparatorio per l'integrazione nella PWA Casa Comasine",
+    "editorial_note": "La cronologia privilegia gli scritti di Remo Sonna e le ricerche di Romano Sonna. Le altre fonti sono usate per verificare date e contesto."
+  },
+  "epochs": [
+    {
+      "id": "e1",
+      "title": "1853–1888 · Incendi, ricostruzione e grande valanga",
+      "years": [
+        1853,
+        1888
+      ]
+    },
+    {
+      "id": "e2",
+      "title": "1889–1918 · Emigrazione, famiglia Sonna e Grande Guerra",
+      "years": [
+        1889,
+        1918
+      ]
+    },
+    {
+      "id": "e3",
+      "title": "1919–1932 · Dopoguerra, incendi e fine del Comune autonomo",
+      "years": [
+        1919,
+        1932
+      ]
+    },
+    {
+      "id": "e4",
+      "title": "1933–1945 · Il ritorno delle miniere e la guerra",
+      "years": [
+        1933,
+        1945
+      ]
+    },
+    {
+      "id": "e5",
+      "title": "1946–1967 · La Rumi e l'ultima stagione mineraria",
+      "years": [
+        1946,
+        1967
+      ]
+    },
+    {
+      "id": "e6",
+      "title": "1968–1981 · La memoria di Remo e la Comasine contemporanea",
+      "years": [
+        1968,
+        1981
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "date": "1853-10-23",
+      "year": 1853,
+      "icon": "🔥",
+      "title": "Il grande incendio di Comasine",
+      "epoch": "e1",
+      "status": "verificato",
+      "summary": "Un incendio devasta gran parte del paese e distrugge anche l'archivio parrocchiale. È il punto di partenza della cronaca pubblicata di Remo Sonna.",
+      "tags": [
+        "incendi",
+        "paese",
+        "San Matteo"
+      ]
+    },
+    {
+      "date": "1856",
+      "year": 1856,
+      "icon": "🔔",
+      "title": "Ricostruzione del campanile",
+      "epoch": "e1",
+      "status": "verificato",
+      "summary": "Il campanile di San Matteo, danneggiato nell'incendio del 1853, viene ricostruito. La tradizione ricorda fondamenta appoggiate su una piattaforma di tronchi di larice.",
+      "tags": [
+        "San Matteo",
+        "campanile"
+      ]
+    },
+    {
+      "date": "1857-1858",
+      "year": 1857,
+      "icon": "⛏️",
+      "title": "Fine del vecchio ciclo minerario",
+      "epoch": "e1",
+      "status": "verificato",
+      "summary": "Terminano gli scavi della fase mineraria ottocentesca; nel 1858 un incendio alla cantoniera del forno accompagna l'esaurimento dell'ultimo minerale lavorato di quel ciclo.",
+      "tags": [
+        "miniere",
+        "ferro"
+      ]
+    },
+    {
+      "date": "1884-07-02",
+      "year": 1884,
+      "icon": "🌊",
+      "title": "La tragedia del Molìn del Còcc",
+      "epoch": "e1",
+      "status": "verificato",
+      "summary": "Durante una piena del Noce muoiono Maria Bordati, 45 anni, e il marito Giovanni Battista Paternoster, proprietari del mulino con segheria.",
+      "tags": [
+        "Noce",
+        "mulino",
+        "persone"
+      ]
+    },
+    {
+      "date": "1888-02-26",
+      "year": 1888,
+      "icon": "❄️",
+      "title": "La grande valanga",
+      "epoch": "e1",
+      "status": "verificato",
+      "summary": "Una grande valanga investe parte dell'abitato. Il bilancio consolidato è di nove vittime. Casa Matteotti-Meneghetti viene danneggiata; la lesione è ancora visibile nella fotografia del 1908.",
+      "tags": [
+        "valanghe",
+        "Casa Matteotti",
+        "disastri"
+      ]
+    },
+    {
+      "date": "1891",
+      "year": 1891,
+      "icon": "📷",
+      "title": "Giovanni Sonna fotografo a Buenos Aires",
+      "epoch": "e2",
+      "status": "verificato con nota",
+      "summary": "Nei notes dettagliati Giovanni Sonna risulta socio di un atelier fotografico a Buenos Aires dal 1891. Un'altra sintesi di Romano riporta 1889.",
+      "tags": [
+        "Sonna",
+        "emigrazione",
+        "fotografia"
+      ]
+    },
+    {
+      "date": "1892-08-22",
+      "year": 1892,
+      "icon": "⛏️",
+      "title": "Alla ricerca dell'oro",
+      "epoch": "e2",
+      "status": "verificato",
+      "summary": "Giovanni Sonna e altri uomini costituiscono una compagnia per la ricerca dell'oro; la sua esperienza sudamericana lo porterà fino alla Terra del Fuoco e Punta Arenas.",
+      "tags": [
+        "Sonna",
+        "emigrazione",
+        "Sud America"
+      ]
+    },
+    {
+      "date": "1895-1897",
+      "year": 1895,
+      "icon": "🏠",
+      "title": "Giovanni torna a Comasine",
+      "epoch": "e2",
+      "status": "verificato",
+      "summary": "Nel 1895 ottiene la licenza di osteria, nel 1896 quella di bottega e nel 1897 sposa Lucia Zanon.",
+      "tags": [
+        "Sonna",
+        "vita quotidiana"
+      ]
+    },
+    {
+      "date": "fine XIX secolo",
+      "year": 1898,
+      "icon": "🚰",
+      "title": "Il nuovo acquedotto comunale",
+      "epoch": "e2",
+      "status": "data non precisa",
+      "summary": "Negli ultimi anni dell'Ottocento viene completato il nuovo acquedotto comunale. Giovanni Sonna realizza in larice le lavandare delle fontane.",
+      "tags": [
+        "acquedotto",
+        "Sonna",
+        "paese"
+      ]
+    },
+    {
+      "date": "1900-12-21",
+      "year": 1900,
+      "icon": "🌎",
+      "title": "Giovanni riparte per l'America",
+      "epoch": "e2",
+      "status": "verificato",
+      "summary": "Giovanni lascia Comasine verso le 13, annotando nei propri notes denaro, debiti, crediti e spese di viaggio.",
+      "tags": [
+        "Sonna",
+        "emigrazione"
+      ]
+    },
+    {
+      "date": "1904",
+      "year": 1904,
+      "icon": "👶",
+      "title": "Nasce Remo Sonna",
+      "epoch": "e2",
+      "status": "verificato",
+      "summary": "Nasce a Comasine Remo Sonna, futuro autore dei quaderni che conserveranno la memoria del paese.",
+      "tags": [
+        "Remo Sonna",
+        "Sonna"
+      ]
+    },
+    {
+      "date": "1905-1907",
+      "year": 1905,
+      "icon": "🕯️",
+      "title": "Gli anni più duri della famiglia Sonna",
+      "epoch": "e2",
+      "status": "verificato",
+      "summary": "Muore il piccolo Vigilio; nel 1906 muore Lucia Zanon. Nel febbraio 1907 Giovanni lascia Punta Arenas e torna definitivamente a Comasine.",
+      "tags": [
+        "Sonna",
+        "famiglia",
+        "emigrazione"
+      ]
+    },
+    {
+      "date": "1906-1907",
+      "year": 1906,
+      "icon": "🧱",
+      "title": "Il Tòm di Nagràl",
+      "epoch": "e2",
+      "status": "verificato",
+      "summary": "Viene costruito il grande muro antivalanga di Nagràl, una delle risposte materiali della comunità alla tragedia del 1888.",
+      "tags": [
+        "valanghe",
+        "Nagràl",
+        "Tòm"
+      ]
+    },
+    {
+      "date": "1908",
+      "year": 1908,
+      "icon": "📷",
+      "title": "La fotografia di Casa Matteotti",
+      "epoch": "e2",
+      "status": "verificato",
+      "summary": "La storica fotografia della casa n. 32 mostra Antonio Bordati 'Tòni Ferài', don Giulio Daz, Matilde Gionta e la lesione lasciata dalla valanga del 1888.",
+      "tags": [
+        "Casa Matteotti",
+        "Matteotti",
+        "fotografia"
+      ]
+    },
+    {
+      "date": "1914-12-22",
+      "year": 1914,
+      "icon": "🕯️",
+      "title": "Muore don Giulio Daz",
+      "epoch": "e2",
+      "status": "verificato",
+      "summary": "Il curato ritratto davanti a Casa Matteotti nella foto del 1908 muore a Comasine.",
+      "tags": [
+        "persone",
+        "Casa Matteotti"
+      ]
+    },
+    {
+      "date": "1914-1918",
+      "year": 1914,
+      "icon": "⚔️",
+      "title": "La Grande Guerra",
+      "epoch": "e2",
+      "status": "contesto",
+      "summary": "Comasine, allora nel Tirolo austro-ungarico, vive nelle immediate retrovie del fronte della Val di Peio.",
+      "tags": [
+        "Grande Guerra",
+        "Val di Peio"
+      ]
+    },
+    {
+      "date": "1916-12-13",
+      "year": 1916,
+      "icon": "❄️",
+      "title": "Le valanghe di Santa Lucia",
+      "epoch": "e2",
+      "status": "verificato",
+      "summary": "Due valanghe provenienti dalle valli adiacenti convergono sulla chiesa di Santa Lucia e ne danneggiano il tetto.",
+      "tags": [
+        "Santa Lucia",
+        "valanghe"
+      ]
+    },
+    {
+      "date": "1918-11",
+      "year": 1918,
+      "icon": "🏳️",
+      "title": "Finisce l'amministrazione austro-ungarica",
+      "epoch": "e2",
+      "status": "verificato",
+      "summary": "Con la fine della guerra termina l'amministrazione austro-ungarica; l'annessione formale al Regno d'Italia verrà completata nel 1920.",
+      "tags": [
+        "Grande Guerra",
+        "Italia"
+      ]
+    },
+    {
+      "date": "1919-04-03",
+      "year": 1919,
+      "icon": "⛪",
+      "title": "San Matteo diventa parrocchia",
+      "epoch": "e3",
+      "status": "verificato da fonte istituzionale",
+      "summary": "La curazia di Comasine viene eretta canonicamente a parrocchia con decreto del vescovo Celestino Endrici.",
+      "tags": [
+        "San Matteo",
+        "parrocchia"
+      ]
+    },
+    {
+      "date": "1920-10-01",
+      "year": 1920,
+      "icon": "🇮🇹",
+      "title": "Annessione formale all'Italia",
+      "epoch": "e3",
+      "status": "verificato",
+      "summary": "Entra in vigore la legge che approva il Trattato di Saint-Germain e formalizza l'annessione del Trentino al Regno d'Italia.",
+      "tags": [
+        "Italia",
+        "amministrazione"
+      ]
+    },
+    {
+      "date": "1920-1921",
+      "year": 1920,
+      "icon": "⛏️",
+      "title": "Nuovi sondaggi minerari",
+      "epoch": "e3",
+      "status": "verificato",
+      "summary": "Nuove ricerche a Staviôn, Vasi e Garzané seguono in parte le vecchie gallerie, ma vengono presto abbandonate.",
+      "tags": [
+        "miniere",
+        "Staviôn",
+        "Garzané"
+      ]
+    },
+    {
+      "date": "1921-09-23",
+      "year": 1921,
+      "icon": "🔥",
+      "title": "Il grande incendio del 1921",
+      "epoch": "e3",
+      "status": "verificato",
+      "summary": "Lo scoppio di un deposito di polvere da sparo provoca un gravissimo incendio: le ricostruzioni indicano tre morti, circa trenta feriti e una trentina di case distrutte. Viene danneggiata anche casa Sonna.",
+      "tags": [
+        "incendi",
+        "Sonna",
+        "paese"
+      ]
+    },
+    {
+      "date": "1923",
+      "year": 1923,
+      "icon": "⛪",
+      "title": "Viene rifatto il tetto di Santa Lucia",
+      "epoch": "e3",
+      "status": "verificato",
+      "summary": "Si ripara il tetto danneggiato dalle valanghe del 13 dicembre 1916.",
+      "tags": [
+        "Santa Lucia"
+      ]
+    },
+    {
+      "date": "1924",
+      "year": 1924,
+      "icon": "🔥",
+      "title": "Incendio di Casa Matteotti-Meneghetti",
+      "epoch": "e3",
+      "status": "verificato con scelta editoriale",
+      "summary": "La versione più aggiornata delle ricerche di Romano indica il 1924. La temporanea mancanza del tetto contribuì al deterioramento dell'affresco della facciata.",
+      "tags": [
+        "Casa Matteotti",
+        "incendi"
+      ]
+    },
+    {
+      "date": "1924",
+      "year": 1924,
+      "icon": "🕯️",
+      "title": "Comasine e l'assassinio di Giacomo Matteotti",
+      "epoch": "e3",
+      "status": "verificato",
+      "summary": "Dopo l'assassinio di Giacomo Matteotti, dalla comunità di Comasine partono condoglianze alla famiglia; Celesta Zanon vedova Sonna scrive alla vedova ricordando il vincolo di parentela.",
+      "tags": [
+        "Matteotti",
+        "Sonna"
+      ]
+    },
+    {
+      "date": "1928-12-31",
+      "year": 1928,
+      "icon": "🏛️",
+      "title": "Finisce il Comune autonomo di Comasine",
+      "epoch": "e3",
+      "status": "verificato",
+      "summary": "Comasine, insieme a Celledizzo, Celentino, Cogolo e Peio, viene riunita nel nuovo Comune di Peio.",
+      "tags": [
+        "Comune",
+        "amministrazione"
+      ]
+    },
+    {
+      "date": "1937",
+      "year": 1937,
+      "icon": "⛏️",
+      "title": "Riprendono le grandi ricerche minerarie",
+      "epoch": "e4",
+      "status": "verificato",
+      "summary": "Sotto la direzione dell'ing. Tullio Tschurtschenthaler dell'Elmo iniziano provini magnetometrici e nuove gallerie in varie zone della montagna.",
+      "tags": [
+        "miniere",
+        "Tschurtschenthaler"
+      ]
+    },
+    {
+      "date": "1938-estate",
+      "year": 1938,
+      "icon": "👷",
+      "title": "Circa 300 operai",
+      "epoch": "e4",
+      "status": "verificato",
+      "summary": "Nell'estate del 1938 le ricerche raggiungono il massimo di circa 300 lavoratori; a fine agosto lo sviluppo totale delle gallerie aperte è di circa 1.200 metri.",
+      "tags": [
+        "miniere",
+        "operai"
+      ]
+    },
+    {
+      "date": "1938-08",
+      "year": 1938,
+      "icon": "🏗️",
+      "title": "Visita ministeriale alle miniere",
+      "epoch": "e4",
+      "status": "verificato con correzione",
+      "summary": "Le miniere ricevono la visita del Ministro delle Corporazioni Ferruccio Lantini. In una fonte locale il cognome compare come 'Lentini'.",
+      "tags": [
+        "miniere"
+      ]
+    },
+    {
+      "date": "1938",
+      "year": 1938,
+      "icon": "🌪️",
+      "title": "Un uragano danneggia il campanile",
+      "epoch": "e4",
+      "status": "verificato",
+      "summary": "Un violento uragano aggrava i danni alla parte superiore del campanile di San Matteo.",
+      "tags": [
+        "San Matteo",
+        "meteo"
+      ]
+    },
+    {
+      "date": "1939",
+      "year": 1939,
+      "icon": "⚡",
+      "title": "L'elettricità arriva alle gallerie",
+      "epoch": "e4",
+      "status": "verificato",
+      "summary": "Una linea ad alta tensione raggiunge le gallerie 4 e 5 e successivamente Garzané.",
+      "tags": [
+        "miniere",
+        "elettricità"
+      ]
+    },
+    {
+      "date": "1940",
+      "year": 1940,
+      "icon": "🪨",
+      "title": "Una vena di ferro di oltre quattro metri",
+      "epoch": "e4",
+      "status": "verificato",
+      "summary": "A Garzané viene individuata una vena di minerale con spessore superiore ai quattro metri.",
+      "tags": [
+        "miniere",
+        "Garzané"
+      ]
+    },
+    {
+      "date": "1940-1941",
+      "year": 1940,
+      "icon": "🚡",
+      "title": "La teleferica mineraria verso Valéne",
+      "epoch": "e4",
+      "status": "verificato",
+      "summary": "Tra l'autunno 1940 e l'estate 1941 viene realizzato il sistema di trasporto del minerale verso Valéne con grande tramoggia a valle.",
+      "tags": [
+        "miniere",
+        "Valéne",
+        "teleferica"
+      ]
+    },
+    {
+      "date": "1942-1943",
+      "year": 1942,
+      "icon": "👷",
+      "title": "Minatori militarizzati",
+      "epoch": "e4",
+      "status": "verificato",
+      "summary": "Alcuni militari locali vengono destinati alle miniere mantenendo lo status di lavoratori militarizzati.",
+      "tags": [
+        "miniere",
+        "Seconda guerra mondiale"
+      ]
+    },
+    {
+      "date": "1943",
+      "year": 1943,
+      "icon": "⛪",
+      "title": "Grande ampliamento di San Matteo",
+      "epoch": "e4",
+      "status": "verificato",
+      "summary": "Sotto don Pietro Bisoffi la chiesa viene notevolmente ampliata.",
+      "tags": [
+        "San Matteo"
+      ]
+    },
+    {
+      "date": "1943-09-08",
+      "year": 1943,
+      "icon": "⚠️",
+      "title": "La crisi dell'8 settembre",
+      "epoch": "e4",
+      "status": "verificato",
+      "summary": "Dopo l'armistizio si disgrega l'organizzazione mineraria. A fine ottobre chiudono i principali cantieri di Pradolìn e Prà di Cöi.",
+      "tags": [
+        "miniere",
+        "Seconda guerra mondiale"
+      ]
+    },
+    {
+      "date": "1943-1944",
+      "year": 1943,
+      "icon": "🌾",
+      "title": "Remo costruisce il mulino",
+      "epoch": "e4",
+      "status": "verificato",
+      "summary": "Remo Sonna costruisce un mulino per macinare il grano. L'oggetto è conservato al Museo della Civiltà Solandra di Malé.",
+      "tags": [
+        "Remo Sonna",
+        "mestieri",
+        "Museo di Malé"
+      ]
+    },
+    {
+      "date": "1944",
+      "year": 1944,
+      "icon": "⛏️",
+      "title": "Chiude l'ultimo cantiere della fase bellica",
+      "epoch": "e4",
+      "status": "verificato",
+      "summary": "Viene chiuso il cantiere rimasto sul versante di Cellentino, presso la strada delle Pendéggie.",
+      "tags": [
+        "miniere"
+      ]
+    },
+    {
+      "date": "1945",
+      "year": 1945,
+      "icon": "❤️",
+      "title": "Il Capitello del Sacro Cuore",
+      "epoch": "e4",
+      "status": "verificato",
+      "summary": "Il capitello viene eretto come ringraziamento per essere scampati ai pericoli della guerra.",
+      "tags": [
+        "capitelli",
+        "Seconda guerra mondiale"
+      ]
+    },
+    {
+      "date": "1949",
+      "year": 1949,
+      "icon": "🏚️",
+      "title": "Demolizione dei baraccamenti minerari",
+      "epoch": "e5",
+      "status": "verificato",
+      "summary": "Vengono demoliti i baraccamenti della società La Comasine sui versanti di Comasine e Cellentino.",
+      "tags": [
+        "miniere"
+      ]
+    },
+    {
+      "date": "1952-03",
+      "year": 1952,
+      "icon": "🚡",
+      "title": "Smontata la vecchia teleferica",
+      "epoch": "e5",
+      "status": "verificato",
+      "summary": "Nel marzo 1952 viene rimossa la parte metallica della vecchia teleferica.",
+      "tags": [
+        "miniere",
+        "teleferica"
+      ]
+    },
+    {
+      "date": "1952-09",
+      "year": 1952,
+      "icon": "🏭",
+      "title": "Arriva la Metallurgica Luciano Rumi",
+      "epoch": "e5",
+      "status": "verificato",
+      "summary": "La Rumi avvia le prime attività a Garzané con sei operai di Comasine.",
+      "tags": [
+        "Rumi",
+        "miniere",
+        "Garzané"
+      ]
+    },
+    {
+      "date": "1953",
+      "year": 1953,
+      "icon": "🚡",
+      "title": "Nuova teleferica Valéne–Staviôn–Garzané",
+      "epoch": "e5",
+      "status": "verificato",
+      "summary": "La Rumi costruisce una nuova teleferica e porta gli addetti a circa venti, quasi tutti del paese. Viene riattivata anche la San Cesare.",
+      "tags": [
+        "Rumi",
+        "miniere",
+        "teleferica"
+      ]
+    },
+    {
+      "date": "1954",
+      "year": 1954,
+      "icon": "💥",
+      "title": "Lo scoppio alla San Cesare",
+      "epoch": "e5",
+      "status": "verificato",
+      "summary": "Una mina esplode accidentalmente durante un turno e coinvolge l'intero gruppo presente. Romano raccoglierà la testimonianza di Pierino 'Pera' Bordati.",
+      "tags": [
+        "San Cesare",
+        "minatori",
+        "Pierino Bordati"
+      ]
+    },
+    {
+      "date": "circa 1954",
+      "year": 1954,
+      "icon": "🔥",
+      "title": "Demolizione dell'antico altoforno",
+      "epoch": "e5",
+      "status": "data approssimativa",
+      "summary": "Viene demolito l'antico altoforno del Fôren de Novàl, importante resto della metallurgia tradizionale.",
+      "tags": [
+        "ferro",
+        "Fôren de Novàl"
+      ]
+    },
+    {
+      "date": "1955-1960",
+      "year": 1955,
+      "icon": "⛏️",
+      "title": "L'ultima vera fase produttiva",
+      "epoch": "e5",
+      "status": "verificato",
+      "summary": "L'attività continua con una certa intensità, soprattutto a Garzané; il minerale viene spedito alle fonderie.",
+      "tags": [
+        "Rumi",
+        "miniere",
+        "Garzané"
+      ]
+    },
+    {
+      "date": "1961-1966",
+      "year": 1961,
+      "icon": "📉",
+      "title": "Il declino",
+      "epoch": "e5",
+      "status": "verificato",
+      "summary": "Dopo il 1960 i lavori proseguono sempre più lentamente e con carattere prevalentemente di ricerca.",
+      "tags": [
+        "miniere"
+      ]
+    },
+    {
+      "date": "1967",
+      "year": 1967,
+      "icon": "🛑",
+      "title": "Fine definitiva delle miniere",
+      "epoch": "e5",
+      "status": "verificato",
+      "summary": "La Rumi rinuncia alla concessione. Restano sulla montagna grandi quantità di minerale già estratto, compresi oltre 2.000 m³ presso la galleria n. 5 di Staviôn.",
+      "tags": [
+        "Rumi",
+        "miniere",
+        "Staviôn"
+      ]
+    },
+    {
+      "date": "1967",
+      "year": 1967,
+      "icon": "❤️",
+      "title": "L'ultima eredità del ferro",
+      "epoch": "e5",
+      "status": "verificato",
+      "summary": "La Rumi dona alla parrocchia gli impianti delle teleferiche. Il ricavato della vendita contribuirà alla ristrutturazione di San Matteo.",
+      "tags": [
+        "miniere",
+        "San Matteo"
+      ]
+    },
+    {
+      "date": "1969",
+      "year": 1969,
+      "icon": "⛪",
+      "title": "Grande ristrutturazione di San Matteo",
+      "epoch": "e6",
+      "status": "verificato",
+      "summary": "La chiesa viene profondamente riorganizzata secondo la liturgia postconciliare: nuovo pavimento, granito e legno, nuova illuminazione e mensa al centro.",
+      "tags": [
+        "San Matteo"
+      ]
+    },
+    {
+      "date": "1969-10-05",
+      "year": 1969,
+      "icon": "✝️",
+      "title": "Consacrazione del nuovo altare",
+      "epoch": "e6",
+      "status": "verificato",
+      "summary": "L'arcivescovo Alessandro Maria Gottardi consacra il nuovo altare di San Matteo.",
+      "tags": [
+        "San Matteo"
+      ]
+    },
+    {
+      "date": "1965-1975",
+      "year": 1970,
+      "icon": "❄️",
+      "title": "I cinque quaderni su frane e valanghe",
+      "epoch": "e6",
+      "status": "verificato",
+      "summary": "Remo Sonna dedica cinque quaderni manoscritti a frane e valanghe, con schizzi, grafici e rilievi topografici.",
+      "tags": [
+        "Remo Sonna",
+        "valanghe",
+        "manoscritti"
+      ]
+    },
+    {
+      "date": "1971",
+      "year": 1971,
+      "icon": "🛡️",
+      "title": "Gli altari laterali lasciano Santa Lucia",
+      "epoch": "e6",
+      "status": "verificato",
+      "summary": "Per proteggerli dai furti, i due altari laterali di Santa Lucia vengono trasferiti a San Matteo.",
+      "tags": [
+        "Santa Lucia",
+        "San Matteo",
+        "arte sacra"
+      ]
+    },
+    {
+      "date": "1976",
+      "year": 1976,
+      "icon": "🚨",
+      "title": "Il furto a Santa Lucia",
+      "epoch": "e6",
+      "status": "verificato",
+      "summary": "I ladri sottraggono importanti elementi dell'altare maggiore, fra cui il grande San Michele e altre sculture decorative.",
+      "tags": [
+        "Santa Lucia",
+        "furti",
+        "arte sacra"
+      ]
+    },
+    {
+      "date": "1979-08",
+      "year": 1979,
+      "icon": "⛪",
+      "title": "L'altare maggiore di Santa Lucia viene trasferito",
+      "epoch": "e6",
+      "status": "verificato",
+      "summary": "Nell'agosto 1979 l'altare maggiore di Santa Lucia viene collocato nella chiesa di San Matteo.",
+      "tags": [
+        "Santa Lucia",
+        "San Matteo",
+        "arte sacra"
+      ]
+    },
+    {
+      "date": "1981",
+      "year": 1981,
+      "icon": "🔔",
+      "title": "Restauro della cella campanaria",
+      "epoch": "e6",
+      "status": "verificato",
+      "summary": "La parte superiore del campanile viene finalmente restaurata a regola d'arte dopo i danni accumulati dall'incendio del 1921 e dall'uragano del 1938.",
+      "tags": [
+        "San Matteo",
+        "campanile"
+      ]
+    },
+    {
+      "date": "1981",
+      "year": 1981,
+      "icon": "📖",
+      "title": "Termina la cronaca pubblicata di Remo",
+      "epoch": "e6",
+      "status": "verificato",
+      "summary": "Il 1981 è il limite cronologico dell'opera pubblicata di Remo Sonna sulla storia di Comasine.",
+      "tags": [
+        "Remo Sonna",
+        "libro"
+      ]
+    }
+  ],
+  "special_sections": [
+    {
+      "id": "miniere",
+      "icon": "⛏️",
+      "title": "Le miniere di ferro",
+      "description": "Dalle antiche miniere di magnetite alla chiusura definitiva del 1967, con gallerie, provini, teleferiche e ultimi minatori."
+    },
+    {
+      "id": "frane",
+      "icon": "❄️",
+      "title": "Frane e valanghe",
+      "description": "La valanga del 1888, Santa Lucia nel 1916, il Tòm di Nagràl e i cinque quaderni manoscritti di Remo."
+    },
+    {
+      "id": "sonna",
+      "icon": "📖",
+      "title": "Remo, Romano e la famiglia Sonna",
+      "description": "Giovanni emigrante e fotografo, Remo cronista del paese, Romano trascrittore, ricercatore e custode della memoria."
+    },
+    {
+      "id": "matteotti",
+      "icon": "🏠",
+      "title": "Casa Matteotti e la famiglia",
+      "description": "La casa storica, le miniere, la fotografia del 1908, la valanga del 1888, l'incendio del 1924 e i legami con Giacomo Matteotti."
+    },
+    {
+      "id": "chiese",
+      "icon": "⛪",
+      "title": "San Matteo e Santa Lucia",
+      "description": "Incendi, valanghe, altari, restauri e trasformazioni delle due chiese di Comasine."
+    },
+    {
+      "id": "emigrazione",
+      "icon": "🌎",
+      "title": "I comasinesi nel mondo",
+      "description": "America, Sud America, mestieri stagionali e reti familiari: il paese raccontato attraverso chi partiva e chi tornava."
+    },
+    {
+      "id": "dialetto",
+      "icon": "🗣️",
+      "title": "Parole di Comasine",
+      "description": "Glossario del dialetto specifico raccolto da Romano Sonna, riferito soprattutto al parlato degli anni 1940–1960."
+    },
+    {
+      "id": "luoghi",
+      "icon": "📍",
+      "title": "I luoghi del racconto",
+      "description": "Casa Matteotti, Santa Lucia, Tòm, Nagràl, Staviôn, Garzané, Valéne, San Cesare, Boài, Fôren de Novàl e altri luoghi da collegare alla mappa."
+    }
+  ],
+  "editorial_flags": [
+    {
+      "topic": "Parrocchia di San Matteo",
+      "decision": "Usare 3 aprile 1919",
+      "reason": "Data confermata dall'Archivio parrocchiale e dalla fonte CEI; una pagina di Romano riporta 1923."
+    },
+    {
+      "topic": "Incendio di Casa Matteotti",
+      "decision": "Usare 1924",
+      "reason": "La pagina specifica più aggiornata e altre pagine di Romano indicano 1924; una pagina più vecchia riporta 1921."
+    },
+    {
+      "topic": "Fine delle miniere",
+      "decision": "Usare 1967",
+      "reason": "Gli appunti minerari e la pagina sui segni sacri indicano la rinuncia Rumi e la chiusura finale nel 1967."
+    },
+    {
+      "topic": "Ministro alle miniere nel 1938",
+      "decision": "Ferruccio Lantini",
+      "reason": "La fonte locale scrive 'Lentini', ma le fonti storiche nazionali confermano Lantini come Ministro delle Corporazioni."
+    },
+    {
+      "topic": "Atelier fotografico di Giovanni Sonna",
+      "decision": "Usare 1891 con nota sulla variante 1889",
+      "reason": "I notes dettagliati danno gennaio 1891; una sintesi di Romano riporta 1889."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Libro di Remo Sonna",
+      "url": "https://www.comasine.it/index.php/Libro.html"
+    },
+    {
+      "label": "Miniere di Comasine",
+      "url": "https://www.comasine.it/index.php/Miniere.html"
+    },
+    {
+      "label": "Casa Matteotti-Meneghetti",
+      "url": "https://www.comasine.it/index.php/casa-matteotti-69.html"
+    },
+    {
+      "label": "Famiglia Matteotti",
+      "url": "https://www.comasine.it/index.php/matteotti.html"
+    },
+    {
+      "label": "San Matteo",
+      "url": "https://www.comasine.it/index.php/chiesa-san-matteo.html"
+    },
+    {
+      "label": "Santa Lucia",
+      "url": "https://www.comasine.it/index.php/santa-lucia.html"
+    },
+    {
+      "label": "Altari lignei",
+      "url": "https://www.comasine.it/index.php/altari-lignei.html"
+    },
+    {
+      "label": "Dialetto di Comasine",
+      "url": "https://www.comasine.it/index.php/Dialetto.html"
+    },
+    {
+      "label": "Famiglie Sonna",
+      "url": "https://www.comasine.it/index.php/Sonna.html"
+    },
+    {
+      "label": "Frane e valanghe · quaderni di Remo",
+      "url": "https://www.comasine.it/index.php/Frane.html"
+    },
+    {
+      "label": "Segni sacri di Comasine",
+      "url": "https://www.comasine.it/index.php/segni-sacri.html"
+    }
+  ],
+  "places": [
+    {
+      "name": "Casa Matteotti-Meneghetti",
+      "themes": [
+        "Matteotti",
+        "valanga 1888",
+        "incendio 1924",
+        "foto 1908"
+      ]
+    },
+    {
+      "name": "Chiesa di Santa Lucia",
+      "themes": [
+        "valanghe",
+        "minatori",
+        "altari",
+        "cimitero"
+      ]
+    },
+    {
+      "name": "Chiesa di San Matteo",
+      "themes": [
+        "incendi",
+        "parrocchia",
+        "campanile",
+        "altari"
+      ]
+    },
+    {
+      "name": "Tòm di Nagràl",
+      "themes": [
+        "valanghe",
+        "protezione del paese"
+      ]
+    },
+    {
+      "name": "Staviôn",
+      "themes": [
+        "miniere",
+        "galleria n. 5",
+        "Rumi"
+      ]
+    },
+    {
+      "name": "Garzané",
+      "themes": [
+        "miniere",
+        "vena di ferro",
+        "Rumi"
+      ]
+    },
+    {
+      "name": "Valéne",
+      "themes": [
+        "teleferica",
+        "tramoggia mineraria"
+      ]
+    },
+    {
+      "name": "San Cesare",
+      "themes": [
+        "miniera",
+        "incidente 1954"
+      ]
+    },
+    {
+      "name": "Còrno Boài",
+      "themes": [
+        "miniere",
+        "provini"
+      ]
+    },
+    {
+      "name": "Fôren de Novàl",
+      "themes": [
+        "altoforno",
+        "lavorazione del ferro"
+      ]
+    },
+    {
+      "name": "Molìn del Còcc",
+      "themes": [
+        "piena del Noce",
+        "1884"
+      ]
+    }
+  ]
+}

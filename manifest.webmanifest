@@ -2,8 +2,8 @@
   "id": "./",
   "name": "Casa Comasine · Val di Pejo",
   "short_name": "Casa Comasine",
-  "description": "Meteo operativo, sentieri, guida della valle e informazioni utili per Casa Comasine.",
-  "start_url": "./?pwa=rc14",
+  "description": "Meteo operativo, sentieri, guida della valle, storia di Comasine e informazioni utili per Casa Comasine.",
+  "start_url": "./?pwa=rc16",
   "scope": "./",
   "display": "standalone",
   "display_override": [

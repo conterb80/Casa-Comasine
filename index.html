@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Casa Comasine</title>
 <meta name="theme-color" content="#0d1620">
-<link rel="manifest" href="./manifest.webmanifest?v=14">
+<link rel="manifest" href="./manifest.webmanifest?v=16">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -603,6 +603,33 @@ html body #daysCard::after{
 }
 </style>
 
+
+<style>
+/* ===== RC16 · STORIA DI COMASINE ===== */
+.hub-btn.history-wide{grid-column:1/-1;background:linear-gradient(135deg,#765638,#9a744d);color:#fff;justify-content:flex-start;padding:12px 15px;text-align:left}
+.hub-btn.history-wide small{font-size:10px;font-weight:600;opacity:.78;margin-left:auto}
+.history-guide{grid-column:1/-1}
+.history-wrap{max-width:840px}
+.history-hero{background:linear-gradient(145deg,#2a211a,#64482f 55%,#26394a);border:1px solid #ffffff18;border-radius:24px;padding:18px;color:#fff;box-shadow:0 12px 28px #0003}
+.history-hero small{display:block;font-size:11px;letter-spacing:.08em;color:#e8d7c3;font-weight:800}
+.history-hero h3{font-size:24px;margin:6px 0 8px}.history-hero p{margin:0;color:#f4eadf;line-height:1.45;font-size:13px}
+.history-hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:13px}
+.history-hero-actions a,.history-hero-actions button{border:0;border-radius:13px;padding:10px 11px;background:#ffffff15;border:1px solid #ffffff26;color:#fff;text-decoration:none;font-weight:800;text-align:center;cursor:pointer}
+.history-search{display:flex;gap:8px;margin:12px 0 9px}.history-search input{width:100%;border:1px solid #314154;background:#142130;color:#f5f7fb;border-radius:14px;padding:12px 13px;outline:none}.history-search input::placeholder{color:#8492a4}
+.history-tabs{display:flex;gap:7px;overflow:auto;padding:1px 0 10px}.history-tabs button{border:0;border-radius:999px;background:#172434;color:#aeb9c7;padding:9px 14px;font-weight:800;white-space:nowrap;cursor:pointer}.history-tabs button.active{background:#8b6745;color:#fff}
+.history-pane{display:none}.history-pane.active{display:block}
+.history-epoch{background:#121f2c;border:1px solid #24374a;border-radius:19px;margin:0 0 9px;overflow:hidden}
+.history-epoch summary{list-style:none;cursor:pointer;padding:13px 14px;display:flex;gap:10px;align-items:center;font-weight:850;color:#f5f7fa}.history-epoch summary::-webkit-details-marker{display:none}.history-epoch summary span{color:#aab6c4;font-size:11px;font-weight:700;margin-left:auto}
+.history-events{display:grid;gap:8px;padding:0 9px 10px}
+.history-event{background:#182839;border:1px solid #2b4055;border-radius:16px;padding:12px}.history-event-top{display:flex;gap:9px;align-items:flex-start}.history-event-icon{font-size:22px;width:28px;flex:0 0 28px}.history-event-date{font-size:10px;color:#c9a984;font-weight:900;letter-spacing:.04em;text-transform:uppercase}.history-event h4{font-size:15px;margin:2px 0 5px;color:#fff}.history-event p{font-size:12px;line-height:1.45;margin:0;color:#c5d0dc}.history-event-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px}.history-event-tags span{font-size:9px;padding:5px 7px;border-radius:999px;background:#22384c;color:#bfd0df}.history-status{margin-left:auto;font-size:9px!important;background:#263f33!important;color:#a9d6b9!important}
+.history-empty{padding:20px;text-align:center;border-radius:18px;background:#172434;color:#aeb9c7}
+.history-topic-grid,.history-place-grid,.history-source-grid{display:grid;gap:9px}
+.history-topic,.history-place,.history-source{background:#172434;border:1px solid #293b4e;border-radius:18px;padding:14px;color:#eef3f8}.history-topic h3,.history-place h3,.history-source h3{font-size:16px;margin:0 0 6px}.history-topic p,.history-place p,.history-source p{font-size:12px;line-height:1.45;color:#b8c4d1;margin:0}.history-topic button,.history-place a,.history-source a{display:inline-block;margin-top:10px;border:0;border-radius:11px;padding:8px 10px;background:#273d52;color:#fff;text-decoration:none;font-size:11px;font-weight:800;cursor:pointer}.history-topic-icon{font-size:25px;margin-bottom:7px}
+.history-note{background:#2a251e;border:1px solid #554938;border-radius:17px;padding:13px;color:#e9ddcf;font-size:12px;line-height:1.45;margin:10px 0}.history-note b{color:#fff}
+.history-flags{display:grid;gap:7px}.history-flag{background:#172434;border-left:3px solid #9a744d;border-radius:12px;padding:11px 12px}.history-flag b{display:block;color:#fff;font-size:12px}.history-flag span{display:block;color:#adbbc9;font-size:11px;line-height:1.4;margin-top:3px}
+@media(max-width:560px){.hub-btn.history-wide{align-items:flex-start}.hub-btn.history-wide small{max-width:130px;text-align:right}.history-hero-actions{grid-template-columns:1fr}.history-event{padding:11px}.history-hero h3{font-size:21px}}
+</style>
+
 </head>
 <body>
 <div class="wrap">
@@ -745,6 +772,7 @@ html body #daysCard::after{
       <button class="hub-btn" data-open-screen="uscite"><span>📅</span>Uscite</button>
       <button class="hub-btn" data-open-screen="diario"><span>📖</span>Diario</button>
       <button class="hub-btn" data-open-screen="guida"><span>🏔️</span>Guida</button>
+      <button class="hub-btn history-wide" data-open-screen="history"><span>📜</span>Storia di Comasine <small>1853–1981 · Remo e Romano Sonna</small></button>
     </div>
   </section>
 
@@ -937,6 +965,10 @@ html body #daysCard::after{
       <a href="https://www.skipejo.it/" target="_blank"><b>🚡 Impianti</b><small>Pejo 3000 e aperture</small></a>
       <a href="https://www.meteotrentino.it/" target="_blank"><b>🌦️ Meteo</b><small>Fonte ufficiale Trentino</small></a>
     </div></div>
+    <div class="guide-section"><h3>SCOPRI COMASINE</h3><div class="guide-grid">
+      <button class="history-guide" data-guide-screen="history"><b>📜 Storia di Comasine</b><small>1853–1981 · cronaca, miniere, valanghe e famiglie</small></button>
+      <a href="https://www.comasine.it/index.php/Libro.html" target="_blank" rel="noreferrer"><b>📖 Libro di Remo Sonna</b><small>Edizione curata da Romano Sonna</small></a>
+    </div></div>
     <div class="guide-section"><h3>VIVI LA VALLE</h3><div class="guide-grid">
       <button data-guide-screen="sentieri"><b>🥾 Sentieri</b><small>Percorsi e uscite</small></button>
       <a href="https://www.termepejo.it/" target="_blank"><b>♨️ Terme</b><small>Terme di Pejo</small></a>
@@ -1005,6 +1037,38 @@ html body #daysCard::after{
   </div>
 </section>
 
+
+<!-- RC16: STORIA DI COMASINE -->
+<section class="app-screen" id="screen-history">
+  <div class="screen-wrap history-wrap">
+    <div class="screen-head"><button class="icon-btn close-screen">‹</button><h2>📜 Storia di Comasine</h2><span></span></div>
+    <div class="history-hero">
+      <small>COMÀSINE · MEMORIA DEL PAESE</small>
+      <h3>1853–1981</h3>
+      <p>Una lettura cronologica della storia raccolta nei quaderni di <b>Remo Sonna</b>, trascritti, ordinati e approfonditi dal figlio <b>Romano Sonna</b>. Incendi, valanghe, miniere, emigrazione, chiese, famiglie e vita quotidiana.</p>
+      <div class="history-hero-actions">
+        <a href="https://www.comasine.it/index.php/Libro.html" target="_blank" rel="noreferrer">📖 Libro completo</a>
+        <button id="historyJumpThemes">🧭 Esplora per tema</button>
+      </div>
+    </div>
+    <div class="history-search"><input id="historySearch" type="search" placeholder="Cerca: valanga, Matteotti, Garzané, 1954…" autocomplete="off"></div>
+    <div class="history-tabs" id="historyTabs">
+      <button class="active" data-history-tab="timeline">Cronologia</button>
+      <button data-history-tab="themes">Temi</button>
+      <button data-history-tab="places">Luoghi</button>
+      <button data-history-tab="sources">Fonti</button>
+    </div>
+    <div class="history-pane active" id="history-pane-timeline"><div id="historyTimeline"></div></div>
+    <div class="history-pane" id="history-pane-themes"><div id="historyThemes" class="history-topic-grid"></div></div>
+    <div class="history-pane" id="history-pane-places"><div id="historyPlaces" class="history-place-grid"></div></div>
+    <div class="history-pane" id="history-pane-sources">
+      <div class="history-note"><b>Come leggere questa sezione.</b> La fonte principale resta la memoria di Remo, conservata e ordinata da Romano. Dove esistono date discordanti, l'app usa la versione verificata con archivi o fonti istituzionali e mantiene una nota editoriale.</div>
+      <div id="historyFlags" class="history-flags"></div>
+      <div id="historySources" class="history-source-grid" style="margin-top:10px"></div>
+    </div>
+  </div>
+</section>
+
 <nav class="bottom-app-nav" id="bottomNav" style="display:none">
   <button data-nav="home">🏠<br>Home</button>
   <button data-nav="sentieri" class="active">🥾<br>Sentieri</button>
@@ -1020,7 +1084,7 @@ if ('serviceWorker' in navigator) {
     try {
       const regs = await navigator.serviceWorker.getRegistrations();
       await Promise.all(regs.map(r => r.unregister()));
-      await navigator.serviceWorker.register('./sw-rc14.js', {scope:'./'});
+      await navigator.serviceWorker.register('./sw-rc16.js', {scope:'./'});
     } catch (e) {
       console.warn('PWA registration:', e);
     }
@@ -1516,7 +1580,7 @@ function showScreen(name){
   document.querySelectorAll(".app-screen").forEach(s=>s.classList.remove("active"));
   const el=document.getElementById("screen-"+name);
   if(el) el.classList.add("active");
-  document.getElementById("bottomNav").style.display=name==="detail"||name==="plan"?"none":"grid";
+  document.getElementById("bottomNav").style.display=(name==="detail"||name==="plan"||name==="history")?"none":"grid";
   document.body.style.overflow=name?"hidden":"";
   document.querySelectorAll("#bottomNav button").forEach(b=>b.classList.toggle("active",b.dataset.nav===name));
   if(name==="sentieri") renderTrails();
@@ -1741,5 +1805,68 @@ renderTrails();
  });
 })();
 </script>
+
+<script>
+/* ===== RC16 · STORIA DI COMASINE ===== */
+const HISTORY_DATA={"meta":{"title":"Storia di Comasine","subtitle":"Dalla cronaca di Remo Sonna, ordinata e integrata da Romano Sonna","period":"1853–1981","purpose":"Pacchetto contenuti preparatorio per l'integrazione nella PWA Casa Comasine","editorial_note":"La cronologia privilegia gli scritti di Remo Sonna e le ricerche di Romano Sonna. Le altre fonti sono usate per verificare date e contesto."},"epochs":[{"id":"e1","title":"1853–1888 · Incendi, ricostruzione e grande valanga","years":[1853,1888]},{"id":"e2","title":"1889–1918 · Emigrazione, famiglia Sonna e Grande Guerra","years":[1889,1918]},{"id":"e3","title":"1919–1932 · Dopoguerra, incendi e fine del Comune autonomo","years":[1919,1932]},{"id":"e4","title":"1933–1945 · Il ritorno delle miniere e la guerra","years":[1933,1945]},{"id":"e5","title":"1946–1967 · La Rumi e l'ultima stagione mineraria","years":[1946,1967]},{"id":"e6","title":"1968–1981 · La memoria di Remo e la Comasine contemporanea","years":[1968,1981]}],"timeline":[{"date":"1853-10-23","year":1853,"icon":"🔥","title":"Il grande incendio di Comasine","epoch":"e1","status":"verificato","summary":"Un incendio devasta gran parte del paese e distrugge anche l'archivio parrocchiale. È il punto di partenza della cronaca pubblicata di Remo Sonna.","tags":["incendi","paese","San Matteo"]},{"date":"1856","year":1856,"icon":"🔔","title":"Ricostruzione del campanile","epoch":"e1","status":"verificato","summary":"Il campanile di San Matteo, danneggiato nell'incendio del 1853, viene ricostruito. La tradizione ricorda fondamenta appoggiate su una piattaforma di tronchi di larice.","tags":["San Matteo","campanile"]},{"date":"1857-1858","year":1857,"icon":"⛏️","title":"Fine del vecchio ciclo minerario","epoch":"e1","status":"verificato","summary":"Terminano gli scavi della fase mineraria ottocentesca; nel 1858 un incendio alla cantoniera del forno accompagna l'esaurimento dell'ultimo minerale lavorato di quel ciclo.","tags":["miniere","ferro"]},{"date":"1884-07-02","year":1884,"icon":"🌊","title":"La tragedia del Molìn del Còcc","epoch":"e1","status":"verificato","summary":"Durante una piena del Noce muoiono Maria Bordati, 45 anni, e il marito Giovanni Battista Paternoster, proprietari del mulino con segheria.","tags":["Noce","mulino","persone"]},{"date":"1888-02-26","year":1888,"icon":"❄️","title":"La grande valanga","epoch":"e1","status":"verificato","summary":"Una grande valanga investe parte dell'abitato. Il bilancio consolidato è di nove vittime. Casa Matteotti-Meneghetti viene danneggiata; la lesione è ancora visibile nella fotografia del 1908.","tags":["valanghe","Casa Matteotti","disastri"]},{"date":"1891","year":1891,"icon":"📷","title":"Giovanni Sonna fotografo a Buenos Aires","epoch":"e2","status":"verificato con nota","summary":"Nei notes dettagliati Giovanni Sonna risulta socio di un atelier fotografico a Buenos Aires dal 1891. Un'altra sintesi di Romano riporta 1889.","tags":["Sonna","emigrazione","fotografia"]},{"date":"1892-08-22","year":1892,"icon":"⛏️","title":"Alla ricerca dell'oro","epoch":"e2","status":"verificato","summary":"Giovanni Sonna e altri uomini costituiscono una compagnia per la ricerca dell'oro; la sua esperienza sudamericana lo porterà fino alla Terra del Fuoco e Punta Arenas.","tags":["Sonna","emigrazione","Sud America"]},{"date":"1895-1897","year":1895,"icon":"🏠","title":"Giovanni torna a Comasine","epoch":"e2","status":"verificato","summary":"Nel 1895 ottiene la licenza di osteria, nel 1896 quella di bottega e nel 1897 sposa Lucia Zanon.","tags":["Sonna","vita quotidiana"]},{"date":"fine XIX secolo","year":1898,"icon":"🚰","title":"Il nuovo acquedotto comunale","epoch":"e2","status":"data non precisa","summary":"Negli ultimi anni dell'Ottocento viene completato il nuovo acquedotto comunale. Giovanni Sonna realizza in larice le lavandare delle fontane.","tags":["acquedotto","Sonna","paese"]},{"date":"1900-12-21","year":1900,"icon":"🌎","title":"Giovanni riparte per l'America","epoch":"e2","status":"verificato","summary":"Giovanni lascia Comasine verso le 13, annotando nei propri notes denaro, debiti, crediti e spese di viaggio.","tags":["Sonna","emigrazione"]},{"date":"1904","year":1904,"icon":"👶","title":"Nasce Remo Sonna","epoch":"e2","status":"verificato","summary":"Nasce a Comasine Remo Sonna, futuro autore dei quaderni che conserveranno la memoria del paese.","tags":["Remo Sonna","Sonna"]},{"date":"1905-1907","year":1905,"icon":"🕯️","title":"Gli anni più duri della famiglia Sonna","epoch":"e2","status":"verificato","summary":"Muore il piccolo Vigilio; nel 1906 muore Lucia Zanon. Nel febbraio 1907 Giovanni lascia Punta Arenas e torna definitivamente a Comasine.","tags":["Sonna","famiglia","emigrazione"]},{"date":"1906-1907","year":1906,"icon":"🧱","title":"Il Tòm di Nagràl","epoch":"e2","status":"verificato","summary":"Viene costruito il grande muro antivalanga di Nagràl, una delle risposte materiali della comunità alla tragedia del 1888.","tags":["valanghe","Nagràl","Tòm"]},{"date":"1908","year":1908,"icon":"📷","title":"La fotografia di Casa Matteotti","epoch":"e2","status":"verificato","summary":"La storica fotografia della casa n. 32 mostra Antonio Bordati 'Tòni Ferài', don Giulio Daz, Matilde Gionta e la lesione lasciata dalla valanga del 1888.","tags":["Casa Matteotti","Matteotti","fotografia"]},{"date":"1914-12-22","year":1914,"icon":"🕯️","title":"Muore don Giulio Daz","epoch":"e2","status":"verificato","summary":"Il curato ritratto davanti a Casa Matteotti nella foto del 1908 muore a Comasine.","tags":["persone","Casa Matteotti"]},{"date":"1914-1918","year":1914,"icon":"⚔️","title":"La Grande Guerra","epoch":"e2","status":"contesto","summary":"Comasine, allora nel Tirolo austro-ungarico, vive nelle immediate retrovie del fronte della Val di Peio.","tags":["Grande Guerra","Val di Peio"]},{"date":"1916-12-13","year":1916,"icon":"❄️","title":"Le valanghe di Santa Lucia","epoch":"e2","status":"verificato","summary":"Due valanghe provenienti dalle valli adiacenti convergono sulla chiesa di Santa Lucia e ne danneggiano il tetto.","tags":["Santa Lucia","valanghe"]},{"date":"1918-11","year":1918,"icon":"🏳️","title":"Finisce l'amministrazione austro-ungarica","epoch":"e2","status":"verificato","summary":"Con la fine della guerra termina l'amministrazione austro-ungarica; l'annessione formale al Regno d'Italia verrà completata nel 1920.","tags":["Grande Guerra","Italia"]},{"date":"1919-04-03","year":1919,"icon":"⛪","title":"San Matteo diventa parrocchia","epoch":"e3","status":"verificato da fonte istituzionale","summary":"La curazia di Comasine viene eretta canonicamente a parrocchia con decreto del vescovo Celestino Endrici.","tags":["San Matteo","parrocchia"]},{"date":"1920-10-01","year":1920,"icon":"🇮🇹","title":"Annessione formale all'Italia","epoch":"e3","status":"verificato","summary":"Entra in vigore la legge che approva il Trattato di Saint-Germain e formalizza l'annessione del Trentino al Regno d'Italia.","tags":["Italia","amministrazione"]},{"date":"1920-1921","year":1920,"icon":"⛏️","title":"Nuovi sondaggi minerari","epoch":"e3","status":"verificato","summary":"Nuove ricerche a Staviôn, Vasi e Garzané seguono in parte le vecchie gallerie, ma vengono presto abbandonate.","tags":["miniere","Staviôn","Garzané"]},{"date":"1921-09-23","year":1921,"icon":"🔥","title":"Il grande incendio del 1921","epoch":"e3","status":"verificato","summary":"Lo scoppio di un deposito di polvere da sparo provoca un gravissimo incendio: le ricostruzioni indicano tre morti, circa trenta feriti e una trentina di case distrutte. Viene danneggiata anche casa Sonna.","tags":["incendi","Sonna","paese"]},{"date":"1923","year":1923,"icon":"⛪","title":"Viene rifatto il tetto di Santa Lucia","epoch":"e3","status":"verificato","summary":"Si ripara il tetto danneggiato dalle valanghe del 13 dicembre 1916.","tags":["Santa Lucia"]},{"date":"1924","year":1924,"icon":"🔥","title":"Incendio di Casa Matteotti-Meneghetti","epoch":"e3","status":"verificato con scelta editoriale","summary":"La versione più aggiornata delle ricerche di Romano indica il 1924. La temporanea mancanza del tetto contribuì al deterioramento dell'affresco della facciata.","tags":["Casa Matteotti","incendi"]},{"date":"1924","year":1924,"icon":"🕯️","title":"Comasine e l'assassinio di Giacomo Matteotti","epoch":"e3","status":"verificato","summary":"Dopo l'assassinio di Giacomo Matteotti, dalla comunità di Comasine partono condoglianze alla famiglia; Celesta Zanon vedova Sonna scrive alla vedova ricordando il vincolo di parentela.","tags":["Matteotti","Sonna"]},{"date":"1928-12-31","year":1928,"icon":"🏛️","title":"Finisce il Comune autonomo di Comasine","epoch":"e3","status":"verificato","summary":"Comasine, insieme a Celledizzo, Celentino, Cogolo e Peio, viene riunita nel nuovo Comune di Peio.","tags":["Comune","amministrazione"]},{"date":"1937","year":1937,"icon":"⛏️","title":"Riprendono le grandi ricerche minerarie","epoch":"e4","status":"verificato","summary":"Sotto la direzione dell'ing. Tullio Tschurtschenthaler dell'Elmo iniziano provini magnetometrici e nuove gallerie in varie zone della montagna.","tags":["miniere","Tschurtschenthaler"]},{"date":"1938-estate","year":1938,"icon":"👷","title":"Circa 300 operai","epoch":"e4","status":"verificato","summary":"Nell'estate del 1938 le ricerche raggiungono il massimo di circa 300 lavoratori; a fine agosto lo sviluppo totale delle gallerie aperte è di circa 1.200 metri.","tags":["miniere","operai"]},{"date":"1938-08","year":1938,"icon":"🏗️","title":"Visita ministeriale alle miniere","epoch":"e4","status":"verificato con correzione","summary":"Le miniere ricevono la visita del Ministro delle Corporazioni Ferruccio Lantini. In una fonte locale il cognome compare come 'Lentini'.","tags":["miniere"]},{"date":"1938","year":1938,"icon":"🌪️","title":"Un uragano danneggia il campanile","epoch":"e4","status":"verificato","summary":"Un violento uragano aggrava i danni alla parte superiore del campanile di San Matteo.","tags":["San Matteo","meteo"]},{"date":"1939","year":1939,"icon":"⚡","title":"L'elettricità arriva alle gallerie","epoch":"e4","status":"verificato","summary":"Una linea ad alta tensione raggiunge le gallerie 4 e 5 e successivamente Garzané.","tags":["miniere","elettricità"]},{"date":"1940","year":1940,"icon":"🪨","title":"Una vena di ferro di oltre quattro metri","epoch":"e4","status":"verificato","summary":"A Garzané viene individuata una vena di minerale con spessore superiore ai quattro metri.","tags":["miniere","Garzané"]},{"date":"1940-1941","year":1940,"icon":"🚡","title":"La teleferica mineraria verso Valéne","epoch":"e4","status":"verificato","summary":"Tra l'autunno 1940 e l'estate 1941 viene realizzato il sistema di trasporto del minerale verso Valéne con grande tramoggia a valle.","tags":["miniere","Valéne","teleferica"]},{"date":"1942-1943","year":1942,"icon":"👷","title":"Minatori militarizzati","epoch":"e4","status":"verificato","summary":"Alcuni militari locali vengono destinati alle miniere mantenendo lo status di lavoratori militarizzati.","tags":["miniere","Seconda guerra mondiale"]},{"date":"1943","year":1943,"icon":"⛪","title":"Grande ampliamento di San Matteo","epoch":"e4","status":"verificato","summary":"Sotto don Pietro Bisoffi la chiesa viene notevolmente ampliata.","tags":["San Matteo"]},{"date":"1943-09-08","year":1943,"icon":"⚠️","title":"La crisi dell'8 settembre","epoch":"e4","status":"verificato","summary":"Dopo l'armistizio si disgrega l'organizzazione mineraria. A fine ottobre chiudono i principali cantieri di Pradolìn e Prà di Cöi.","tags":["miniere","Seconda guerra mondiale"]},{"date":"1943-1944","year":1943,"icon":"🌾","title":"Remo costruisce il mulino","epoch":"e4","status":"verificato","summary":"Remo Sonna costruisce un mulino per macinare il grano. L'oggetto è conservato al Museo della Civiltà Solandra di Malé.","tags":["Remo Sonna","mestieri","Museo di Malé"]},{"date":"1944","year":1944,"icon":"⛏️","title":"Chiude l'ultimo cantiere della fase bellica","epoch":"e4","status":"verificato","summary":"Viene chiuso il cantiere rimasto sul versante di Cellentino, presso la strada delle Pendéggie.","tags":["miniere"]},{"date":"1945","year":1945,"icon":"❤️","title":"Il Capitello del Sacro Cuore","epoch":"e4","status":"verificato","summary":"Il capitello viene eretto come ringraziamento per essere scampati ai pericoli della guerra.","tags":["capitelli","Seconda guerra mondiale"]},{"date":"1949","year":1949,"icon":"🏚️","title":"Demolizione dei baraccamenti minerari","epoch":"e5","status":"verificato","summary":"Vengono demoliti i baraccamenti della società La Comasine sui versanti di Comasine e Cellentino.","tags":["miniere"]},{"date":"1952-03","year":1952,"icon":"🚡","title":"Smontata la vecchia teleferica","epoch":"e5","status":"verificato","summary":"Nel marzo 1952 viene rimossa la parte metallica della vecchia teleferica.","tags":["miniere","teleferica"]},{"date":"1952-09","year":1952,"icon":"🏭","title":"Arriva la Metallurgica Luciano Rumi","epoch":"e5","status":"verificato","summary":"La Rumi avvia le prime attività a Garzané con sei operai di Comasine.","tags":["Rumi","miniere","Garzané"]},{"date":"1953","year":1953,"icon":"🚡","title":"Nuova teleferica Valéne–Staviôn–Garzané","epoch":"e5","status":"verificato","summary":"La Rumi costruisce una nuova teleferica e porta gli addetti a circa venti, quasi tutti del paese. Viene riattivata anche la San Cesare.","tags":["Rumi","miniere","teleferica"]},{"date":"1954","year":1954,"icon":"💥","title":"Lo scoppio alla San Cesare","epoch":"e5","status":"verificato","summary":"Una mina esplode accidentalmente durante un turno e coinvolge l'intero gruppo presente. Romano raccoglierà la testimonianza di Pierino 'Pera' Bordati.","tags":["San Cesare","minatori","Pierino Bordati"]},{"date":"circa 1954","year":1954,"icon":"🔥","title":"Demolizione dell'antico altoforno","epoch":"e5","status":"data approssimativa","summary":"Viene demolito l'antico altoforno del Fôren de Novàl, importante resto della metallurgia tradizionale.","tags":["ferro","Fôren de Novàl"]},{"date":"1955-1960","year":1955,"icon":"⛏️","title":"L'ultima vera fase produttiva","epoch":"e5","status":"verificato","summary":"L'attività continua con una certa intensità, soprattutto a Garzané; il minerale viene spedito alle fonderie.","tags":["Rumi","miniere","Garzané"]},{"date":"1961-1966","year":1961,"icon":"📉","title":"Il declino","epoch":"e5","status":"verificato","summary":"Dopo il 1960 i lavori proseguono sempre più lentamente e con carattere prevalentemente di ricerca.","tags":["miniere"]},{"date":"1967","year":1967,"icon":"🛑","title":"Fine definitiva delle miniere","epoch":"e5","status":"verificato","summary":"La Rumi rinuncia alla concessione. Restano sulla montagna grandi quantità di minerale già estratto, compresi oltre 2.000 m³ presso la galleria n. 5 di Staviôn.","tags":["Rumi","miniere","Staviôn"]},{"date":"1967","year":1967,"icon":"❤️","title":"L'ultima eredità del ferro","epoch":"e5","status":"verificato","summary":"La Rumi dona alla parrocchia gli impianti delle teleferiche. Il ricavato della vendita contribuirà alla ristrutturazione di San Matteo.","tags":["miniere","San Matteo"]},{"date":"1969","year":1969,"icon":"⛪","title":"Grande ristrutturazione di San Matteo","epoch":"e6","status":"verificato","summary":"La chiesa viene profondamente riorganizzata secondo la liturgia postconciliare: nuovo pavimento, granito e legno, nuova illuminazione e mensa al centro.","tags":["San Matteo"]},{"date":"1969-10-05","year":1969,"icon":"✝️","title":"Consacrazione del nuovo altare","epoch":"e6","status":"verificato","summary":"L'arcivescovo Alessandro Maria Gottardi consacra il nuovo altare di San Matteo.","tags":["San Matteo"]},{"date":"1965-1975","year":1970,"icon":"❄️","title":"I cinque quaderni su frane e valanghe","epoch":"e6","status":"verificato","summary":"Remo Sonna dedica cinque quaderni manoscritti a frane e valanghe, con schizzi, grafici e rilievi topografici.","tags":["Remo Sonna","valanghe","manoscritti"]},{"date":"1971","year":1971,"icon":"🛡️","title":"Gli altari laterali lasciano Santa Lucia","epoch":"e6","status":"verificato","summary":"Per proteggerli dai furti, i due altari laterali di Santa Lucia vengono trasferiti a San Matteo.","tags":["Santa Lucia","San Matteo","arte sacra"]},{"date":"1976","year":1976,"icon":"🚨","title":"Il furto a Santa Lucia","epoch":"e6","status":"verificato","summary":"I ladri sottraggono importanti elementi dell'altare maggiore, fra cui il grande San Michele e altre sculture decorative.","tags":["Santa Lucia","furti","arte sacra"]},{"date":"1979-08","year":1979,"icon":"⛪","title":"L'altare maggiore di Santa Lucia viene trasferito","epoch":"e6","status":"verificato","summary":"Nell'agosto 1979 l'altare maggiore di Santa Lucia viene collocato nella chiesa di San Matteo.","tags":["Santa Lucia","San Matteo","arte sacra"]},{"date":"1981","year":1981,"icon":"🔔","title":"Restauro della cella campanaria","epoch":"e6","status":"verificato","summary":"La parte superiore del campanile viene finalmente restaurata a regola d'arte dopo i danni accumulati dall'incendio del 1921 e dall'uragano del 1938.","tags":["San Matteo","campanile"]},{"date":"1981","year":1981,"icon":"📖","title":"Termina la cronaca pubblicata di Remo","epoch":"e6","status":"verificato","summary":"Il 1981 è il limite cronologico dell'opera pubblicata di Remo Sonna sulla storia di Comasine.","tags":["Remo Sonna","libro"]}],"special_sections":[{"id":"miniere","icon":"⛏️","title":"Le miniere di ferro","description":"Dalle antiche miniere di magnetite alla chiusura definitiva del 1967, con gallerie, provini, teleferiche e ultimi minatori."},{"id":"frane","icon":"❄️","title":"Frane e valanghe","description":"La valanga del 1888, Santa Lucia nel 1916, il Tòm di Nagràl e i cinque quaderni manoscritti di Remo."},{"id":"sonna","icon":"📖","title":"Remo, Romano e la famiglia Sonna","description":"Giovanni emigrante e fotografo, Remo cronista del paese, Romano trascrittore, ricercatore e custode della memoria."},{"id":"matteotti","icon":"🏠","title":"Casa Matteotti e la famiglia","description":"La casa storica, le miniere, la fotografia del 1908, la valanga del 1888, l'incendio del 1924 e i legami con Giacomo Matteotti."},{"id":"chiese","icon":"⛪","title":"San Matteo e Santa Lucia","description":"Incendi, valanghe, altari, restauri e trasformazioni delle due chiese di Comasine."},{"id":"emigrazione","icon":"🌎","title":"I comasinesi nel mondo","description":"America, Sud America, mestieri stagionali e reti familiari: il paese raccontato attraverso chi partiva e chi tornava."},{"id":"dialetto","icon":"🗣️","title":"Parole di Comasine","description":"Glossario del dialetto specifico raccolto da Romano Sonna, riferito soprattutto al parlato degli anni 1940–1960."},{"id":"luoghi","icon":"📍","title":"I luoghi del racconto","description":"Casa Matteotti, Santa Lucia, Tòm, Nagràl, Staviôn, Garzané, Valéne, San Cesare, Boài, Fôren de Novàl e altri luoghi da collegare alla mappa."}],"editorial_flags":[{"topic":"Parrocchia di San Matteo","decision":"Usare 3 aprile 1919","reason":"Data confermata dall'Archivio parrocchiale e dalla fonte CEI; una pagina di Romano riporta 1923."},{"topic":"Incendio di Casa Matteotti","decision":"Usare 1924","reason":"La pagina specifica più aggiornata e altre pagine di Romano indicano 1924; una pagina più vecchia riporta 1921."},{"topic":"Fine delle miniere","decision":"Usare 1967","reason":"Gli appunti minerari e la pagina sui segni sacri indicano la rinuncia Rumi e la chiusura finale nel 1967."},{"topic":"Ministro alle miniere nel 1938","decision":"Ferruccio Lantini","reason":"La fonte locale scrive 'Lentini', ma le fonti storiche nazionali confermano Lantini come Ministro delle Corporazioni."},{"topic":"Atelier fotografico di Giovanni Sonna","decision":"Usare 1891 con nota sulla variante 1889","reason":"I notes dettagliati danno gennaio 1891; una sintesi di Romano riporta 1889."}],"sources":[{"label":"Libro di Remo Sonna","url":"https://www.comasine.it/index.php/Libro.html"},{"label":"Miniere di Comasine","url":"https://www.comasine.it/index.php/Miniere.html"},{"label":"Casa Matteotti-Meneghetti","url":"https://www.comasine.it/index.php/casa-matteotti-69.html"},{"label":"Famiglia Matteotti","url":"https://www.comasine.it/index.php/matteotti.html"},{"label":"San Matteo","url":"https://www.comasine.it/index.php/chiesa-san-matteo.html"},{"label":"Santa Lucia","url":"https://www.comasine.it/index.php/santa-lucia.html"},{"label":"Altari lignei","url":"https://www.comasine.it/index.php/altari-lignei.html"},{"label":"Dialetto di Comasine","url":"https://www.comasine.it/index.php/Dialetto.html"},{"label":"Famiglie Sonna","url":"https://www.comasine.it/index.php/Sonna.html"},{"label":"Frane e valanghe · quaderni di Remo","url":"https://www.comasine.it/index.php/Frane.html"},{"label":"Segni sacri di Comasine","url":"https://www.comasine.it/index.php/segni-sacri.html"}],"places":[{"name":"Casa Matteotti-Meneghetti","themes":["Matteotti","valanga 1888","incendio 1924","foto 1908"]},{"name":"Chiesa di Santa Lucia","themes":["valanghe","minatori","altari","cimitero"]},{"name":"Chiesa di San Matteo","themes":["incendi","parrocchia","campanile","altari"]},{"name":"Tòm di Nagràl","themes":["valanghe","protezione del paese"]},{"name":"Staviôn","themes":["miniere","galleria n. 5","Rumi"]},{"name":"Garzané","themes":["miniere","vena di ferro","Rumi"]},{"name":"Valéne","themes":["teleferica","tramoggia mineraria"]},{"name":"San Cesare","themes":["miniera","incidente 1954"]},{"name":"Còrno Boài","themes":["miniere","provini"]},{"name":"Fôren de Novàl","themes":["altoforno","lavorazione del ferro"]},{"name":"Molìn del Còcc","themes":["piena del Noce","1884"]}]};
+(function(){
+  const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  const norm=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+  const displayDate=e=>{
+    const d=e.date||String(e.year||'');
+    if(/^\d{4}-\d{2}-\d{2}$/.test(d)){const [y,m,day]=d.split('-');return `${day}/${m}/${y}`;}
+    if(/^\d{4}-\d{2}$/.test(d)){const [y,m]=d.split('-');return `${m}/${y}`;}
+    return d.replace('-estate',' · estate');
+  };
+  let historyQuery='';
+  let themeFilter='';
+  function eventMatches(e){
+    const hay=norm([e.date,e.year,e.title,e.summary,(e.tags||[]).join(' '),e.status].join(' '));
+    if(historyQuery && !hay.includes(norm(historyQuery))) return false;
+    if(themeFilter && !hay.includes(norm(themeFilter))) return false;
+    return true;
+  }
+  function renderTimeline(){
+    const host=document.getElementById('historyTimeline'); if(!host)return;
+    let html='';
+    HISTORY_DATA.epochs.forEach((ep,i)=>{
+      const ev=HISTORY_DATA.timeline.filter(e=>e.epoch===ep.id && eventMatches(e));
+      if(!ev.length)return;
+      html+=`<details class="history-epoch" ${i===0?'open':''}><summary>${esc(ep.title)}<span>${ev.length} ${ev.length===1?'evento':'eventi'}</span></summary><div class="history-events">`;
+      html+=ev.map(e=>`<article class="history-event"><div class="history-event-top"><div class="history-event-icon">${esc(e.icon||'•')}</div><div style="min-width:0;flex:1"><div class="history-event-date">${esc(displayDate(e))}</div><h4>${esc(e.title)}</h4><p>${esc(e.summary)}</p><div class="history-event-tags">${(e.tags||[]).map(t=>`<span>${esc(t)}</span>`).join('')}${e.status?`<span class="history-status">${esc(e.status)}</span>`:''}</div></div></div></article>`).join('');
+      html+='</div></details>';
+    });
+    host.innerHTML=html||'<div class="history-empty">Nessun evento corrisponde alla ricerca.</div>';
+  }
+  const topicSearch={miniere:'miniere',frane:'valanghe',sonna:'Sonna',matteotti:'Matteotti',chiese:'San Matteo',emigrazione:'emigrazione',dialetto:'dialetto',luoghi:''};
+  function renderThemes(){
+    const host=document.getElementById('historyThemes'); if(!host)return;
+    host.innerHTML=HISTORY_DATA.special_sections.map(t=>`<article class="history-topic"><div class="history-topic-icon">${esc(t.icon)}</div><h3>${esc(t.title)}</h3><p>${esc(t.description)}</p><button data-topic="${esc(t.id)}">Vedi nella cronologia →</button></article>`).join('');
+    host.querySelectorAll('[data-topic]').forEach(b=>b.onclick=()=>{themeFilter=topicSearch[b.dataset.topic]||'';historyQuery='';const si=document.getElementById('historySearch');if(si)si.value=themeFilter;historyQuery=themeFilter;switchHistoryTab('timeline');renderTimeline();});
+  }
+  function renderPlaces(){
+    const host=document.getElementById('historyPlaces'); if(!host)return;
+    host.innerHTML=HISTORY_DATA.places.map(p=>{const q=encodeURIComponent(p.name+' Comasine Peio Trentino');return `<article class="history-place"><h3>📍 ${esc(p.name)}</h3><p>${esc((p.themes||[]).join(' · '))}</p><a href="https://www.google.com/maps/search/?api=1&query=${q}" target="_blank" rel="noreferrer">Apri su Maps</a></article>`}).join('');
+  }
+  function renderSources(){
+    const f=document.getElementById('historyFlags');if(f)f.innerHTML=(HISTORY_DATA.editorial_flags||[]).map(x=>`<div class="history-flag"><b>${esc(x.topic)} · ${esc(x.decision)}</b><span>${esc(x.reason)}</span></div>`).join('');
+    const s=document.getElementById('historySources');if(s)s.innerHTML=(HISTORY_DATA.sources||[]).map(x=>`<article class="history-source"><h3>${esc(x.label)}</h3><p>Fonte e approfondimento esterno.</p><a href="${esc(x.url)}" target="_blank" rel="noreferrer">Apri fonte</a></article>`).join('');
+  }
+  function switchHistoryTab(tab){
+    document.querySelectorAll('#historyTabs button').forEach(b=>b.classList.toggle('active',b.dataset.historyTab===tab));
+    document.querySelectorAll('#screen-history .history-pane').forEach(p=>p.classList.remove('active'));
+    const pane=document.getElementById('history-pane-'+tab);if(pane)pane.classList.add('active');
+  }
+  function initHistory(){
+    renderTimeline();renderThemes();renderPlaces();renderSources();
+    document.querySelectorAll('#historyTabs button').forEach(b=>b.onclick=()=>switchHistoryTab(b.dataset.historyTab));
+    const search=document.getElementById('historySearch');if(search)search.oninput=e=>{historyQuery=e.target.value;themeFilter='';switchHistoryTab('timeline');renderTimeline();};
+    const j=document.getElementById('historyJumpThemes');if(j)j.onclick=()=>switchHistoryTab('themes');
+    document.querySelectorAll('[data-open-screen="history"],[data-guide-screen="history"]').forEach(b=>b.addEventListener('click',()=>{historyQuery='';themeFilter='';const s=document.getElementById('historySearch');if(s)s.value='';switchHistoryTab('timeline');renderTimeline();}));
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initHistory);else initHistory();
+})();
+</script>
+
 </body>
 </html>

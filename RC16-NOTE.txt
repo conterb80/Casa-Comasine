@@ -1,0 +1,13 @@
+RC16 - Storia di Comasine
+
+Base: RC15 Percorsi Marilleva.
+Aggiunta nuova sezione "Storia di Comasine" senza modificare sentieri, meteo o diario.
+- Accesso rapido dedicato
+- Cronologia 1853-1981 (57 eventi)
+- 6 epoche storiche
+- Temi: Miniere, Frane e valanghe, Sonna, Matteotti, Chiese, Emigrazione, Dialetto, Luoghi
+- Ricerca testuale
+- Luoghi con apertura in Google Maps
+- Fonti e note sulle discrepanze storiche
+- Link al libro completo di Remo Sonna curato da Romano Sonna
+- PWA aggiornata a RC16
