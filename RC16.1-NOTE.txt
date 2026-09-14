@@ -1,0 +1,9 @@
+RC16.1 - PWA Fix completo
+
+Base: RC16 Storia di Comasine.
+Corretto il problema di installazione PWA causato dai percorsi delle icone non coerenti con il caricamento flat su GitHub.
+- icone PWA in root
+- manifest corretti
+- apple-touch-icon corretto
+- service worker corretto e cache incrementata a v2
+Nessuna modifica alle funzioni dell'app.
